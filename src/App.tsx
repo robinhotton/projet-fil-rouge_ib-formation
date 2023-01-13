@@ -1,7 +1,12 @@
 import "./App.Scss";
+import LandingPage from "./pages/LandingPage";
 
-function App() {
-  return <div className="App"></div>;
+function App(): JSX.Element {
+  return (
+    <div className="App">
+      <LandingPage />
+    </div>
+  );
 }
 
 export default App;

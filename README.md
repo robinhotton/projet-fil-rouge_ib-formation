@@ -1,7 +1,7 @@
 # UltraMotion Corp
 
-![logo Pricipal](/public/img/LogoPrincipal.svg)
-![logo DarkMode](/public/img/LogoDarkMode.svg)
+![logo Pricipal](/public/img/logoPrincipal.svg)
+![logo DarkMode](/public/img/logoDarkMode.svg)
 
 Projet fil rouge : [Ib-formation](https://www.ib-formation.fr/)
 

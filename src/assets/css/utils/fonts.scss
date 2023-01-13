@@ -1,0 +1,49 @@
+// Création de classe pour les différents titres et contenu
+.title {
+  font-family: $worksans;
+  font-size: 42px;
+  color: $black;
+}
+.content {
+  font-family: $roboto;
+  font-size: 15px;
+}
+
+// Création des classes pour les différents liens menant à google ou à une autre page.
+.link {
+  font-family: $roboto;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $green;
+  &:hover {
+    color: $hoverGreen;
+  }
+}
+.linkToGoogle
+{
+    font-family: $worksans;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+// Création des classes texte pour les deux différents bouttons de l'application.
+.buttonText {
+  font-family: $worksans;
+  font-size: 16px;
+  color: $light;
+}
+
+.bigButtonText {
+    font-family: $worksans;
+    font-size: 21px;
+    color: $light
+}
+
+// Création de classe pour les graisses
+.bold {
+  font-weight: bold;
+}
+.normal {
+  font-weight: normal;
+}

@@ -1,5 +1,11 @@
 import Footer from "../commons/Footer/Footer";
+import Header from "../commons/Header";
 
 export default function LandingPage(): JSX.Element {
-    return <Footer />
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }

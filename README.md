@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# UltraMotion Corp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![logo Pricipal](/public/img/LogoPrincipal.svg)
+![logo DarkMode](/public/img/LogoDarkMode.svg)
 
-## Available Scripts
+Projet fil rouge : [Ib-formation](https://www.ib-formation.fr/)
 
-In the project directory, you can run:
+Durée : début novembre 2022 - fin janvier 2023 (3 mois)
 
-### `npm start`
+## Prérequis
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [node.js](https://nodejs.org/en/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## installation
 
-### `npm test`
+- récupérer le projet
+- installer les dépendances avec `npm i`
+- Lancer le serveur avec `npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Membres
 
-### `npm run build`
+- [Pierre Dumont](https://github.com/PierreD59)
+- [Robin Hotton](https://github.com/Gerob59)
+- [Peter Boniface](https://github.com/peterboniface)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Travail effectué
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Persona](https://www.canva.com/design/DAFVfEKsZj4/VbaFOJDvE6jbBxkHxzc4QA/edit?utm_content=DAFVfEKsZj4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [User Story](https://docs.google.com/spreadsheets/d/1PRI6pndtnhPqj--X3W33oXfbw50mpy7VXpd1_0mDzFA/edit#gid=1764161495)
+- [Charte graphique](https://www.canva.com/design/DAFVlP_uPNE/Er0it3A6UL9IIPSLtYrNJA/view?utm_content=DAFVlP_uPNE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Wireframe / Maquettage / Prototypage](https://www.figma.com/team_invite/redeem/78lEjFCsum1azZk7CFyG98)
+- [Trello](https://trello.com/b/n83uIREc/projet-fil-rouge)
+- Implémentation graphique avec react typescript
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Description
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Une entreprise industrielle, `UltraMotion Corp` , souhaite créer une application web permettant à de futurs partenaires de s’inscrire et revendre leurs services. A cet effet, UltraMotionCorp a établi une version préliminaire du cahier des charges (CDC). Il est important de noter que ce dernier pourra tout à fait être modifié et étendu tout le long du cycle de développement et de livraison. Le délai fixé par le client est de quatre mois maximum à partir de la soumission du CDC.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+L’application est principalement axée sur les points suivants :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Le module d’inscription :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+Le client souhaite pouvoir donner la possibilité aux partenaires de créer une liste de services tel que :
+    1. Le câblage d’armoire électrique
+    2. L’accompagnement aux choix de matériels industriels
+    3. L’installation de matériels
+    4. Etc…
+Pour chaque type de service, le partenaire propose un taux horaire.
+Chaque partenaire peut ajouter son logo, une description de son entreprise, l’effectif, le numéro de siret, ses coordonnées, son domaine principal d’activité et la zone géographique qu’il couvre.
+```
 
-## Learn More
+2. Le module de recherche de prestations :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+L’application doit pouvoir permettre à des tiers de rechercher des entreprises, par nom et surtout par type de prestation. Une fois la prestation trouvée, le client peut ajouter cette prestation à un panier et continuer ses recherches.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Une fois le panier validé, une notification est envoyée aux entreprises sélectionnées, celle-ci doivent pouvoir valider la prestation ou non.
+```
+
+3. Un module de devis :
+
+```
+Lorsqu’une entreprise est sélectionnée, elle doit pouvoir proposer un devis pour la prestation en question.
+On devra pouvoir gérer le temps de prestation mais également également la vente de matériel. Lors de la validation du devis, le prix total du panier est mis à jour.
+```
+
+4. Un module de communication :
+
+```
+Dés lors qu’un client et qu’un prestataire finalisent un devis, ils doivent pouvoir échanger des documents via l’application sous forme de fichiers pdf. Ces fichiers seront rattachés au numéro de devis et accessibles par le client et le prestataire.
+```
+
+5. Evaluation de la prestation :
+
+```
+Lorsque le client décide de valider une prestation, celle-ci est réputée débuter. Les deux parties peuvent décider de terminer la prestation, lorsque que c’est le cas des deux côtés, la prestation s’arrête. Et une évaluation portant sur 4 items est proposée au client (l’evaluation se fera via l’attributiuon d’une note de 0 à 5) :
+    1. La qualité globale de la prestation
+    2. La facilité de communication
+    3. La qualité du dossier technique fournit
+    4. Le niveau d’expertise
+```
+
+6. Module de monitoring :
+
+```
+Une partie administration doit permettre de visualiser :
+    1. le nombre de prestations en cours et terminées.
+    2. Le nombre moyen, Max et min de prestation par prestataire
+    3. Le prix moyen, Max et min d’une prestation.
+```

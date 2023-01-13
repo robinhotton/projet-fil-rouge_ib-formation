@@ -5,7 +5,10 @@
 
 Projet fil rouge : [Ib-formation](https://www.ib-formation.fr/)
 
-Durée : début novembre 2022 - fin janvier 2023 (3 mois)
+Formation : début novembre 2022 - fin janvier 2023 (3 mois)
+
+Projet : 22 décembre 2022 - 1 fevrier 2023
+(~ 5 semaines dont 7 jours dédié pendant la formation)
 
 ## Prérequis
 

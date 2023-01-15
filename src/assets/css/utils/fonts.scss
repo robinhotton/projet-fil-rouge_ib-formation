@@ -1,10 +1,20 @@
-// Création de classe pour les différents titres et contenu
+// Création de classe pour les différents titres, sous titre et contenu
 .title {
   font-family: $worksans;
   font-size: 42px;
   color: $black;
 }
-.content {
+.titleCard {
+  font-family: $worksans;
+  font-size: 21px;
+  color: $black;
+}
+.subTitle, .entrepriseName, .coord, .subTitleCard {
+  font-family: $worksans;
+  font-size: 18px;
+  color: $black;
+}
+.content, input, .contentCard {
   font-family: $roboto;
   font-size: 15px;
 }
@@ -23,14 +33,15 @@
 .linkToGoogle
 {
     font-family: $worksans;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: bold;
+    color: $black;
 }
 
 // Création des classes texte pour les deux différents bouttons de l'application.
 .buttonText {
   font-family: $worksans;
-  font-size: 16px;
+  font-size: 15px;
   color: $light;
 }
 .bigButtonText {
@@ -47,4 +58,25 @@
   font-weight: normal;
 }
 
-// 
+// Classe pour les prestations
+.prestationTitleLight, .prestationTitleDark
+{
+  font-family: $worksans;
+  font-size: 21px;
+  font-weight: bold;
+}
+.prestationTitleDark
+{
+  color: $dark;
+}
+
+.prestationTitleLight
+{
+  color: $light;
+}
+.titlePrestationPage
+{
+  font-family: $worksans;
+  font-size: 30px;
+  font-weight: bold;
+}

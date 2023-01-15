@@ -1,12 +1,12 @@
 import Prestation from "../../models/Prestation";
 import Card from "./Card";
 
-type CategorieProps = {
+type CardsCategorieProps = {
   nomCategorie: any;
   getData: any;
 };
 
-const AdminCategorie: React.FC<CategorieProps> = ({
+const CardsCategorie: React.FC<CardsCategorieProps> = ({
   nomCategorie,
   getData,
 }) => {
@@ -57,4 +57,4 @@ const AdminCategorie: React.FC<CategorieProps> = ({
     </div>
   );
 };
-export default AdminCategorie;
+export default CardsCategorie;

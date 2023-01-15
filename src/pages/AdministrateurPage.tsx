@@ -1,9 +1,9 @@
-import AdminController from "../components/card/AdminController";
+import CardsController from "../components/card/CardsController";
 
 const AdministrateurPage = () => {
   return (
     <>
-      <AdminController />
+      <CardsController />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-const StatsGlobales = (getData: any) => {
+const CardsGlobales = (getData: any) => {
   const prestationsTotales = () => {};
   const prestationsEnCours = () => {};
   const prestationsTerminees = () => {};
@@ -16,4 +16,4 @@ const StatsGlobales = (getData: any) => {
     </div>
   );
 };
-export default StatsGlobales;
+export default CardsGlobales;

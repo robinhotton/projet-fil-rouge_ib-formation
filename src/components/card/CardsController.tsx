@@ -1,8 +1,8 @@
 import axios from "axios";
-import AdminCategorie from "./AdminCategorie";
-import StatsGlobales from "./StatsGlobales";
+import CardsCategorie from "./CardsCategorie";
+import StatsGlobales from "./CardsGlobales";
 
-const AdminController = () => {
+const CardsController = () => {
   //verifier ce que sa renvoi
   const getData = async () => {
     return await axios
@@ -35,7 +35,7 @@ const AdminController = () => {
       <h1>Prestations</h1>
       <div className="allCategories">
         {/* getCategorie.forEach((categorie : any) => {
-             <AdminCategorie
+             <CardsCategorie
           nomCategorie={categorie}
           getData={getData}
         />
@@ -44,4 +44,4 @@ const AdminController = () => {
     </>
   );
 };
-export default AdminController;
+export default CardsController;

@@ -1,5 +1,4 @@
 @import "../../assets/css/utils/variables.scss";
-@import "../../assets/css/utils/fonts.scss";
 
 footer {
   background: $black;
@@ -29,7 +28,7 @@ ul {
 span {
   border: solid;
   mix-blend-mode: normal;
-  border: 1px solid #ececec;
+  border: 1px solid $light;
   border-radius: 5px;
 }
 

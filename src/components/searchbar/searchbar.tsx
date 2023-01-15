@@ -1,10 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import "dotenv/config";
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
-  const jsonServer = process.env.JSONSERVER as string;
 
   const handleSearchInput = (event: any) => {
     setSearchTerm(event.target.value);
@@ -13,7 +11,7 @@ function SearchBar() {
   // a verifier
   const handleSearchSubmit = async (event: any) => {
     event.preventDefault();
-    let adresse = jsonServer;
+    let adresse = "http://localhost:3000/prestations";
     if (searchTerm !== "") adresse += "/" + searchTerm;
     const response = await axios.get(adresse);
     console.log(response.data);

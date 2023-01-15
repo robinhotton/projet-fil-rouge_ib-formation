@@ -12,9 +12,9 @@ const DropdownMenu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
   const [selectCategorie, setSelectCategorie] = useState<string>("");
   const categories = () => {
     return [
-      " Le câblage d’armoire électrique",
-      "L’accompagnement aux choix de matériels industriels",
-      "L’installation de matériels",
+      "Le câblage d'armoire électrique",
+      "L'accompagnement aux choix de matériels industriels",
+      "L'installation de matériels",
     ];
   };
 

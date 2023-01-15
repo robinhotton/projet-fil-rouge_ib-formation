@@ -1,55 +1,35 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import axios from "axios";
+import "dotenv/config";
 
-type SearchBarProps = {
-  results: string;
-  onChangeValue: Function;
-};
+function SearchBar() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const jsonServer = process.env.JSONSERVER as string;
 
-//props
-/*const SearchBar: React.FC<SearchBarProps> = ({ results, onChangeValue }) => {
-  const [showPreview, setShowPreview] = useState(null);
-
-  const updateText = (text: string) => {
-    if (text) {
-      let list = results.filter((issue: string) => {
-        return issue.name.toLowerCase().indexOf(text.toLowerCase()) >= 0;
-      });
-      onChangeValue(text, list);
-      setShowPreview(list);
-    } else {
-      setShowPreview(null);
-    }
+  const handleSearchInput = (event: any) => {
+    setSearchTerm(event.target.value);
   };
 
-  const cancelSearch = () => {
-    setShowPreview(null);
-  };
-  const showList = () => {
-    if (showPreview) {
-      return showPreview.map((item) => {
-        return <li className="list-group-item">{item.name}</li>;
-      });
-    }
-    return <div />;
+  // a verifier
+  const handleSearchSubmit = async (event: any) => {
+    event.preventDefault();
+    let adresse = jsonServer;
+    if (searchTerm !== "") adresse += "/" + searchTerm;
+    const response = await axios.get(adresse);
+    console.log(response.data);
   };
 
   return (
-    <div className="auto">
-      <button className="cancel-btn" onClick={() => cancelSearch()}>
-        x
-      </button>
+    <form onSubmit={handleSearchSubmit}>
       <input
-        className="search-bar"
-        placeholder="Search"
-        onChange={(e) => updateText(e.target.value)}
+        type="text"
+        value={searchTerm}
+        onChange={handleSearchInput}
+        placeholder="Search..."
       />
-      <div className="list-group ">{showPreview && showList()}</div>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
-  */
-
-const SearchBar = () => {
-  return 0;
-};
+}
 
 export default SearchBar;

@@ -1,0 +1,12 @@
+@import "../../assets/css/utils/variables.scss";
+
+.person {
+    color: $light;
+}
+a {
+    text-decoration: none
+}
+a span {
+    color: $light;
+    border: solid $black;
+}

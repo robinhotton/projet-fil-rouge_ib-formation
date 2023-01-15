@@ -3,8 +3,16 @@
 header {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     background: $black;
+    height: 100px;
+    width: 100%;
+    align-items: center;
 }
-.cart {
+header .link {
+
+}
+
+header .cart {
     color: $light;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./SearchBar.scss";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,6 +21,7 @@ const SearchBar = () => {
   return (
     <form onSubmit={handleSearchSubmit}>
       <input
+        className="searchbar"
         type="text"
         value={searchTerm}
         onChange={handleSearchInput}

@@ -2,41 +2,35 @@
   "clients": [
     {
       "id": 1,
-      "nom": "tmp",
-      "prenom": "tmp",
-      "mail": "tmp",
+      "nom": "robin",
+      "prenom": "hotton",
+      "mail": "robin@hotton.com",
       "panier": []
     }
   ],
   "entreprises": [
     {
       "id": 1,
-      "logo ": "tmp",
-      "effectif": 123,
-      "siret": 123,
-      "coordonnees": "tmp",
-      "domaineActivite": "tmp",
-      "zoneGeographique": "tmp",
-      "servicesProposes": "tmp"
+      "logo ": "http://www.logo.com",
+      "effectif": 42,
+      "siret": 40380088100043,
+      "coordonnees": "42 Rue Brûle Maison, 59000 Lille",
+      "zoneActivite": "Metropole Lilloise"
     }
   ],
   "prestations": [
     {
       "id": 1,
       "idEntreprise": 1,
-      "nom": "tmp",
-      "localisation": "tmp",
-      "description": "tmp",
-      "tauxHoraire": "tmp",
+      "categorie": "Le câblage d'armoire électrique",
+      "description": "Pose et réparation des cables des armoires électriques",
+      "tauxHoraire": 142.42,
       "termine": true,
       "devis": {
-        "id": 1,
-        "tempsPrestation": "tmp",
-        "prixMateriel": "tmp"
+        "tempsPrestation": 42,
+        "prixMateriel": 4200
       },
       "evaluations": {
-        "id": 1,
-        "status": "DEBUTER",
         "qualiteGlobale": 5,
         "faciliteCommunication": 5,
         "qualiteTechnique": 5,
@@ -44,7 +38,7 @@
       }
     }
   ],
-  "categoriesPrestations": [
+  "categories": [
     {
       "id": 1,
       "nom": "Le câblage d'armoire électrique"

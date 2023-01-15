@@ -18,7 +18,7 @@ const CardsController = () => {
 
   const getCategorie = async () => {
     return await axios
-      .get("http://localhost:3000/categoriesPrestations")
+      .get("http://localhost:3000/categories")
       .then((response: any) => {
         return JSON.parse(response.data);
       })

@@ -1,19 +1,15 @@
 type Prestation = {
   id: number;
   idEntreprise: number;
-  nom: string;
-  localisation: string;
+  categorie: string;
   description: string;
-  tauxHoraire: string;
+  tauxHoraire: number;
   termine: boolean;
   devis: {
-    id: number;
-    tempsPrestation: string;
-    prixMateriel: string;
+    tempsPrestation: number;
+    prixMateriel: number;
   };
   evaluations: {
-    id: number;
-    status: string;
     qualiteGlobale: number;
     faciliteCommunication: number;
     qualiteTechnique: number;

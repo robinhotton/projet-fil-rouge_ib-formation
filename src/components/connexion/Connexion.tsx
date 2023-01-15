@@ -1,10 +1,13 @@
 import { BsFillPersonFill } from "react-icons/bs";
+import "./Connexion.scss";
 
 const ConnexionLink = () => {
   return (
     <>
-      <BsFillPersonFill />
-      <a href="">Connexion</a>;
+      <BsFillPersonFill className="person" />
+      <a href="">
+        <span>Connexion</span>
+      </a>
     </>
   );
 };

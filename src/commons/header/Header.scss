@@ -1,0 +1,10 @@
+@import "../../assets/css/utils/variables.scss";
+
+header {
+    display: flex;
+    flex-direction: row;
+    background: $black;
+}
+.cart {
+    color: $light;
+}

@@ -2,24 +2,29 @@
 
 footer {
   background: $black;
-  height: 115px;
+  height: 130px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .TopFooter p,
-.TopFooter a,
-.TopFooter span,
+.TopFooter p span,
 .MiddleFooter a,
 .MiddleFooter p,
 .EndFooter p,
 .EndFooter a {
   color: $light;
   text-decoration: none;
-  font-family: $worksans;
+  font-family: $roboto;
   font-size: 15px;
   margin: 5px
+}
+
+.TopFooter p:first-child, .MiddleFooter p:first-child {
+  font-size: 18px;
+  font-family: $worksans;
+  padding-bottom: 10px;
 }
 
 span {
@@ -31,5 +36,6 @@ span {
 .Facebook, .Youtube, .Twitter, .Linkedin {
     filter : invert(1);
     margin: 10px;
+    cursor: pointer;
 }
 

@@ -9,20 +9,33 @@ export default function Footer() {
     <footer>
       <div className="TopFooter">
         <p>Statistiques</p>
-        <p>Commandes en cours:</p>
-        <span>4821</span>
-        <p>Services livrés:</p>
-        <span>8971</span>
+        <p>
+          Commandes en cours : <span>4821</span>
+        </p>
+        <p>
+          Services livrés : <span>8971</span>
+        </p>
       </div>
 
       <div className="MiddleFooter">
-        <ul><p>À propos d'Ultramotion Corp</p>
-          <li><a href="">Nos valeurs</a></li>
-          <li><a href="">Comment ça marche ?</a></li>
-          <li><a href="">Devenir partenaire</a></li>
-          <li><a href="">Aide et contact</a></li>
-          <li><a href="">FAQ</a></li>
-        </ul> 
+        <ul>
+          <p>À propos d'Ultramotion Corp :</p>
+          <li>
+            <a href="">Nos valeurs</a>
+          </li>
+          <li>
+            <a href="">Comment ça marche ?</a>
+          </li>
+          <li>
+            <a href="">Devenir partenaire</a>
+          </li>
+          <li>
+            <a href="">Aide et contact</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
       </div>
 
       <div className="EndFooter">

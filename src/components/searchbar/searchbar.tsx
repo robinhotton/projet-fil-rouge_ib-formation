@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-function SearchBar() {
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchInput = (event: any) => {
@@ -28,6 +28,6 @@ function SearchBar() {
       <button type="submit">Search</button>
     </form>
   );
-}
+};
 
 export default SearchBar;

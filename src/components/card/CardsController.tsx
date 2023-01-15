@@ -2,44 +2,40 @@ import axios from "axios";
 import CardsCategorie from "./CardsCategorie";
 import StatsGlobales from "./CardsGlobales";
 
-const CardsController = () => {
+const CardsController = async () => {
   //verifier ce que sa renvoi
   const getData = async () => {
-    return await axios
-      .get("http://localhost:3000/prestations")
-      .then((response: any) => {
-        return JSON.parse(response.data);
-      })
-      .then((response) => response)
-      .catch(() => {
-        return "error at: AdminController.tsx -> getData -> catch";
-      });
+    try {
+      const response = await axios.get("http://localhost:3000/prestations");
+      return response.data.prestations;
+    } catch (error) {
+      return "error at: AdminController.tsx -> getData -> catch";
+    }
   };
 
   const getCategorie = async () => {
-    return await axios
-      .get("http://localhost:3000/categories")
-      .then((response: any) => {
-        return JSON.parse(response.data);
-      })
-      .then((response) => response)
-      .catch(() => {
-        return "error at: AdminController.tsx -> getData -> catch";
-      });
+    try {
+      const response = await axios.get("http://localhost:3000/categories");
+      return response.data.categories;
+    } catch (error) {
+      return "error at: AdminController.tsx -> getCategorie -> catch";
+    }
   };
 
+  const categories = await getCategorie();
   return (
     <>
       <h1>Statistiques globales</h1>
       <StatsGlobales getData={getData} />
       <h1>Prestations</h1>
       <div className="allCategories">
-        {/* getCategorie.forEach((categorie : any) => {
-             <CardsCategorie
-          nomCategorie={categorie}
-          getData={getData}
-        />
-        }); */}
+        {categories.map((categorie: any, index: number) => (
+          <CardsCategorie
+            key={index}
+            nomCategorie={categorie}
+            getData={getData}
+          />
+        ))}
       </div>
     </>
   );

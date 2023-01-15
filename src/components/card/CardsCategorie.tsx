@@ -11,7 +11,9 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
   getData,
 }) => {
   const filteredData = () => {
-    getData.filter((prestation: Prestation) => prestation.nom === nomCategorie);
+    getData.filter(
+      (prestation: Prestation) => prestation.categorie === nomCategorie
+    );
   };
 
   const prixMoyen = () => {};

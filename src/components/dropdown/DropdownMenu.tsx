@@ -46,7 +46,7 @@ const DropdownMenu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
   };
 
   return (
-    <>
+    <div className="MenuContainer">
       <button
         className={showDropDown ? "active" : undefined}
         onClick={(): void => toggleDropDown()}
@@ -65,7 +65,7 @@ const DropdownMenu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
         )}
         <RxTriangleDown />
       </button>
-    </>
+    </div>
   );
 };
 

@@ -15,7 +15,7 @@ const SearchBar = () => {
     let adresse = "http://localhost:3000/prestations";
     if (searchTerm !== "") adresse += "/" + searchTerm;
     const response = await axios.get(adresse);
-    console.log(response.data);
+    return response.data;
   };
 
   return (
@@ -27,7 +27,9 @@ const SearchBar = () => {
         onChange={handleSearchInput}
         placeholder="Search..."
       />
-      <button type="submit">Search</button>
+      <button className="searchButton" type="submit">
+        Search
+      </button>
     </form>
   );
 };

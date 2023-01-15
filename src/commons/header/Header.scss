@@ -9,10 +9,8 @@ header {
     width: 100%;
     align-items: center;
 }
-header .link {
-
-}
 
 header .cart {
     color: $light;
+    cursor: pointer;
 }

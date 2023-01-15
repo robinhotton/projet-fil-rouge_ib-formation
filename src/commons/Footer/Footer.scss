@@ -2,7 +2,7 @@
 
 footer {
   background: $black;
-  height: 274px;
+  height: 115px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -19,17 +19,13 @@ footer {
   text-decoration: none;
   font-family: $worksans;
   font-size: 15px;
-}
-
-ul {
-  list-style-type: none;
+  margin: 5px
 }
 
 span {
   border: solid;
-  mix-blend-mode: normal;
   border: 1px solid $light;
-  border-radius: 5px;
+  border-radius: 5px; 
 }
 
 .Facebook, .Youtube, .Twitter, .Linkedin {

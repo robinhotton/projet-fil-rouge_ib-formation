@@ -1,3 +1,4 @@
+@import './variables.scss';
 // Création de classe pour les différents titres, sous titre et contenu
 .title {
   font-family: $worksans;
@@ -67,7 +68,7 @@
 }
 .prestationTitleDark
 {
-  color: $dark;
+  color: $black;
 }
 
 .prestationTitleLight
@@ -79,4 +80,18 @@
   font-family: $worksans;
   font-size: 30px;
   font-weight: bold;
+}
+
+// Alignement du texte
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.justify {
+  text-align: justify;
+}
+.left {
+  text-align: left;
 }

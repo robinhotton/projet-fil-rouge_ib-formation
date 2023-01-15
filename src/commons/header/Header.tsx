@@ -1,6 +1,6 @@
 import ConnexionLink from "../../components/connexion/Connexion";
 import DropdownMenu from "../../components/dropdown/DropdownMenu";
-import SearchBar from "../../components/searchbar/SearchBar";
+import SearchBar from "../../components/searchbar/searchbar";
 import { FaShoppingCart } from "react-icons/fa";
 import "./Header.scss";
 

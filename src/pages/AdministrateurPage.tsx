@@ -1,6 +1,12 @@
+import Aside from "../components/aside/Aside";
 import CardsController from "../components/card/CardsController";
 
 const AdministrateurPage = () => {
-  return <>{/* <CardsController /> */}</>;
+  return (
+    <>
+      <Aside />
+      {/* <CardsController /> */}
+    </>
+  );
 };
 export default AdministrateurPage;

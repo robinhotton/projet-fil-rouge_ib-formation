@@ -1,7 +1,7 @@
 import Aside from "../components/aside/Aside";
 import CardsController from "../components/card/CardsController";
 
-const AdministrateurPage = () => {
+const AdministrateurPage: React.FC = () => {
   return (
     <>
       <Aside />

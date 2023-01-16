@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaEllipsisV } from "react-icons/fa";
 
 type AsideElementProps = {
-  logo: any;
+  logo: string | React.ReactElement;
   nomCategorie: string;
 };
 

@@ -1,6 +1,10 @@
 import Card from "./Card";
 
-const CardsGlobales = (getData: any) => {
+type CardsGlobalesProps = {
+  getData: any;
+};
+
+const CardsGlobales: React.FC<CardsGlobalesProps> = (getData) => {
   const prestationsTotales = () => {};
   const prestationsEnCours = () => {};
   const prestationsTerminees = () => {};

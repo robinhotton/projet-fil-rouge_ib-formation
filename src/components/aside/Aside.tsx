@@ -3,7 +3,7 @@ import { MdQueryStats } from "react-icons/md";
 import { MdOutlineWatchLater } from "react-icons/md";
 import "./Aside.scss";
 
-const Aside = () => {
+const Aside: React.FC = () => {
   return (
     <aside>
       <h1 className="title">Admin</h1>

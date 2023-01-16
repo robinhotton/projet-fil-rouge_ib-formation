@@ -4,7 +4,7 @@ import SearchBar from "../../components/searchbar/SearchBar";
 import { FaShoppingCart } from "react-icons/fa";
 import "./Header.scss";
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
     <header>
       <img src="" alt="logo"></img>
@@ -16,4 +16,5 @@ export default function Header() {
       <FaShoppingCart className="cart" />
     </header>
   );
-}
+};
+export default Header;

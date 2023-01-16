@@ -1,7 +1,7 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import "./Connexion.scss";
 
-const ConnexionLink = () => {
+const ConnexionLink: React.FC = () => {
   return (
     <div className="connexion">
       <BsFillPersonFill className="person" />

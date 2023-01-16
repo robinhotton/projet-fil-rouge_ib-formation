@@ -1,12 +1,14 @@
 import "./App.Scss";
-import AdministrateurPage from "./pages/AdministrateurPage";
-import LandingPage from "./pages/LandingPage";
+import Footer from "./commons/Footer/Footer";
+import Header from "./commons/header/Header";
+import Router from "./router/Router";
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      {/* <LandingPage /> */}
-      <AdministrateurPage />
+      <Header />
+      <Router />
+      <Footer />
     </div>
   );
 }

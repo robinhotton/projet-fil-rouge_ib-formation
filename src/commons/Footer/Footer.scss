@@ -1,0 +1,42 @@
+@import "../../assets/css/utils/variables.scss";
+
+footer {
+  background: $black;
+  height: 274px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+}
+
+.TopFooter p,
+.TopFooter a,
+.TopFooter span,
+.MiddleFooter a,
+.MiddleFooter p,
+.EndFooter p,
+.EndFooter a {
+  color: $light;
+  text-decoration: none;
+  font-family: $worksans;
+  font-size: 15px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+span {
+  border: solid;
+  mix-blend-mode: normal;
+  border: 1px solid $light;
+  border-radius: 5px;
+}
+
+.Facebook, .Youtube, .Twitter, .Linkedin {
+    filter : invert(1);
+    margin: 10px;
+}
+

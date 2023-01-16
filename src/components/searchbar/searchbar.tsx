@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import "./SearchBar.scss";
+import "./searchbar.scss";
 
-const SearchBar = () => {
+const searchbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchInput = (event: any) => {
@@ -34,4 +34,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default searchbar;

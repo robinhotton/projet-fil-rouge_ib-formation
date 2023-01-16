@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./searchbar.scss";
-import "dotenv/config";
+import "./SearchBar.scss";
+//import "dotenv/config";
 
 const SearchBar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -9,7 +9,8 @@ const SearchBar: React.FC = () => {
   /**
    * URL de l'api json-server, utilisation du `.env`
    */
-  const jsonServer: string = "" + process.env.JSONSERVER;
+  const jsonServer: string = "http://localhost:3000/prestations";
+  //const jsonServer: string = "" + process.env.JSONSERVER;
 
   /**
    * récupère les données du json-server grace à axios

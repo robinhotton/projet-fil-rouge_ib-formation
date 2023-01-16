@@ -1,10 +1,10 @@
 import "./App.Scss";
-import LandingPage from "./pages/LandingPage";
+import Router from "./router/Router";
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <LandingPage />
+      <Router />
     </div>
   );
 }

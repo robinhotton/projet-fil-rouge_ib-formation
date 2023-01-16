@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import DropDown from "./Dropdown";
 import { RxTriangleDown } from "react-icons/rx";
-import "./Menu.scss";
+import "./DropdownMenu.scss";
 
 type placeHolderProps = {
   placeholder?: string;
 };
 
-const Menu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
+const DropdownMenu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [selectCategorie, setSelectCategorie] = useState<string>("");
   const categories = () => {
@@ -19,17 +19,15 @@ const Menu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
   };
 
   /**
-   * Toggle the drop down menu
+   * Activer / Désactiver le menu dropdown
    */
   const toggleDropDown = () => {
     setShowDropDown(!showDropDown);
   };
 
   /**
-   * Hide the drop down menu if click occurs
-   * outside of the drop-down element.
-   *
-   * @param event  The mouse event
+   * Referme le menu dropdown si un click survient en dehors des elements
+   * @param event  evenement de la souris
    */
   const dismissHandler = (event: React.FocusEvent<HTMLButtonElement>): void => {
     if (event.currentTarget === event.target) {
@@ -41,14 +39,14 @@ const Menu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
    * Callback function to consume the
    * city name from the child component
    *
-   * @param city  The selected city
+   * @param categorie  la ville selectionné
    */
   const categorieSelection = (categorie: string): void => {
     setSelectCategorie(categorie);
   };
 
   return (
-    <>
+    <div className="MenuContainer">
       <button
         className={showDropDown ? "active" : undefined}
         onClick={(): void => toggleDropDown()}
@@ -67,8 +65,8 @@ const Menu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
         )}
         <RxTriangleDown />
       </button>
-    </>
+    </div>
   );
 };
 
-export default Menu;
+export default DropdownMenu;

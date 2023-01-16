@@ -1,0 +1,16 @@
+@import "../../assets/css/utils/variables.scss";
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: $black;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+}
+
+header .cart {
+    color: $light;
+    cursor: pointer;
+}

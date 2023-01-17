@@ -16,7 +16,8 @@ const CardsController: React.FC = () => {
   }, []);
 
   const prestationsParCategories = (nomCategorie: string): Prestation[] => {
-    return prestations.filter(
+    const copie: Prestation[] = prestations;
+    return copie.filter(
       (prestation) => prestation.categorie.nom === nomCategorie
     );
   };
@@ -39,4 +40,3 @@ const CardsController: React.FC = () => {
   );
 };
 export default CardsController;
-/*;*/

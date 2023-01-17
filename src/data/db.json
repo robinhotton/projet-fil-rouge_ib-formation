@@ -22,7 +22,10 @@
     {
       "id": 1,
       "idEntreprise": 1,
-      "categorie": "Le câblage d'armoire électrique",
+      "categorie": {
+        "id": 1,
+        "nom": "Le câblage d'armoire électrique"
+      },
       "description": "Pose et réparation des cables des armoires électriques",
       "tauxHoraire": 142.42,
       "termine": true,

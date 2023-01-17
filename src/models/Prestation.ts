@@ -9,8 +9,8 @@ export default class Prestation {
   private _description: string;
   private _tauxHoraire: number;
   private _termine: boolean;
-  private _devis?: Devis;
-  private _evaluation?: Evaluation;
+  private _devis!: Devis;
+  private _evaluation!: Evaluation;
 
   constructor(
     id: number,
@@ -34,15 +34,15 @@ export default class Prestation {
   public addDevis(devis: Devis): void {
     this._devis = devis;
   }
-  public removeDevis(): void {
-    this._devis = undefined;
-  }
 
   public addEvaluation(evaluation: Evaluation): void {
     this._evaluation = evaluation;
   }
-  public removeEvaluation(): void {
-    this._evaluation = undefined;
+
+  public prixTotal(): number {
+    return (
+      this._tauxHoraire * this.devis.tempsPrestation + this.devis.prixMateriel
+    );
   }
 
   get id() {
@@ -82,6 +82,6 @@ export default class Prestation {
     this._description = description;
   }
   set tauxHoraire(txHoraire: number) {
-    this._tauxHoraire = this.tauxHoraire;
+    this._tauxHoraire = txHoraire;
   }
 }

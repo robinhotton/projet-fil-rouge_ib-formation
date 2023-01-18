@@ -1,4 +1,5 @@
 import { RouteObject, useRoutes } from "react-router";
+import CreatePrestation from "../components/createPrestation/createPrestation";
 import AdministrateurPage from "../pages/AdministrateurPage";
 import LandingPage from "../pages/LandingPage";
 

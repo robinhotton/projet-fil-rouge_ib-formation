@@ -1,10 +1,11 @@
-@import 'variables';
+@import "variables";
 
 .buttonPrestationSubmit {
-    height: 48px;
-    width: 234px;
-    border-radius: 10px;
-    background: $orange;
-    margin-top: 25px;
-    margin-left: 65px;
+  height: 48px;
+  width: 234px;
+  border-radius: 10px;
+  background: $orange;
+  margin-top: 25px;
+  margin-left: 65px;
+  border: 0;
 }

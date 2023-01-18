@@ -2,8 +2,7 @@
 
 footer {
   background: $black;
-  height: 274px;
-  width: 100%;
+  height: 130px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -12,31 +11,33 @@ footer {
 }
 
 .TopFooter p,
-.TopFooter a,
-.TopFooter span,
+.TopFooter p span,
 .MiddleFooter a,
 .MiddleFooter p,
 .EndFooter p,
 .EndFooter a {
   color: $light;
   text-decoration: none;
-  font-family: $worksans;
+  font-family: $roboto;
   font-size: 15px;
+  margin: 5px
 }
 
-ul {
-  list-style-type: none;
+.TopFooter p:first-child, .MiddleFooter p:first-child {
+  font-size: 18px;
+  font-family: $worksans;
+  padding-bottom: 10px;
 }
 
 span {
   border: solid;
-  mix-blend-mode: normal;
   border: 1px solid $light;
-  border-radius: 5px;
+  border-radius: 5px; 
 }
 
 .Facebook, .Youtube, .Twitter, .Linkedin {
     filter : invert(1);
     margin: 10px;
+    cursor: pointer;
 }
 

@@ -2,12 +2,19 @@ import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
 import CreatePrestation from "../components/createPrestation/createPrestation";
 
-export default function LandingPage(): JSX.Element {
+const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
-      <CreatePrestation prestationName={""} entrepriseName={""} prestationContent={""} hourlyRate={0} devis={""} />
+      <CreatePrestation
+        prestationName={""}
+        entrepriseName={""}
+        prestationContent={""}
+        hourlyRate={0}
+        devis={""}
+      />
       <Footer />
     </>
   );
-}
+};
+export default LandingPage;

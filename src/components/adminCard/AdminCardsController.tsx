@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import Prestation from "../../models/Prestation";
 import Categorie from "../../models/Categorie";
-import StatsGlobales from "./CardsGlobales";
-import CardsCategorie from "./CardsCategorie";
+import StatsGlobales from "./AdminCardsGlobales";
+import CardsCategorie from "./AdminCardsCategorie";
 import GetAllCategories from "../../services/RequeteCategories";
 import PrestationService from "../../services/PrestationService";
 
-const CardsController: React.FC = () => {
+const AdminCardsController: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
   const [categories, setCategories] = useState<Categorie[]>([]);
 
   useEffect(() => {
     setCategories(GetAllCategories());
-    setPrestations(PrestationService.GetAllPrestations());
+    PrestationService.getAllPrestations().then((prestations) =>
+      setPrestations(prestations)
+    );
   }, []);
 
   const prestationsParCategories = (nomCategorie: string): Prestation[] => {
@@ -39,4 +41,4 @@ const CardsController: React.FC = () => {
     </div>
   );
 };
-export default CardsController;
+export default AdminCardsController;

@@ -17,7 +17,7 @@ export default class PrestationService {
   }
 
   public static async updateHero(prestation: Prestation): Promise<Prestation> {
-    return fetch(`http://localhost:3004/prestations/${hero.id}`, {
+    return fetch(`http://localhost:3004/prestations/${prestation.id}`, {
       method: "PUT",
       body: JSON.stringify(prestation),
       headers: { "content-type": "application/json" },

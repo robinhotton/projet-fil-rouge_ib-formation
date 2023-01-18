@@ -1,9 +1,9 @@
-type CardProps = {
+type AdminCardProps = {
   textCard: string;
   getCardData: Function;
 };
 
-const Card: React.FC<CardProps> = ({ textCard, getCardData }) => {
+const AdminCard: React.FC<AdminCardProps> = ({ textCard, getCardData }) => {
   return (
     <div className="Card">
       <p>textCard: {textCard}</p>
@@ -11,4 +11,4 @@ const Card: React.FC<CardProps> = ({ textCard, getCardData }) => {
     </div>
   );
 };
-export default Card;
+export default AdminCard;

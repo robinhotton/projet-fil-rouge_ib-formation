@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import GetAllEntreprises from "../../services/RequeteEntreprises";
 import Prestation from "../../models/Prestation";
 import Entreprise from "../../models/Entreprise";
-import Card from "./Card";
+import Card from "./AdminCard";
 
-type CardsCategorieProps = {
+type AdminCardsCategorieProps = {
   nomCategorie: string;
   prestationsDeLaCategorie: Prestation[];
 };
 
-const CardsCategorie: React.FC<CardsCategorieProps> = ({
+const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   nomCategorie,
   prestationsDeLaCategorie,
 }) => {
@@ -102,4 +102,4 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
     </div>
   );
 };
-export default CardsCategorie;
+export default AdminCardsCategorie;

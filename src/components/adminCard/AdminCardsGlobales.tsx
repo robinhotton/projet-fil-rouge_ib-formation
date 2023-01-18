@@ -1,11 +1,13 @@
 import Prestation from "../../models/Prestation";
-import Card from "./Card";
+import Card from "./AdminCard";
 
-type CardsGlobalesProps = {
+type AdminCardsGlobalesProps = {
   allPrestations: Prestation[];
 };
 
-const CardsGlobales: React.FC<CardsGlobalesProps> = ({ allPrestations }) => {
+const AdminCardsGlobales: React.FC<AdminCardsGlobalesProps> = ({
+  allPrestations,
+}) => {
   const prestationsTotales = () => {
     return allPrestations.length;
   };
@@ -29,4 +31,4 @@ const CardsGlobales: React.FC<CardsGlobalesProps> = ({ allPrestations }) => {
     </div>
   );
 };
-export default CardsGlobales;
+export default AdminCardsGlobales;

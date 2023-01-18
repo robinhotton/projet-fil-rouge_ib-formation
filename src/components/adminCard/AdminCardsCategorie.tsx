@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GetAllEntreprises from "../../services/RequeteEntreprises";
+import GetAllEntreprises from "../../services/EntrepriseService";
 import Prestation from "../../models/Prestation";
 import Entreprise from "../../models/Entreprise";
 import Card from "./AdminCard";
@@ -18,7 +18,7 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
 
   useEffect(() => {
     setPrestations(prestationsDeLaCategorie);
-    setEntreprises(GetAllEntreprises());
+    // setEntreprises(GetAllEntreprises());
   }, []);
 
   const prixMoyen = () => {

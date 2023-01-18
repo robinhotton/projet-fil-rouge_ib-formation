@@ -4,7 +4,7 @@ import { BsYoutube } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import "./Footer.scss";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer>
       <div className="TopFooter">
@@ -52,4 +52,5 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+export default Footer;

@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import Prestation from "../../models/Prestation";
 import "./SearchBar.scss";
 //import "dotenv/config";
 
 const SearchBar: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<Prestation[]>([]);
 
   /**
    * URL de l'api json-server, utilisation du `.env`
    */
-  const jsonServer: string = "http://localhost:3000/prestations";
+  const jsonServer: string = "http://localhost:3004/prestations";
   //const jsonServer: string = "" + process.env.JSONSERVER;
 
   /**
    * récupère les données du json-server grace à axios
    */
   useEffect(() => {
-    axios.get(jsonServer).then((response) => setSearchTerm(response.data));
+    fetch(jsonServer)
+      .then((response) => response.json())
+      .then((data) => setSearchTerm(data));
   }, []);
 
   /**
    * Permet de mettre à jour l'état de la recherche saisie en fonction des entrées de l'utilisateur.
    * @param event modification de la recherche de la searchbar
    */
-  const handleSearchInput = (event: any) => {
-    setSearchTerm(event.target.value);
+  const changeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // setSearchTerm(event.target.value);
   };
 
   /**
@@ -32,21 +34,23 @@ const SearchBar: React.FC = () => {
    * @param event submit form
    * @returns informations souhaitées par l'utilisateurs
    */
-  const handleSearchSubmit = async (event: any) => {
+  const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     let adresse = jsonServer;
-    if (searchTerm !== "") adresse += "/" + searchTerm;
-    const response = await axios.get(adresse);
-    return response.data;
+    if (searchTerm) adresse += "/" + searchTerm;
+    fetch(adresse)
+      .then((response) => response.json())
+      .then((data) => setSearchTerm(data));
+    return searchTerm;
   };
 
   return (
-    <form onSubmit={handleSearchSubmit}>
+    <form onSubmit={soumission}>
       <input
         className="searchbar"
         type="text"
-        value={searchTerm}
-        onChange={handleSearchInput}
+        //value={}
+        onChange={changeSearch}
         placeholder="Search..."
       />
       <button className="searchButton" type="submit">

@@ -4,7 +4,7 @@ import CardsController from "../components/card/CardsController";
 const AdministrateurPage: React.FC = () => {
   return (
     <>
-      <CardsController />
+      {/* <CardsController /> */}
       <Aside />
     </>
   );

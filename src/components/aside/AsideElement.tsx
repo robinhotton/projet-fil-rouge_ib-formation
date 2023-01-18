@@ -30,7 +30,7 @@ const AsideElement: React.FC<AsideElementProps> = ({ logo, nomCategorie }) => {
     <div className="asideElement">
       <button
         // Ajout de la classe active si onClick est vrai
-        className={onClick ? "active" : undefined}
+        className={onClick ? "active" : ""}
         // Gestion des événements click et blur pour gérer l'affichage du composant
         onClick={(): void => toggleOnClick()}
         onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>

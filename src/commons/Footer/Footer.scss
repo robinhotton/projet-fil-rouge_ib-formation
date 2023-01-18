@@ -2,7 +2,7 @@
 
 footer {
   background: $black;
-  height: 130px;
+  height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -16,13 +16,14 @@ footer {
 .EndFooter a {
   color: $light;
   text-decoration: none;
-  font-family: $roboto;
+  font-family: $worksans;
   font-size: 15px;
-  margin: 5px
+  margin: 5px;
 }
 
-.TopFooter p:first-child, .MiddleFooter p:first-child {
-  font-size: 18px;
+.TopFooter p:first-child,
+.MiddleFooter p:first-child {
+  font-size: 15px;
   font-family: $worksans;
   padding-bottom: 10px;
 }
@@ -30,12 +31,24 @@ footer {
 span {
   border: solid;
   border: 1px solid $light;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
-.Facebook, .Youtube, .Twitter, .Linkedin {
-    filter : invert(1);
-    margin: 10px;
-    cursor: pointer;
+.Facebook,
+.Youtube,
+.Twitter,
+.Linkedin {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  margin: 10px;
+  cursor: pointer;
 }
 
+.TopFooter {
+  margin-top: 33px;
+  margin-left: 43px;
+}
+.EndFooter {
+  margin-top: 30px;
+}

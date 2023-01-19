@@ -3,19 +3,19 @@ import Devis from "./Devis";
 import Evaluation from "./Evaluation";
 
 export default class Prestation {
-  id?: number;
-  idEntreprise?: number;
-  categorie: Categorie;
+  categorie: string;
   description: string;
   tauxHoraire: number;
   termine: boolean;
+  id?: number;
+  idEntreprise?: number;
   evaluation?: Evaluation;
   devis?: Devis;
   tempsPrestation!: number;
   prixMateriel!: number;
 
   constructor(
-    categorie: Categorie = new Categorie(0, ""),
+    categorie: string = "",
     description: string = "",
     tauxHoraire: number = 0,
     devis: Devis = new Devis(5, 5),

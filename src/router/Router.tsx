@@ -1,6 +1,6 @@
 import { RouteObject, useRoutes } from "react-router";
-import CreatePrestation from "../components/createPrestation/createPrestation";
 import AdministrateurPage from "../pages/AdministrateurPage";
+import CreatePrestationPage from "../pages/CreatePrestationPage";
 import LandingPage from "../pages/LandingPage";
 
 const Router: React.FC = () => {
@@ -12,6 +12,10 @@ const Router: React.FC = () => {
     {
       path: "/admin",
       element: <AdministrateurPage />,
+    },
+    {
+      path: "/create",
+      element: <CreatePrestationPage />,
     },
   ];
   return <>{useRoutes(routes)}</>;

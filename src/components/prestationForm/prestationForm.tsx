@@ -18,26 +18,26 @@ type champ = {
 type Form = {
   description: champ;
   tauxHoraire: champ;
-  categorieName: champ;
+  categorie: champ;
   devis: champ;
 };
 
 const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
   const [form, setForm] = useState<Form>({
     description: {
-      value: prestation?.description,
+      value: prestation.description,
       isValid: true,
     },
     tauxHoraire: {
-      value: prestation?.tauxHoraire,
+      value: prestation.tauxHoraire,
       isValid: true,
     },
-    categorieName: {
-      value: prestation?.categorie.nom,
+    categorie: {
+      value: prestation.categorie,
       isValid: true,
     },
     devis: {
-      value: prestation?.devis,
+      value: prestation.devis,
       isValid: true,
     },
   });
@@ -53,10 +53,10 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
 
   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const description = form.description.value;
-    const tauxHoraire = form.tauxHoraire.value;
-    const categorieName = form.categorieName.value;
-    const devis = form.devis.value;
+    prestation.description = form.description.value;
+    prestation.tauxHoraire = form.tauxHoraire.value;
+    prestation.categorie = form.categorie.value;
+    prestation.devis = form.devis.value;
     if (edit) maj();
     else ajout();
   };
@@ -85,12 +85,12 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
               <input
                 type="text"
                 name="categorie"
-                placeholder="Nom de la prestation"
+                placeholder="categorie de la prestation"
               />
               <input
                 type="text"
                 name="tauxHoraire"
-                placeholder="Taux horraire de la prestation"
+                placeholder="Taux horaire de la prestation"
               />
             </div>
             <div className="formGroup">
@@ -100,11 +100,12 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
               ></textarea>
             </div>
           </div>
-          <input type="text" name="devis" />
+          <input type="text" name="devis" placeholder="lien devis" />
         </div>
         <input
           className="buttonPrestationSubmit bigButtonText bold"
           type="submit"
+          value="envoyer"
         />
       </form>
     </>

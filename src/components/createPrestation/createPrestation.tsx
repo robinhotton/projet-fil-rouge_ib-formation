@@ -1,24 +1,13 @@
+import { useState } from "react";
+import Prestation from "../../models/Prestation";
 import PrestationForm from "../prestationForm/prestationForm";
 import "./createPrestation.scss";
 
-type createPrestationProps = {
-  prestationName: string;
-  entrepriseName: string;
-  prestationContent: string;
-  hourlyRate: number;
-  devis: string;
-};
-
-const CreatePrestation: React.FC<createPrestationProps> = ({
-  prestationName,
-  entrepriseName,
-  prestationContent,
-  hourlyRate,
-  devis,
-}) => {
+const CreatePrestation: React.FC = () => {
+  const [prestation] = useState<Prestation>(new Prestation());
   return (
     <main>
-      <PrestationForm />
+      <PrestationForm prestation={prestation} edit={false} />
     </main>
   );
 };

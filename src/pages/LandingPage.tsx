@@ -6,13 +6,7 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
-      <CreatePrestation
-        prestationName={""}
-        entrepriseName={""}
-        prestationContent={""}
-        hourlyRate={0}
-        devis={""}
-      />
+      <CreatePrestation />
       <Footer />
     </>
   );

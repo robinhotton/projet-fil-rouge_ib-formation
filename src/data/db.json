@@ -22,17 +22,17 @@
     {
       "id": 1,
       "idEntreprise": 1,
-      "categorie": {
-        "id": 1,
-        "nom": "Le câblage d'armoire électrique"
-      },
+      "categorie": [
+        {
+          "nom": "Le câblage d'armoire électrique"
+        }
+      ],
       "description": "Pose et réparation des cables des armoires électriques",
       "tauxHoraire": 142.42,
+      "tempsPrestation": 42,
+      "prixMateriel": 4200,
       "termine": true,
-      "devis": {
-        "tempsPrestation": 42,
-        "prixMateriel": 4200
-      },
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
         "qualiteGlobale": 5,
         "faciliteCommunication": 5,

@@ -6,7 +6,7 @@ main {
     margin-bottom: 100px;
     .prestationForm {
         width: 700px;
-        height: 500px;
+        // height: 500px;
         margin: 25px auto;
         background: $light;
         border-radius: 10px;
@@ -49,12 +49,16 @@ main {
                 {
                     height: 100%;
                     width: 300px;
+                    padding-left: 19px;
+                    padding-top: 19px;
+                    font-size: 15px;
+                    font-family: $roboto;
                 }
             }
         }
         input[type=file]
         {
-            margin-left: 65px
+            margin-left: 50px
         }
     }
 }

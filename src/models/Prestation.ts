@@ -3,85 +3,47 @@ import Devis from "./Devis";
 import Evaluation from "./Evaluation";
 
 export default class Prestation {
-  private _id: number;
-  private _idEntreprise: number;
-  private _categorie: Categorie;
-  private _description: string;
-  private _tauxHoraire: number;
-  private _termine: boolean;
-  private _devis!: Devis;
-  private _evaluation!: Evaluation;
+  id?: number;
+  idEntreprise?: number;
+  categorie: Categorie;
+  description: string;
+  tauxHoraire: number;
+  termine: boolean;
+  evaluation?: Evaluation;
+  devis?: Devis;
+  tempsPrestation!: number;
+  prixMateriel!: number;
 
   constructor(
-    id: number,
-    idEntreprise: number,
-    categorie: Categorie,
-    description: string,
-    tauxHoraire: number,
-    devis: Devis,
-    evaluation: Evaluation
+    categorie: Categorie = new Categorie(0, ""),
+    description: string = "",
+    tauxHoraire: number = 0,
+    devis: Devis = new Devis(5, 5),
+    evaluation: Evaluation = new Evaluation(5, 5, 5, 5)
   ) {
-    this._id = id;
-    this._idEntreprise = idEntreprise;
-    this._categorie = categorie;
-    this._description = description;
-    this._tauxHoraire = tauxHoraire;
-    this._termine = false;
-    this._devis = devis || undefined;
-    this._evaluation = evaluation || undefined;
+    this.categorie = categorie;
+    this.description = description;
+    this.tauxHoraire = tauxHoraire;
+    this.termine = false;
+    this.devis = devis;
+    this.evaluation = evaluation;
   }
 
   public addDevis(devis: Devis): void {
-    this._devis = devis;
+    this.devis = devis;
   }
 
   public addEvaluation(evaluation: Evaluation): void {
-    this._evaluation = evaluation;
+    this.evaluation = evaluation;
   }
 
   public prixTotal(): number {
-    return (
-      this._tauxHoraire * this.devis.tempsPrestation + this.devis.prixMateriel
-    );
-  }
-
-  get id() {
-    return this._id;
-  }
-  get idEntreprise() {
-    return this._idEntreprise;
-  }
-  get categorie() {
-    return this._categorie;
-  }
-  get description() {
-    return this._description;
-  }
-  get tauxHoraire() {
-    return this._tauxHoraire;
-  }
-  get termine() {
-    return this._termine;
-  }
-  get devis() {
-    return this._devis;
-  }
-  get evaluation() {
-    return this._evaluation;
-  }
-  set id(id: number) {
-    this._id = id;
-  }
-  set idEntreprise(id: number) {
-    this._idEntreprise = id;
-  }
-  set categorie(categorie: Categorie) {
-    this._categorie = categorie;
-  }
-  set description(description: string) {
-    this._description = description;
-  }
-  set tauxHoraire(txHoraire: number) {
-    this._tauxHoraire = txHoraire;
+    if (this.devis) {
+      return (
+        this.tauxHoraire * this.devis.tempsPrestation + this.devis.prixMateriel
+      );
+    } else {
+      throw "Devis non ajouté";
+    }
   }
 }

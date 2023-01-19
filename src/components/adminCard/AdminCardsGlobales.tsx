@@ -8,25 +8,28 @@ type AdminCardsGlobalesProps = {
 const AdminCardsGlobales: React.FC<AdminCardsGlobalesProps> = ({
   allPrestations,
 }) => {
-  const prestationsTotales = () => {
+  const prestationsTotales = (): number => {
     return allPrestations.length;
   };
-  const prestationsEnCours = () => {
+  const prestationsEnCours = (): number => {
     return allPrestations.filter((prestation) => prestation.termine === false)
       .length;
   };
-  const prestationsTerminees = () => {
+  const prestationsTerminees = (): number => {
     return allPrestations.filter((prestation) => prestation.termine === true)
       .length;
   };
 
   return (
     <div className="cardsGlobales">
-      <Card textCard="Prestations totales" getCardData={prestationsTotales} />
-      <Card textCard="Prestations en cours" getCardData={prestationsEnCours} />
+      <Card textCard="Prestations totales" getCardData={prestationsTotales()} />
+      <Card
+        textCard="Prestations en cours"
+        getCardData={prestationsEnCours()}
+      />
       <Card
         textCard="Prestations terminées"
-        getCardData={prestationsTerminees}
+        getCardData={prestationsTerminees()}
       />
     </div>
   );

@@ -20,26 +20,16 @@ const SearchBarController: React.FC = () => {
   };
 
   //delete the contact
-  const onDeleteHandler = (contactId: number) => {
-    const notAId = (item: any) => item.id !== contactId;
+  const onDeleteHandler = (prestationId: number) => {
+    const notAId = (item: Prestation) => item.id !== prestationId;
     const updatedList = prestations.filter(notAId);
     setSearchTerm("");
     setPrestations(updatedList);
   };
 
   //search using filter function
-  const toSearch = (searchTerm: string) => (item: any) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase());
-
-  const prestationsFiltrees = prestations
-    .filter(toSearch(searchTerm))
-    .map((prestation) => (
-      <PrestationCard
-        key={prestation.id}
-        prestation={prestation}
-        deleteContact={onDeleteHandler}
-      />
-    ));
+  const toSearch = (searchTerm: string) => (item: Prestation) =>
+    item.categorie.nom.toLowerCase().includes(searchTerm.toLowerCase());
 
   return (
     <>
@@ -47,7 +37,13 @@ const SearchBarController: React.FC = () => {
         prestationsValue={searchTerm}
         onChangeHandler={onSearchHandler}
       />
-      {prestationsFiltrees}
+      {prestations.filter(toSearch(searchTerm)).map((prestation) => (
+        <PrestationCard
+          key={prestation.id}
+          prestation={prestation}
+          deleteContact={onDeleteHandler}
+        />
+      ))}
     </>
   );
 };

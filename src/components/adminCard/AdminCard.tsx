@@ -1,13 +1,13 @@
 type AdminCardProps = {
   textCard: string;
-  getCardData: Function;
+  getCardData: number;
 };
 
 const AdminCard: React.FC<AdminCardProps> = ({ textCard, getCardData }) => {
   return (
     <div className="Card">
       <p>textCard: {textCard}</p>
-      <p>getDonneeCategorie: {getCardData.toString()}</p>
+      <p>data: {getCardData}</p>
     </div>
   );
 };

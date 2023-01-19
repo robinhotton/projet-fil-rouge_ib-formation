@@ -3,17 +3,19 @@ import Prestation from "../../models/Prestation";
 import Categorie from "../../models/Categorie";
 import StatsGlobales from "./AdminCardsGlobales";
 import CardsCategorie from "./AdminCardsCategorie";
-import GetAllCategories from "../../services/CategorieService";
 import PrestationService from "../../services/PrestationService";
+import CategoriesService from "../../services/CategorieService";
 
 const AdminCardsController: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
   const [categories, setCategories] = useState<Categorie[]>([]);
 
   useEffect(() => {
-    //setCategories(GetAllCategories());
     PrestationService.getAllPrestations().then((prestations) =>
       setPrestations(prestations)
+    );
+    CategoriesService.getAllCategories().then((categorie) =>
+      setCategories(categorie)
     );
   }, []);
 

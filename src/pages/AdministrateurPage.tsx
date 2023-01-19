@@ -1,10 +1,10 @@
 import Aside from "../components/aside/Aside";
-import CardsController from "../components/card/CardsController";
+import AdminCardsController from "../components/adminCard/AdminCardsController";
 
 const AdministrateurPage: React.FC = () => {
   return (
     <>
-      {/* <CardsController /> */}
+      <AdminCardsController />
       <Aside />
     </>
   );

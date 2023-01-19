@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import GetAllEntreprises from "../../services/RequeteEntreprises";
 import Prestation from "../../models/Prestation";
 import Entreprise from "../../models/Entreprise";
-import Card from "./Card";
+import AdminCard from "./AdminCard";
+import EntrepriseService from "../../services/EntrepriseService";
 
-type CardsCategorieProps = {
+type AdminCardsCategorieProps = {
   nomCategorie: string;
   prestationsDeLaCategorie: Prestation[];
 };
 
-const CardsCategorie: React.FC<CardsCategorieProps> = ({
+const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   nomCategorie,
   prestationsDeLaCategorie,
 }) => {
@@ -18,16 +18,18 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
 
   useEffect(() => {
     setPrestations(prestationsDeLaCategorie);
-    setEntreprises(GetAllEntreprises());
+    EntrepriseService.getAllEntreprises().then((entreprise) =>
+      setEntreprises(entreprise)
+    );
   }, []);
 
-  const prixMoyen = () => {
+  const prixMoyen = (): number => {
     let moy: number = 0;
     prestations.forEach((prestation) => (moy += prestation.prixTotal()));
     return moy;
   };
 
-  const prixMin = () => {
+  const prixMin = (): number => {
     let min: number = prestations[0].prixTotal();
     prestations.forEach((prestation) => {
       const prixPrestation = prestation.prixTotal();
@@ -36,7 +38,7 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
     return min;
   };
 
-  const prixMax = () => {
+  const prixMax = (): number => {
     let max: number = prestations[0].prixTotal();
     prestations.forEach((prestation) => {
       const prixPrestation: number = prestation.prixTotal();
@@ -61,7 +63,7 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
     return tableauARemplir;
   };
 
-  const moyParPrestataire = () => {
+  const moyParPrestataire = (): number => {
     const tableauRempli: number[] = setUpTableau();
     const moy: number =
       tableauRempli.reduce(
@@ -71,12 +73,12 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
     return moy;
   };
 
-  const minParPrestataire = () => {
+  const minParPrestataire = (): number => {
     const tableauRempli: number[] = setUpTableau();
     return Math.min(...tableauRempli);
   };
 
-  const maxParPrestataire = () => {
+  const maxParPrestataire = (): number => {
     const tableauRempli: number[] = setUpTableau();
     return Math.max(...tableauRempli);
   };
@@ -84,22 +86,22 @@ const CardsCategorie: React.FC<CardsCategorieProps> = ({
   return (
     <div className="cardCategorie">
       <h2>{nomCategorie}</h2>
-      <Card
+      <AdminCard
         textCard="Moyenne par prestataire"
-        getCardData={moyParPrestataire}
+        getCardData={moyParPrestataire()}
       />
-      <Card
+      <AdminCard
         textCard="Minimun par prestataire"
-        getCardData={minParPrestataire}
+        getCardData={minParPrestataire()}
       />
-      <Card
+      <AdminCard
         textCard="Maximum par prestataire"
-        getCardData={maxParPrestataire}
+        getCardData={maxParPrestataire()}
       />
-      <Card textCard="Prix moyen" getCardData={prixMoyen} />
-      <Card textCard="Prix minimum" getCardData={prixMin} />
-      <Card textCard="Prix maximum" getCardData={prixMax} />
+      <AdminCard textCard="Prix moyen" getCardData={prixMoyen()} />
+      <AdminCard textCard="Prix minimum" getCardData={prixMin()} />
+      <AdminCard textCard="Prix maximum" getCardData={prixMax()} />
     </div>
   );
 };
-export default CardsCategorie;
+export default AdminCardsCategorie;

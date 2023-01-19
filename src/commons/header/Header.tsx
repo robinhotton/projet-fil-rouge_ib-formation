@@ -1,6 +1,6 @@
 import ConnexionLink from "../../components/connexion/Connexion";
 import DropdownMenu from "../../components/dropdown/DropdownMenu";
-import SearchBar from "../../components/searchbar/SearchBar";
+import SearchBarController from "../../components/searchbar/SearchBarController";
 import { FaShoppingCart } from "react-icons/fa";
 import "./Header.scss";
 
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       <DropdownMenu />
       <DropdownMenu />
       <DropdownMenu />
-      <SearchBar />
+      <SearchBarController />
       <ConnexionLink />
       <FaShoppingCart className="cart" />
     </header>

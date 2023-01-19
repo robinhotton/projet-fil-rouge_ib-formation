@@ -1,4 +1,3 @@
-import Categorie from "./Categorie";
 import Devis from "./Devis";
 import Evaluation from "./Evaluation";
 

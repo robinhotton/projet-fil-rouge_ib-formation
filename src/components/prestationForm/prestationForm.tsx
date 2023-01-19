@@ -100,8 +100,6 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
             <div className="formGroup">
               <textarea
                 name="description"
-                value={form.description.value}
-                //onChange={editPrestation}
                 placeholder="Description de la prestation"
               ></textarea>
             </div>

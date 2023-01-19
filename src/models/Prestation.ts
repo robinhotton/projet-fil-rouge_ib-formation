@@ -9,7 +9,7 @@ export default class Prestation {
   id?: number;
   idEntreprise?: number;
   evaluation?: Evaluation;
-  devis?: Devis;
+  devis?: string;
   tempsPrestation!: number;
   prixMateriel!: number;
 
@@ -17,7 +17,7 @@ export default class Prestation {
     categorie: string = "",
     description: string = "",
     tauxHoraire: number = 0,
-    devis: Devis = new Devis(5, 5),
+    devis: string = "",
     evaluation: Evaluation = new Evaluation(5, 5, 5, 5)
   ) {
     this.categorie = categorie;
@@ -26,10 +26,6 @@ export default class Prestation {
     this.termine = false;
     this.devis = devis;
     this.evaluation = evaluation;
-  }
-
-  public addDevis(devis: Devis): void {
-    this.devis = devis;
   }
 
   public addEvaluation(evaluation: Evaluation): void {

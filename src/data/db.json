@@ -22,7 +22,9 @@
     {
       "id": 1,
       "idEntreprise": 1,
-      "categorie": ["Le câblage d'armoire électrique"],
+      "categorie": [
+        "Le câblage d'armoire électrique"
+      ],
       "description": "Pose et réparation des cables des armoires électriques",
       "tauxHoraire": 142.42,
       "tempsPrestation": 42,
@@ -35,6 +37,20 @@
         "qualiteTechnique": 5,
         "niveauExpertise": 5
       }
+    },
+    {
+      "categorie": "sdfg",
+      "description": "",
+      "tauxHoraire": "6.31",
+      "termine": false,
+      "evaluation": {
+        "_qualiteGlobale": 5,
+        "_faciliteCommunication": 5,
+        "_qualiteTechnique": 5,
+        "_niveauExpertise": 5
+      },
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
+      "id": 2
     }
   ],
   "categories": [

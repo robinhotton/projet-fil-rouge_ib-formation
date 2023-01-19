@@ -1,24 +1,25 @@
-import Devis from "./Devis";
 import Evaluation from "./Evaluation";
 
 export default class Prestation {
+  id?: number;
+  idEntreprise?: number;
   categorie: string;
   description: string;
   tauxHoraire: number;
+  tempsPrestation?: number;
+  prixMateriel?: number;
   termine: boolean;
-  id?: number;
-  idEntreprise?: number;
-  evaluation?: Evaluation;
   devis?: string;
-  tempsPrestation!: number;
-  prixMateriel!: number;
+  evaluation?: Evaluation;
 
   constructor(
     categorie: string = "",
     description: string = "",
     tauxHoraire: number = 0,
     devis: string = "",
-    evaluation: Evaluation = new Evaluation(5, 5, 5, 5)
+    evaluation: Evaluation = new Evaluation(),
+    tempsPrestation: number = 0,
+    prixMateriel: number = 0
   ) {
     this.categorie = categorie;
     this.description = description;
@@ -26,17 +27,14 @@ export default class Prestation {
     this.termine = false;
     this.devis = devis;
     this.evaluation = evaluation;
+    this.tempsPrestation = tempsPrestation;
+    this.prixMateriel = prixMateriel;
   }
-
-  public addEvaluation(evaluation: Evaluation): void {
-    this.evaluation = evaluation;
-  }
-
   public prixTotal(): number {
-    if (this.devis) {
+    if (this.devis && this.tempsPrestation && this.prixMateriel) {
       return this.tauxHoraire * this.tempsPrestation + this.prixMateriel;
     } else {
-      throw "Devis non ajouté";
+      throw "prix non calculable";
     }
   }
 }

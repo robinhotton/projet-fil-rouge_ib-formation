@@ -29,7 +29,7 @@ const SearchBarController: React.FC = () => {
 
   //search using filter function
   const toSearch = (searchTerm: string) => (item: Prestation) =>
-    item.categorie.nom.toLowerCase().includes(searchTerm.toLowerCase());
+    item.categorie.toLowerCase().includes(searchTerm.toLowerCase());
 
   return (
     <>

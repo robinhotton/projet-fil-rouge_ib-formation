@@ -85,22 +85,34 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
               <input
                 type="text"
                 name="categorie"
+                value={form.categorie.value}
+                onChange={editPrestation}
                 placeholder="categorie de la prestation"
               />
               <input
                 type="text"
                 name="tauxHoraire"
+                value={form.tauxHoraire.value}
+                onChange={editPrestation}
                 placeholder="Taux horaire de la prestation"
               />
             </div>
             <div className="formGroup">
               <textarea
                 name="description"
+                value={form.description.value}
+                //onChange={editPrestation}
                 placeholder="Description de la prestation"
               ></textarea>
             </div>
           </div>
-          <input type="text" name="devis" placeholder="lien devis" />
+          <input
+            type="text"
+            name="devis"
+            placeholder="lien devis"
+            value={form.devis.value}
+            onChange={editPrestation}
+          />
         </div>
         <input
           className="buttonPrestationSubmit bigButtonText bold"

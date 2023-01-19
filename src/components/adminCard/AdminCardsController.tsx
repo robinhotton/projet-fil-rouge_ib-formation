@@ -21,9 +21,7 @@ const AdminCardsController: React.FC = () => {
 
   const prestationsParCategories = (nomCategorie: string): Prestation[] => {
     const copie: Prestation[] = prestations;
-    return copie.filter(
-      (prestation) => prestation.categorie.nom === nomCategorie
-    );
+    return copie.filter((prestation) => prestation.categorie === nomCategorie);
   };
 
   return (

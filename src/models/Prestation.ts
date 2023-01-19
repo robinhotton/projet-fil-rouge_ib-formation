@@ -39,9 +39,7 @@ export default class Prestation {
 
   public prixTotal(): number {
     if (this.devis) {
-      return (
-        this.tauxHoraire * this.devis.tempsPrestation + this.devis.prixMateriel
-      );
+      return this.tauxHoraire * this.tempsPrestation + this.prixMateriel;
     } else {
       throw "Devis non ajouté";
     }

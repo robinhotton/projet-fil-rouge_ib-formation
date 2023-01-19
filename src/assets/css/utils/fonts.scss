@@ -11,12 +11,17 @@
   font-size: 21px;
   color: $black;
 }
-.subTitle, .entrepriseName, .coord, .subTitleCard {
+.subTitle,
+.entrepriseName,
+.coord,
+.subTitleCard {
   font-family: $worksans;
   font-size: 18px;
   color: $black;
 }
-.content, input, .contentCard {
+.content,
+input,
+.contentCard {
   font-family: $roboto;
   font-size: 15px;
 }
@@ -32,12 +37,11 @@
     color: $hoverGreen;
   }
 }
-.linkToGoogle
-{
-    font-family: $worksans;
-    font-size: 21px;
-    font-weight: bold;
-    color: $black;
+.linkToGoogle {
+  font-family: $worksans;
+  font-size: 21px;
+  font-weight: bold;
+  color: $black;
 }
 
 // Création des classes texte pour les deux différents bouttons de l'application.
@@ -47,9 +51,9 @@
   color: $light;
 }
 .bigButtonText {
-    font-family: $worksans;
-    font-size: 21px;
-    color: $light
+  font-family: $worksans;
+  font-size: 21px;
+  color: $light;
 }
 
 // Création de classe pour les graisses
@@ -61,23 +65,20 @@
 }
 
 // Classe pour les prestations
-.prestationTitleLight, .prestationTitleDark
-{
+.prestationTitleLight,
+.prestationTitleDark {
   font-family: $worksans;
   font-size: 21px;
   font-weight: bold;
 }
-.prestationTitleDark
-{
+.prestationTitleDark {
   color: $black;
 }
 
-.prestationTitleLight
-{
+.prestationTitleLight {
   color: $light;
 }
-.titlePrestationPage
-{
+.titlePrestationPage {
   font-family: $worksans;
   font-size: 30px;
   font-weight: bold;

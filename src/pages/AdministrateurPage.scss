@@ -1,0 +1,16 @@
+.AdminPage {
+  display: flex;
+  flex-direction: row;
+}
+
+.AdminPage .AdminContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.AdminPage .AdminContent .AdminHeader {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px lightgray;
+  width: 80vw;
+}

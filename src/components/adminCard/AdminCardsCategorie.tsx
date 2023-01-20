@@ -3,6 +3,7 @@ import Prestation from "../../models/Prestation";
 import Entreprise from "../../models/Entreprise";
 import AdminCard from "./AdminCard";
 import EntrepriseService from "../../services/EntrepriseService";
+import "./AdminCardsCategorie.scss";
 
 type AdminCardsCategorieProps = {
   nomCategorie: string;
@@ -23,11 +24,6 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     );
   }, []);
 
-  // const prixMoyen = (): number => {
-  //   let moy: number = 0;
-  //   prestations.forEach((prestation) => (moy += prestation.prixTotal()));
-  //   return moy;
-  // };
   const prixMoyen = (): number => {
     let moy: number = 0;
     prestations.forEach(
@@ -101,22 +97,26 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
 
   return (
     <div className="cardCategorie">
-      <h2>{nomCategorie}</h2>
-      <AdminCard
-        textCard="Moyenne par prestataire"
-        getCardData={moyParPrestataire()}
-      />
-      <AdminCard
-        textCard="Minimun par prestataire"
-        getCardData={minParPrestataire()}
-      />
-      <AdminCard
-        textCard="Maximum par prestataire"
-        getCardData={maxParPrestataire()}
-      />
-      <AdminCard textCard="Prix moyen" getCardData={prixMoyen()} />
-      <AdminCard textCard="Prix minimum" getCardData={prixMin()} />
-      <AdminCard textCard="Prix maximum" getCardData={prixMax()} />
+      <h2 className="titleCard">{nomCategorie}</h2>
+      <div className="statsNombre">
+        <AdminCard
+          textCard="Moyenne par prestataire"
+          getCardData={moyParPrestataire()}
+        />
+        <AdminCard
+          textCard="Minimun par prestataire"
+          getCardData={minParPrestataire()}
+        />
+        <AdminCard
+          textCard="Maximum par prestataire"
+          getCardData={maxParPrestataire()}
+        />
+      </div>
+      <div className="statsPrix">
+        <AdminCard textCard="Prix moyen" getCardData={prixMoyen()} />
+        <AdminCard textCard="Prix minimum" getCardData={prixMin()} />
+        <AdminCard textCard="Prix maximum" getCardData={prixMax()} />
+      </div>
     </div>
   );
 };

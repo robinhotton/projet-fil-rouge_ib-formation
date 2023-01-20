@@ -4,6 +4,7 @@ import StatsGlobales from "./AdminCardsGlobales";
 import CardsCategorie from "./AdminCardsCategorie";
 import PrestationService from "../../services/PrestationService";
 import CategoriesService from "../../services/CategorieService";
+import "./AdminCardsController.scss";
 
 const AdminCardsController: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
@@ -25,9 +26,9 @@ const AdminCardsController: React.FC = () => {
 
   return (
     <div className="statistiques">
-      <h1>Statistiques globales</h1>
+      <h1 className="titlePrestationPage">Statistiques globales</h1>
       <StatsGlobales allPrestations={prestations} />
-      <h1>Prestations</h1>
+      <h1 className="titlePrestationPage">Prestations</h1>
       <div className="allCategories">
         {categories.map((categorie) => (
           <CardsCategorie

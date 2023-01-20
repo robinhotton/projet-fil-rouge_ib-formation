@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import Devis from "../../models/Devis";
 import Prestation from "../../models/Prestation";
 import PrestationService from "../../services/PrestationService";
 

@@ -23,7 +23,7 @@ const EditPrestation: React.FC = () => {
           <PrestationForm prestation={prestation} edit={true} />
         </>
       ) : (
-        <></>
+        <h1>La prestation n'existe pas</h1>
       )}
     </main>
   );

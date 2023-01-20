@@ -50,9 +50,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
     setForm({ ...form, ...nouveauChamp });
   };
 
-  const soumission = (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
+  const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     prestation.description = form.description.value;
     prestation.tauxHoraire = form.tauxHoraire.value;
@@ -110,6 +108,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
                 name="description"
                 placeholder="Description de la prestation"
                 onChange={editPrestation}
+                value={form.description.value}
               ></textarea>
             </div>
           </div>

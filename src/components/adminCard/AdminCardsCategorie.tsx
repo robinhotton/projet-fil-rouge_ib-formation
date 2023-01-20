@@ -23,25 +23,39 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     );
   }, []);
 
+  // const prixMoyen = (): number => {
+  //   let moy: number = 0;
+  //   prestations.forEach((prestation) => (moy += prestation.prixTotal()));
+  //   return moy;
+  // };
   const prixMoyen = (): number => {
     let moy: number = 0;
-    prestations.forEach((prestation) => (moy += prestation.prixTotal()));
+    prestations.forEach(
+      (prestation) =>
+        (moy +=
+          prestation.tauxHoraire * prestation.tempsPrestation! +
+          prestation.prixMateriel!)
+    );
     return moy;
   };
 
   const prixMin = (): number => {
-    let min: number = prestations[0].prixTotal();
+    let min: number = Infinity;
     prestations.forEach((prestation) => {
-      const prixPrestation = prestation.prixTotal();
+      const prixPrestation =
+        prestation.tauxHoraire * prestation.tempsPrestation! +
+        prestation.prixMateriel!;
       if (prixPrestation < min) min = prixPrestation;
     });
     return min;
   };
 
   const prixMax = (): number => {
-    let max: number = prestations[0].prixTotal();
+    let max: number = 0;
     prestations.forEach((prestation) => {
-      const prixPrestation: number = prestation.prixTotal();
+      const prixPrestation: number =
+        prestation.tauxHoraire * prestation.tempsPrestation! +
+        prestation.prixMateriel!;
       if (prixPrestation > max) max = prixPrestation;
     });
     return max;
@@ -58,7 +72,9 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   const setUpTableau = (): number[] => {
     const tableauARemplir: number[] = setUpTableauZero();
     prestations.forEach((prestation) => {
-      // tableauARemplir[prestation.idEntreprise - 1] += 1;
+      if (prestation.idEntreprise) {
+        tableauARemplir[prestation.idEntreprise - 1] += 1;
+      }
     });
     return tableauARemplir;
   };

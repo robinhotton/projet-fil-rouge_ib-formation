@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Prestation from "../../models/Prestation";
-import Categorie from "../../models/Categorie";
 import StatsGlobales from "./AdminCardsGlobales";
 import CardsCategorie from "./AdminCardsCategorie";
 import PrestationService from "../../services/PrestationService";
@@ -8,7 +7,7 @@ import CategoriesService from "../../services/CategorieService";
 
 const AdminCardsController: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
-  const [categories, setCategories] = useState<Categorie[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
     PrestationService.getAllPrestations().then((prestations) =>
@@ -32,9 +31,8 @@ const AdminCardsController: React.FC = () => {
       <div className="allCategories">
         {categories.map((categorie) => (
           <CardsCategorie
-            key={categorie.id}
-            nomCategorie={categorie.nom}
-            prestationsDeLaCategorie={prestationsParCategories(categorie.nom)}
+            nomCategorie={categorie}
+            prestationsDeLaCategorie={prestationsParCategories(categorie)}
           />
         ))}
       </div>

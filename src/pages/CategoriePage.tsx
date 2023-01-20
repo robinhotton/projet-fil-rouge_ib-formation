@@ -25,5 +25,4 @@ const CategoriePage: React.FC = () => {
     </>
   );
 };
-
 export default CategoriePage;

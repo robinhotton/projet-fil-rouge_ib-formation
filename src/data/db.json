@@ -22,37 +22,41 @@
     {
       "id": 1,
       "idEntreprise": 1,
-      "categorie": {
-        "id": 1,
-        "nom": "Le câblage d'armoire électrique"
-      },
-      "description": "Pose et réparation des cables des armoires électriques",
-      "tauxHoraire": 142.42,
+      "categorie": "Le câblage d'armoire électrique",
+      "description": "Pose et réparation des câbles des armoires électriques avec style",
+      "tauxHoraire": "42.69",
+      "tempsPrestation": 42,
+      "prixMateriel": 4200,
       "termine": true,
-      "devis": {
-        "tempsPrestation": 42,
-        "prixMateriel": 4200
-      },
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
         "qualiteGlobale": 5,
         "faciliteCommunication": 5,
         "qualiteTechnique": 5,
         "niveauExpertise": 5
       }
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "nom": "Le câblage d'armoire électrique"
     },
     {
       "id": 2,
-      "nom": "L'accompagnement aux choix de matériels industriels"
-    },
-    {
-      "id": 3,
-      "nom": "L'installation de matériels"
+      "idEntreprise": 1,
+      "categorie": "L'accompagnement aux choix de matériels industriels",
+      "description": "Pose et réparation des câbles des armoires électriques avec style",
+      "tauxHoraire": "42.69",
+      "tempsPrestation": 42,
+      "prixMateriel": 420,
+      "termine": false,
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
+      "evaluations": {
+        "qualiteGlobale": 0,
+        "faciliteCommunication": 0,
+        "qualiteTechnique": 0,
+        "niveauExpertise": 0
+      }
     }
+  ],
+  "categories": [
+    "Le câblage d'armoire électrique",
+    "L'accompagnement aux choix de matériels industriels",
+    "L'installation de matériels"
   ]
 }

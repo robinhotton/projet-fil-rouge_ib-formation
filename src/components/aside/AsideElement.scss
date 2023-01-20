@@ -1,22 +1,21 @@
 @import "../../assets/css/utils/fonts.scss";
 
 .asideElement button {
-    border: 1px solid transparent;
-    cursor: pointer;
-    color: $light;
-    background: $black;
-    padding: 0.25rem;
-    width: 100%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: $light;
+  background: $black;
+  padding: 0.25rem;
+  width: 100%;
 }
 
 .asideElement button:hover,
 .asideElement button.active {
-    border: 1px solid $light;
-   
+  border: 1px solid $light;
 }
 
 .asideElement button .Categorie {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

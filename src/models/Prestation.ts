@@ -31,10 +31,8 @@ export default class Prestation {
     this.prixMateriel = prixMateriel;
   }
   public prixTotal(): number {
-    if (this.devis && this.tempsPrestation && this.prixMateriel) {
+    if (this.tempsPrestation && this.prixMateriel) {
       return this.tauxHoraire * this.tempsPrestation + this.prixMateriel;
-    } else {
-      throw "prix non calculable";
-    }
+    } else return 0;
   }
 }

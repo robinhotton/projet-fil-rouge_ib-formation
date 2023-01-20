@@ -1,0 +1,16 @@
+@import "../../assets/css/utils/fonts.scss";
+
+.cardCategorie {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardCategorie h2 {
+  margin-left: 20px;
+}
+
+.statsPrix,
+.statsNombre {
+  display: flex;
+  flex-direction: row;
+}

@@ -84,32 +84,36 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
         <div className="formBlock">
           <div className="formGroupBlock">
             <div className="formGroup">
+            <label htmlFor="devis" className="subTitle medium">Catégorie de la prestation</label>
               <input
                 type="text"
                 name="categorie"
                 value={form.categorie.value}
                 onChange={editPrestation}
-                placeholder="categorie de la prestation"
+                placeholder="Pose de câble électrique"
               />
+              <label htmlFor="devis" className="subTitle medium">Taux horaire de la prestation</label>
               <input
-                type="text"
+                type="number"
                 name="tauxHoraire"
                 value={form.tauxHoraire.value}
                 onChange={editPrestation}
-                placeholder="Taux horaire de la prestation"
+                placeholder="6.5"
               />
+              <label htmlFor="devis" className="subTitle medium">Devis de la prestation</label>
               <input
                 type="text"
                 name="devis"
-                placeholder="lien devis"
+                placeholder="Url direct ou lien"
                 value={form.devis.value}
                 onChange={editPrestation}
               />
             </div>
             <div className="formGroup">
+            <label htmlFor="devis" className="subTitle medium">Description de la prestation</label>
               <textarea
                 name="description"
-                placeholder="Description de la prestation"
+                placeholder="Entrez une description pour décrire la prestation"
                 onChange={editPrestation}
               ></textarea>
             </div>
@@ -118,7 +122,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
         <input
           className="buttonPrestationSubmit bigButtonText bold"
           type="submit"
-          value="envoyer"
+          value="Envoyer"
         />
       </form>
     </>

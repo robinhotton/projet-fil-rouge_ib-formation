@@ -47,18 +47,15 @@ main {
                 }
                 textArea
                 {
-                    height: 100%;
-                    width: 300px;
+                    height: 100%!important;
+                    width: 300px!important;
                     padding-left: 19px;
                     padding-top: 19px;
                     font-size: 15px;
                     font-family: $roboto;
+                    resize: none;
                 }
             }
-        }
-        input[type=file]
-        {
-            margin-left: 50px
         }
     }
 }

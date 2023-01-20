@@ -43,14 +43,16 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
 
   const redirection = useNavigate();
 
-  const editPrestation = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const editPrestation = (event: React.ChangeEvent<any>) => {
     const nomDuChamp: string = event.target.name;
     const valeurDuChamp: string = event.target.value;
     const nouveauChamp: champ = { [nomDuChamp]: { value: valeurDuChamp } };
     setForm({ ...form, ...nouveauChamp });
   };
 
-  const soumission = (event: React.FormEvent<HTMLFormElement>) => {
+  const soumission = (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
     prestation.description = form.description.value;
     prestation.tauxHoraire = form.tauxHoraire.value;
@@ -95,21 +97,22 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
                 onChange={editPrestation}
                 placeholder="Taux horaire de la prestation"
               />
+              <input
+                type="text"
+                name="devis"
+                placeholder="lien devis"
+                value={form.devis.value}
+                onChange={editPrestation}
+              />
             </div>
             <div className="formGroup">
               <textarea
                 name="description"
                 placeholder="Description de la prestation"
+                onChange={editPrestation}
               ></textarea>
             </div>
           </div>
-          <input
-            type="text"
-            name="devis"
-            placeholder="lien devis"
-            value={form.devis.value}
-            onChange={editPrestation}
-          />
         </div>
         <input
           className="buttonPrestationSubmit bigButtonText bold"

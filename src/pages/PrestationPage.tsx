@@ -1,11 +1,11 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Prestation from "../models/Prestation";
 import PrestationService from "../services/PrestationService";
-import { FiEdit } from "react-icons/fi";
 import PrestationCard from "../components/prestation/PrestationCard";
+import { FiEdit } from "react-icons/fi";
 
 const PrestationPage: React.FC = () => {
   const [prestation, setPrestation] = useState<Prestation>();
@@ -26,10 +26,13 @@ const PrestationPage: React.FC = () => {
         <>
           <div className="card">
             <PrestationCard prestation={prestation} />
+            {/*<link to={`/edit/${id}`}>
+              <FiEdit />
+            </link> */}
           </div>
         </>
       ) : (
-        <h1>Ce héros n'existe pas</h1>
+        <h1>Cette prestation n'exite pas</h1>
       )}
       <Footer />
     </>

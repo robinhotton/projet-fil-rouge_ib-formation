@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       <DropdownMenu />
       <DropdownMenu />
       <DropdownMenu />
-      <SearchBarController />
+      {/* <SearchBarController /> */}
       <ConnexionLink />
       <FaShoppingCart className="cart" />
     </header>

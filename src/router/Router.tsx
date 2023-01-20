@@ -1,7 +1,11 @@
 import { RouteObject, useRoutes } from "react-router";
+import PrestationCard from "../components/prestation/PrestationCard";
 import AdministrateurPage from "../pages/AdministrateurPage";
-import CategoriesPage from "../pages/CategoriePage";
+import CategoriePage from "../pages/CategoriePage";
+import CreatePrestationPage from "../pages/CreatePrestationPage";
+import EditPrestationPage from "../pages/EditPrestationPage";
 import LandingPage from "../pages/LandingPage";
+import PrestationPage from "../pages/PrestationPage";
 
 const Router: React.FC = () => {
   const routes: RouteObject[] = [
@@ -10,12 +14,24 @@ const Router: React.FC = () => {
       element: <LandingPage />,
     },
     {
+      path: "/:id",
+      element: <PrestationPage />,
+    },
+    {
       path: "/admin",
       element: <AdministrateurPage />,
     },
     {
-      path: "/categories",
-      element: <CategoriesPage />,
+      path: "/create",
+      element: <CreatePrestationPage />,
+    },
+    {
+      path: "/edit/:id",
+      element: <EditPrestationPage />,
+    },
+    {
+      path: "/categorie",
+      element: <CategoriePage />,
     },
   ];
   return <>{useRoutes(routes)}</>;

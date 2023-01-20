@@ -7,7 +7,6 @@ import PrestationService from "../services/PrestationService";
 
 const CategoriePage: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
-  const [delPrestation, setDelPrestation] = useState<any>();
 
   useEffect(() => {
     PrestationService.getAllPrestations().then((prestation) =>
@@ -18,12 +17,11 @@ const CategoriePage: React.FC = () => {
     <>
       <Header />
       {prestations.map((prestation) => {
-        <>
-          <PrestationCard prestation={prestation} />
-        </>;
+        <PrestationCard prestation={prestation} />;
       })}
 
       <Footer />
     </>
   );
 };
+export default CategoriePage;

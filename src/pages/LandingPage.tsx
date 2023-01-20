@@ -5,7 +5,6 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
-      <h1>Je suis une landing page</h1>
       <Footer />
     </>
   );

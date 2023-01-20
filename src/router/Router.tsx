@@ -22,6 +22,10 @@ const Router: React.FC = () => {
       path: "/edit/:id",
       element: <EditPrestationPage />,
     },
+    {
+      path: "/categories",
+      element: <CategoriesPage />,
+    },
   ];
   return <>{useRoutes(routes)}</>;
 };

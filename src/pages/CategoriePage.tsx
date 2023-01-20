@@ -6,24 +6,24 @@ import Prestation from "../models/Prestation";
 import PrestationService from "../services/PrestationService";
 
 const CategoriePage: React.FC = () => {
-  const [prestations, setPrestations] = useState<Prestation[]>([]);
-  const [delPrestation, setDelPrestation] = useState<any>();
+  // const [prestations, setPrestations] = useState<Prestation[]>([]);
 
-  useEffect(() => {
-    PrestationService.getAllPrestations().then((prestation) =>
-      setPrestations(prestation)
-    );
-  });
+  // useEffect(() => {
+  //   PrestationService.getAllPrestations().then((prestations) =>
+  //     setPrestations(prestations)
+  //   );
+  // });
   return (
     <>
       <Header />
-      {prestations.map((prestation) => {
-        <>
-          <PrestationCard prestation={prestation} />
-        </>;
-      })}
+      {/* {prestations.map((prestation) => { */}
+      {/* <PrestationCard prestation={prestation} /> */}
+      <PrestationCard />
+      {/* })} */}
 
       <Footer />
     </>
   );
 };
+
+export default CategoriePage;

@@ -1,6 +1,6 @@
 import { RouteObject, useRoutes } from "react-router";
 import AdministrateurPage from "../pages/AdministrateurPage";
-import CategoriesPage from "../pages/CategoriePage";
+import CategoriePage from "../pages/CategoriePage";
 import LandingPage from "../pages/LandingPage";
 
 const Router: React.FC = () => {
@@ -15,7 +15,7 @@ const Router: React.FC = () => {
     },
     {
       path: "/categories",
-      element: <CategoriesPage />,
+      element: <CategoriePage />,
     },
   ];
   return <>{useRoutes(routes)}</>;

@@ -1,0 +1,18 @@
+@import "../../assets/css/utils/fonts.scss";
+
+.fullCard {
+  height: 444px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 30px rgba(30, 30, 30, 0.2);
+}
+
+img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 300px;
+}
+
+.titleCard {
+  font-weight: bold;
+}

@@ -58,7 +58,7 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   const setUpTableau = (): number[] => {
     const tableauARemplir: number[] = setUpTableauZero();
     prestations.forEach((prestation) => {
-      tableauARemplir[prestation.idEntreprise - 1] += 1;
+      // tableauARemplir[prestation.idEntreprise - 1] += 1;
     });
     return tableauARemplir;
   };

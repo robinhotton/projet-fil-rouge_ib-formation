@@ -1,19 +1,14 @@
 import Prestation from "../../models/Prestation";
-import { BsTrash } from "react-icons/bs";
-
+import "./PrestationCard.scss";
 type PrestationCardProps = {
-  prestation: Prestation;
-  deleteContact: Function;
+  prestation?: Prestation;
 };
 
-const PrestationCard: React.FC<PrestationCardProps> = ({
-  prestation,
-  deleteContact,
-}) => {
+const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
   return (
     <>
+      <h1>je suis une card</h1>
       {/* ajouter le html/css de la card */}
-      <BsTrash onClick={deleteContact.bind(this, prestation.id)} />
     </>
   );
 };

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import Devis from "../../models/Devis";
 import Prestation from "../../models/Prestation";
 import PrestationService from "../../services/PrestationService";
 
@@ -51,9 +50,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
     setForm({ ...form, ...nouveauChamp });
   };
 
-  const soumission = (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
+  const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     prestation.description = form.description.value;
     prestation.tauxHoraire = form.tauxHoraire.value;
@@ -115,6 +112,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
                 name="description"
                 placeholder="Entrez une description pour décrire la prestation"
                 onChange={editPrestation}
+                value={form.description.value}
               ></textarea>
             </div>
           </div>

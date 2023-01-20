@@ -6,6 +6,7 @@ import Prestation from "../models/Prestation";
 import PrestationService from "../services/PrestationService";
 import PrestationCard from "../components/prestation/PrestationCard";
 import { FiEdit } from "react-icons/fi";
+import PrestationDetail from "../components/prestationDetail/prestationDetail";
 
 const PrestationPage: React.FC = () => {
   const [prestation, setPrestation] = useState<Prestation>();
@@ -25,10 +26,7 @@ const PrestationPage: React.FC = () => {
       {prestation?.id ? (
         <>
           <div className="card">
-            <PrestationCard prestation={prestation} />
-            {/*<link to={`/edit/${id}`}>
-              <FiEdit />
-            </link> */}
+            <PrestationDetail prestation={prestation} />
           </div>
         </>
       ) : (

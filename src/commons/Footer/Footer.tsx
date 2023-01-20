@@ -1,10 +1,14 @@
 import { BsFacebook } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
+import { BsTwitter } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import "./Footer.scss";
 
-export default function Footer() {
+/**
+ *
+ * @returns affichage du footer
+ */
+const Footer: React.FC = () => {
   return (
     <footer>
       <div className="TopFooter">
@@ -39,17 +43,21 @@ export default function Footer() {
       </div>
 
       <div className="EndFooter">
-        <BsFacebook className="Facebook" href="https://www.facebook.com/" />
-        <AiFillTwitterCircle
-          className="Twitter"
-          href="https://www.twitter.com/"
-        />
-        <BsYoutube className="Youtube" href="https://www.youtube.com/" />
-        <BsLinkedin className="Linkedin" href="http://www.linkedin.com/" />
+        <div className="Social">
+          <BsFacebook className="Facebook" href="https://www.facebook.com/" />
+          <div className="TwitterDiv">
+            <BsTwitter className="Twitter" href="https://www.twitter.com/" />
+          </div>
+          <div className="YoutubeDiv">
+            <BsYoutube className="Youtube" href="https://www.youtube.com/" />
+          </div>
+          <BsLinkedin className="Linkedin" href="http://www.linkedin.com/" />
+        </div>
         <p>
           © 2023 - ULTRAMOTION GROUP - <a href="">Conditions générales</a>
         </p>
       </div>
     </footer>
   );
-}
+};
+export default Footer;

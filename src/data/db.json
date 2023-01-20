@@ -1,0 +1,45 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom": "robin",
+      "prenom": "hotton",
+      "mail": "robin@hotton.com",
+      "panier": []
+    }
+  ],
+  "entreprises": [
+    {
+      "id": 1,
+      "logo ": "http://www.logo.com",
+      "effectif": 42,
+      "siret": 40380088100043,
+      "coordonnees": "42 Rue Brûle Maison, 59000 Lille",
+      "zoneActivite": "Metropole Lilloise"
+    }
+  ],
+  "prestations": [
+    {
+      "id": 1,
+      "idEntreprise": 1,
+      "categorie": ["Le câblage d'armoire électrique"],
+      "description": "Pose et réparation des câbles des armoires électriques avec style",
+      "tauxHoraire": "42.69",
+      "tempsPrestation": 42,
+      "prixMateriel": 4200,
+      "termine": true,
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
+      "evaluations": {
+        "qualiteGlobale": 5,
+        "faciliteCommunication": 5,
+        "qualiteTechnique": 5,
+        "niveauExpertise": 5
+      }
+    }
+  ],
+  "categories": [
+    "Le câblage d'armoire électrique",
+    "L'accompagnement aux choix de matériels industriels",
+    "L'installation de matériels"
+  ]
+}

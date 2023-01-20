@@ -1,13 +1,15 @@
 @import "../../assets/css/utils/variables.scss";
 
 footer {
+  position: absolute;
+  bottom: 0;
   background: $black;
-  height: 130px;
+  height: 150px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
 .TopFooter p,
 .TopFooter p span,
 .MiddleFooter a,
@@ -16,26 +18,83 @@ footer {
 .EndFooter a {
   color: $light;
   text-decoration: none;
-  font-family: $roboto;
+  font-family: $worksans;
   font-size: 15px;
-  margin: 5px
+  margin: 5px;
 }
 
-.TopFooter p:first-child, .MiddleFooter p:first-child {
-  font-size: 18px;
+.TopFooter p:first-child,
+.MiddleFooter p:first-child {
+  font-size: 15px;
   font-family: $worksans;
   padding-bottom: 10px;
 }
 
 span {
   border: solid;
+  padding: 6px 18px 6px 19px;
   border: 1px solid $light;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
-.Facebook, .Youtube, .Twitter, .Linkedin {
-    filter : invert(1);
-    margin: 10px;
-    cursor: pointer;
+.Facebook,
+.Linkedin {
+  width: 32px;
+  height: 32px;
+  filter: invert(0);
+  color: $light;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
+.Youtube,
+.YoutubeDiv {
+  filter: invert(0);
+  color: $black;
+  width: 32px;
+  height: 32px;
+  background: $light;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.TopFooter p {
+  margin-bottom: 20px;
+}
+
+.Social {
+  width: 314px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.YoutubeDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Youtube {
+  width: 28px;
+  height: 22px;
+  align-self: center;
+}
+
+.TwitterDiv {
+  width: 32px;
+  height: 32px;
+  background: $light;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Twitter {
+  align-self: center;
+  color: $black;
+}

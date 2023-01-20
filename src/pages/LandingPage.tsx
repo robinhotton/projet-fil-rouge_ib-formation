@@ -1,11 +1,12 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
 
-export default function LandingPage(): JSX.Element {
+const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
       <Footer />
     </>
   );
-}
+};
+export default LandingPage;

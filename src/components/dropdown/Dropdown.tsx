@@ -3,7 +3,6 @@ import "./Dropdown.scss";
 
 type DropDownProps = {
   categories: string[];
-  showDropDown: boolean;
   toggleDropDown: Function;
   categorieSelection: Function;
 };
@@ -11,7 +10,7 @@ type DropDownProps = {
 const DropDown: React.FC<DropDownProps> = ({
   categories,
   categorieSelection,
-}: DropDownProps): JSX.Element => {
+}) => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
   /**

@@ -22,9 +22,9 @@ Projet : 22 décembre 2022 - 1 fevrier 2023
 
 ## Membres
 
-- [Pierre Dumont](https://github.com/PierreD59)
-- [Robin Hotton](https://github.com/Gerob59)
-- [Peter Boniface](https://github.com/peterboniface)
+- [Pierre Dumont](https://github.com/PierreD59) / [Linkedin](https://www.linkedin.com/in/pierre-dumont-3a6103153/)
+- [Robin Hotton](https://github.com/Gerob59) / [Linkedin](https://www.linkedin.com/in/robin-hotton/)
+- [Peter Boniface](https://github.com/peterboniface) / [Linkedin](https://www.linkedin.com/in/pboni59/)
 
 ## Travail effectué
 

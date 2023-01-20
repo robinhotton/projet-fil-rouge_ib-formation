@@ -3,18 +3,14 @@ import DropDown from "./Dropdown";
 import { RxTriangleDown } from "react-icons/rx";
 import "./DropdownMenu.scss";
 
-type placeHolderProps = {
-  placeholder?: string;
-};
-
-const DropdownMenu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
+const DropdownMenu: React.FC = () => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [selectCategorie, setSelectCategorie] = useState<string>("");
   const categories = () => {
     return [
-      " Le câblage d’armoire électrique",
-      "L’accompagnement aux choix de matériels industriels",
-      "L’installation de matériels",
+      "Le câblage d'armoire électrique",
+      "L'accompagnement aux choix de matériels industriels",
+      "L'installation de matériels",
     ];
   };
 
@@ -58,7 +54,6 @@ const DropdownMenu: React.FC<placeHolderProps> = (placeholder): JSX.Element => {
         {showDropDown && (
           <DropDown
             categories={categories()}
-            showDropDown={false}
             toggleDropDown={(): void => toggleDropDown()}
             categorieSelection={categorieSelection}
           />

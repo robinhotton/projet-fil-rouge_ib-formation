@@ -1,12 +1,14 @@
 @import "../../assets/css/utils/variables.scss";
 
 footer {
-  padding: 0px 43px 0px 43px;
+  position: absolute;
+  bottom: 0;
   background: $black;
   height: 150px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .TopFooter p,
 .TopFooter p span,

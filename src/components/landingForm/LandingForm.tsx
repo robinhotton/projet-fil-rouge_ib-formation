@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import Categorie from "../../models/Categorie";
 import CategoriesService from "../../services/CategorieService";
 
 const LandingForm: React.FC = () => {
-  const [categories, setCategories] = useState<string[]>([]);
-  const [city, setCity] = useState("");
-  const [dropdownValue, setDropdownValue] = useState("");
+  const [categories, setCategories] = useState<Categorie[]>([]);
+  const [city, setCity] = useState<string>();
+  const [dropdownValue, setDropdownValue] = useState<string>();
 
   useEffect(() => {
     CategoriesService.getAllCategories().then((categories) =>
@@ -17,9 +18,10 @@ const LandingForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(`City: ${city}`);
-    console.log(`Type de projet: ${dropdownValue}`);
-    redirection(`/categorie/`);
+    const categorie: number =
+      categories.findIndex((categorie) => categorie.nom === dropdownValue) + 1;
+    if (categorie === 0) redirection(`/categorie/1`);
+    else redirection(`/categorie/${categorie}`);
   };
 
   return (
@@ -39,9 +41,9 @@ const LandingForm: React.FC = () => {
           value={dropdownValue}
           onChange={(event) => setDropdownValue(event.target.value)}
         >
-          {categories.map((category, index) => (
-            <option key={index} value={category}>
-              {category}
+          {categories.map((categorie, index) => (
+            <option key={index} value={categorie.nom}>
+              {categorie.nom}
             </option>
           ))}
         </select>

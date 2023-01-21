@@ -4,6 +4,7 @@ import Header from "../commons/header/Header";
 import PrestationCard from "../components/prestation/PrestationCard";
 import Prestation from "../models/Prestation";
 import PrestationService from "../services/PrestationService";
+import "./CategoriePage.scss";
 
 const CategoriePage: React.FC = () => {
   // const [prestations, setPrestations] = useState<Prestation[]>([]);
@@ -15,13 +16,42 @@ const CategoriePage: React.FC = () => {
   // });
   return (
     <>
-      <Header />
       {/* {prestations.map((prestation) => { */}
       {/* <PrestationCard prestation={prestation} /> */}
-      <PrestationCard />
+      <body>
+        <Header />
+        <div className="categories">
+          <div className="card1">
+            <PrestationCard />
+          </div>
+          <div className="card2">
+            <PrestationCard />
+          </div>
+          <div className="card3">
+            <PrestationCard />
+          </div>
+          <div className="card4">
+            <PrestationCard />
+          </div>
+          <div className="card5">
+            <PrestationCard />
+          </div>
+          <div className="card6">
+            <PrestationCard />
+          </div>
+          <div className="card7">
+            <PrestationCard />
+          </div>
+          <div className="card8">
+            <PrestationCard />
+          </div>
+          <div className="card9">
+            <PrestationCard />
+          </div>
+        </div>
+        <Footer />
+      </body>
       {/* })} */}
-
-      <Footer />
     </>
   );
 };

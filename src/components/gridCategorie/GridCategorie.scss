@@ -3,7 +3,6 @@
 .categorie-grid {
   display: grid;
   gap: 2rem;
-  //grid-template-columns: 3fr 3fr 2fr;
   grid-template-areas:
     "one"
     "two"
@@ -63,4 +62,5 @@
 }
 .categorie-grid .categorie img {
   background-size: cover;
+  object-fit: cover;
 }

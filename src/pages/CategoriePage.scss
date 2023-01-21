@@ -1,0 +1,31 @@
+body {
+  /**** Pour fixer le Footer en bas de page ****/
+  display: grid; /*Transforme la balise body en contenur grid*/
+  grid-template-rows: auto 1fr auto; /*défini la hauteur que les lignes 
+de la grille doivent occuper. Auto correspond à la hauteur par défaut de 
+la ligne (en fonction de ce qu'il y a dedans donc). Fr (fraction) permet 
+d'occuper l'espace restant*/
+  height: 100vh; /*vh (pour viewport height) permet de s'assurer que le 
+body fera bien toute la hauteur de la surface d'affichage du navigateur*/
+  /**********************************/
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 100px 30px 100px;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7,
+.card8,
+.card9 {
+  margin: 30px;
+}

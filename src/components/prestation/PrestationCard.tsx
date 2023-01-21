@@ -1,10 +1,23 @@
+import { useEffect, useState } from "react";
+import Entreprise from "../../models/Entreprise";
 import Prestation from "../../models/Prestation";
+import EntrepriseService from "../../services/EntrepriseService";
 import "./PrestationCard.scss";
 type PrestationCardProps = {
-  prestation?: Prestation;
+  prestation: Prestation;
 };
 
 const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
+  const [entreprise, setEntreprise] = useState<Entreprise>();
+
+  useEffect(() => {
+    if (prestation.idEntreprise) {
+      EntrepriseService.getEntrepriseById(prestation.idEntreprise).then(
+        (entreprise) => setEntreprise(entreprise)
+      );
+    }
+  }, []);
+
   return (
     <div className="fullCard">
       <img
@@ -12,11 +25,9 @@ const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
         alt="prestation"
       />
 
-      <h1 className="titleCard">NOM DE L'ENTREPRISE</h1>
-      <h2 className="coord">Nom de la ville</h2>
-      <p className="contentCard">
-        Réparation / mise en place d'armoire électrique
-      </p>
+      <h1 className="titleCard">{entreprise?.name}</h1>
+      <h2 className="coord">{entreprise?.zoneGeographique}</h2>
+      <p className="contentCard">{prestation.description}</p>
       <button className="moreButton">En savoir plus</button>
     </div>
   );

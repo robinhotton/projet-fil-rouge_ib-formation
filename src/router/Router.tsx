@@ -29,7 +29,7 @@ const Router: React.FC = () => {
       element: <EditPrestationPage />,
     },
     {
-      path: "/categorie",
+      path: "/categorie/:id",
       element: <CategoriePage />,
     },
   ];

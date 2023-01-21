@@ -5,17 +5,18 @@ import CardsCategorie from "./AdminCardsCategorie";
 import PrestationService from "../../services/PrestationService";
 import CategoriesService from "../../services/CategorieService";
 import "./AdminCardsController.scss";
+import Categorie from "../../models/Categorie";
 
 const AdminCardsController: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<Categorie[]>([]);
 
   useEffect(() => {
     PrestationService.getAllPrestations().then((prestations) =>
       setPrestations(prestations)
     );
-    CategoriesService.getAllCategories().then((categorie) =>
-      setCategories(categorie)
+    CategoriesService.getAllCategories().then((categories) =>
+      setCategories(categories)
     );
   }, []);
 
@@ -32,8 +33,8 @@ const AdminCardsController: React.FC = () => {
       <div className="allCategories">
         {categories.map((categorie) => (
           <CardsCategorie
-            nomCategorie={categorie}
-            prestationsDeLaCategorie={prestationsParCategories(categorie)}
+            nomCategorie={categorie.nom}
+            prestationsDeLaCategorie={prestationsParCategories(categorie.nom)}
           />
         ))}
       </div>

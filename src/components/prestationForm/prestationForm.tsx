@@ -81,7 +81,9 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
         <div className="formBlock">
           <div className="formGroupBlock">
             <div className="formGroup">
-            <label htmlFor="devis" className="subTitle medium">Catégorie de la prestation</label>
+              <label htmlFor="devis" className="subTitle medium">
+                Catégorie de la prestation
+              </label>
               <input
                 type="text"
                 name="categorie"
@@ -89,7 +91,9 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
                 onChange={editPrestation}
                 placeholder="Pose de câble électrique"
               />
-              <label htmlFor="devis" className="subTitle medium">Taux horaire de la prestation</label>
+              <label htmlFor="devis" className="subTitle medium">
+                Taux horaire de la prestation
+              </label>
               <input
                 type="number"
                 name="tauxHoraire"
@@ -97,7 +101,9 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
                 onChange={editPrestation}
                 placeholder="6.5"
               />
-              <label htmlFor="devis" className="subTitle medium">Devis de la prestation</label>
+              <label htmlFor="devis" className="subTitle medium">
+                Devis de la prestation
+              </label>
               <input
                 type="text"
                 name="devis"
@@ -107,7 +113,9 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
               />
             </div>
             <div className="formGroup">
-            <label htmlFor="devis" className="subTitle medium">Description de la prestation</label>
+              <label htmlFor="devis" className="subTitle medium">
+                Description de la prestation
+              </label>
               <textarea
                 name="description"
                 placeholder="Entrez une description pour décrire la prestation"

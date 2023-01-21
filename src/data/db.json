@@ -67,6 +67,10 @@
     {
       "id": 3,
       "nom": "L'installation de matériels"
+    },
+    {
+      "id": 4,
+      "nom": "Autre"
     }
   ]
 }

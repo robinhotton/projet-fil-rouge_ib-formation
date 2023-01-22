@@ -13,15 +13,15 @@ const Router: React.FC = () => {
       element: <LandingPage />,
     },
     {
-      path: "/:id",
+      path: "prestation/:id",
       element: <PrestationPage />,
     },
     {
-      path: "/create",
+      path: "prestation/create",
       element: <CreatePrestationPage />,
     },
     {
-      path: "/edit/:id",
+      path: "prestation/edit/:id",
       element: <EditPrestationPage />,
     },
     {

@@ -20,9 +20,6 @@ const Footer: React.FC = () => {
     );
   });
 
-  const prestationsTotales = (): number => {
-    return prestations.length;
-  };
   const prestationsEnCours = (): number => {
     return prestations.filter((prestation) => prestation.termine === false)
       .length;

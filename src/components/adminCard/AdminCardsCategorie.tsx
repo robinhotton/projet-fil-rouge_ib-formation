@@ -33,7 +33,7 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
           prestation.tauxHoraire * prestation.tempsPrestation! +
           prestation.prixMateriel!)
     );
-    return moy / prestations.length;
+    return +(moy / prestations.length).toFixed(2);
   };
 
   const prixMin = (): number => {

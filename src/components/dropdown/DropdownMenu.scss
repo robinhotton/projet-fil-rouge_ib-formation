@@ -6,9 +6,15 @@
   border: 1px solid transparent;
   cursor: pointer;
   color: $light;
-    background: $black;
+  background: $black;
 }
 .MenuContainer button:hover,
 .MenuContainer button.active {
-border: 1px solid $light;
+  border: 1px solid $light;
+}
+
+.flex-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

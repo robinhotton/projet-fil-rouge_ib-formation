@@ -45,7 +45,10 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ placeholder, route }) => {
           dismissHandler(e)
         }
       >
-        <div>{placeholder} </div>
+        <div className="flex-align">
+          <p>{placeholder} </p>
+          <RxTriangleDown />
+        </div>
         {showDropDown && (
           <DropDown
             categories={categories}
@@ -53,7 +56,6 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ placeholder, route }) => {
             toggleDropDown={(): void => toggleDropDown()}
           />
         )}
-        <RxTriangleDown />
       </button>
     </div>
   );

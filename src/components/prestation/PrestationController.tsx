@@ -26,7 +26,7 @@ const PrestationController: React.FC = () => {
         )
       )
     );
-  }, [id]);
+  }, [categorie?.id]);
 
   return (
     <>

@@ -7,11 +7,14 @@ import "./Header.scss";
 const Header: React.FC = () => {
   return (
     <header>
-      <img src="" alt="logo"></img>
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <image href="LogoDarkMode.svg" />
+      </svg>
+
       <DropdownMenu />
       <DropdownMenu />
       <DropdownMenu />
-      {/* <SearchBarController /> */}
+      <SearchBarController />
       <ConnexionLink />
       <FaShoppingCart className="cart" />
     </header>

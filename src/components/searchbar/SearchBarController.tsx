@@ -13,7 +13,7 @@ const SearchBarController: React.FC = () => {
     PrestationService.getAllPrestations().then((prestations) =>
       setPrestations(prestations)
     );
-  });
+  }, []);
 
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -29,9 +29,16 @@ const SearchBarController: React.FC = () => {
         prestationsValue={searchTerm}
         onChangeHandler={onSearchHandler}
       />
-      {prestations.filter(toSearch(searchTerm)).map((prestation) => (
-        <PrestationCard key={prestation.id} prestation={prestation} />
-      ))}
+      {searchTerm === "" ? (
+        <></>
+      ) : (
+        <>
+          {" "}
+          {prestations.filter(toSearch(searchTerm)).map((prestation) => (
+            <PrestationCard key={prestation.id} prestation={prestation} />
+          ))}
+        </>
+      )}
     </>
   );
 };

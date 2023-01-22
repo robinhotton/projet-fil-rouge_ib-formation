@@ -1,7 +1,7 @@
 .CategoriePage {
   /**** Pour fixer le Footer en bas de page ****/
   display: grid; /*Transforme la balise body en contenur grid*/
-  grid-template-rows: auto 1fr auto; /*défini la hauteur que les lignes 
+  grid-template-rows: auto auto 1fr auto; /*défini la hauteur que les lignes 
 de la grille doivent occuper. Auto correspond à la hauteur par défaut de 
 la ligne (en fonction de ce qu'il y a dedans donc). Fr (fraction) permet 
 d'occuper l'espace restant*/

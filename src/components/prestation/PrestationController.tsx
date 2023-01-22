@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Prestation from "../../models/Prestation";
 import PrestationService from "../../services/PrestationService";
 import PrestationCard from "./PrestationCard";
-import "./CategorieController.scss";
+import "./PrestationController.scss";
 import Categorie from "../../models/Categorie";
 import CategoriesService from "../../services/CategorieService";
 
@@ -29,16 +29,18 @@ const PrestationController: React.FC = () => {
   }, [id]);
 
   return (
-    <div className="categories">
-      <h1>Catégorie : {categorie?.nom}</h1>
-      {prestations.map((prestation, index) => {
-        return (
-          <div key={index++} className="card">
-            <PrestationCard prestation={prestation} />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <h1 className="categorieTitre">Catégorie : {categorie?.nom}</h1>
+      <div className="categories">
+        {prestations.map((prestation, index) => {
+          return (
+            <div key={index++} className="card">
+              <PrestationCard prestation={prestation} />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 export default PrestationController;

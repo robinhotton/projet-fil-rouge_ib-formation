@@ -7,13 +7,10 @@ import "./Header.scss";
 const Header: React.FC = () => {
   return (
     <header>
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <image href="LogoDarkMode.svg" />
-      </svg>
-
-      <DropdownMenu placeholder="categories" route="/categories" />
-      <DropdownMenu placeholder="categories" route="/categories" />
-      <DropdownMenu placeholder="categories" route="/categories" />
+      <p>logo</p>
+      <DropdownMenu placeholder="prestations" route="/prestation" />
+      <DropdownMenu placeholder="categories" route="/categorie" />
+      <DropdownMenu placeholder="categories" route="/categorie" />
       <SearchBarController />
       <ConnexionLink />
       <FaShoppingCart className="cart" />

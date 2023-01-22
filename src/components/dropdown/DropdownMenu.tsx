@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DropDown from "./Dropdown";
 import { RxTriangleDown } from "react-icons/rx";
 import "./DropdownMenu.scss";
+import CategoriesService from "../../services/CategorieService";
 
-const DropdownMenu: React.FC = () => {
+type DropdownMenuProps = {
+  placeholder: string;
+  route: string;
+};
+
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ placeholder, route }) => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
-  const [selectCategorie, setSelectCategorie] = useState<string>("");
-  const categories = () => {
-    return [
-      "Le câblage d'armoire électrique",
-      "L'accompagnement aux choix de matériels industriels",
-      "L'installation de matériels",
-    ];
-  };
+  const [categories, setCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    CategoriesService.getAllCategories().then((categories) =>
+      setCategories(categories.map((categorie) => categorie.nom))
+    );
+  }, []);
 
   /**
    * Activer / Désactiver le menu dropdown
@@ -31,16 +36,6 @@ const DropdownMenu: React.FC = () => {
     }
   };
 
-  /**
-   * Callback function to consume the
-   * city name from the child component
-   *
-   * @param categorie  la ville selectionné
-   */
-  const categorieSelection = (categorie: string): void => {
-    setSelectCategorie(categorie);
-  };
-
   return (
     <div className="MenuContainer">
       <button
@@ -50,12 +45,12 @@ const DropdownMenu: React.FC = () => {
           dismissHandler(e)
         }
       >
-        <div>{selectCategorie ? selectCategorie : "Select ..."} </div>
+        <div>{placeholder} </div>
         {showDropDown && (
           <DropDown
-            categories={categories()}
+            categories={categories}
+            route={route}
             toggleDropDown={(): void => toggleDropDown()}
-            categorieSelection={categorieSelection}
           />
         )}
         <RxTriangleDown />

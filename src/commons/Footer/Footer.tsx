@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
+import Prestation from "../../models/Prestation";
+import PrestationService from "../../services/PrestationService";
 import "./Footer.scss";
 
 /**
@@ -9,15 +12,34 @@ import "./Footer.scss";
  * @returns affichage du footer
  */
 const Footer: React.FC = () => {
+  const [prestations, setPrestations] = useState<Prestation[]>([]);
+
+  useEffect(() => {
+    PrestationService.getAllPrestations().then((prestations) =>
+      setPrestations(prestations)
+    );
+  });
+
+  const prestationsTotales = (): number => {
+    return prestations.length;
+  };
+  const prestationsEnCours = (): number => {
+    return prestations.filter((prestation) => prestation.termine === false)
+      .length;
+  };
+  const prestationsTerminees = (): number => {
+    return prestations.filter((prestation) => prestation.termine === true)
+      .length;
+  };
   return (
     <footer>
       <div className="TopFooter">
         <p>Statistiques</p>
         <p>
-          Commandes en cours : <span>4821</span>
+          Commandes en cours : <span>{prestationsEnCours()}</span>
         </p>
         <p>
-          Services livrés : <span>8971</span>
+          Services livrés : <span>{prestationsTerminees()}</span>
         </p>
       </div>
 

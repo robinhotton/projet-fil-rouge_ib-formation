@@ -88,7 +88,7 @@
       "tauxHoraire": 96.3,
       "tempsPrestation": 70,
       "prixMateriel": 5000,
-      "termine": false,
+      "termine": true,
       "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
         "qualiteGlobale": 0,

@@ -11,9 +11,9 @@ const Header: React.FC = () => {
         <image href="LogoDarkMode.svg" />
       </svg>
 
-      <DropdownMenu />
-      <DropdownMenu />
-      <DropdownMenu />
+      <DropdownMenu placeholder="categories" route="/categories" />
+      <DropdownMenu placeholder="categories" route="/categories" />
+      <DropdownMenu placeholder="categories" route="/categories" />
       <SearchBarController />
       <ConnexionLink />
       <FaShoppingCart className="cart" />

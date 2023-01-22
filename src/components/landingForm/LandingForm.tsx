@@ -12,7 +12,7 @@ const LandingForm: React.FC = () => {
     CategoriesService.getAllCategories().then((categories) =>
       setCategories(categories)
     );
-  });
+  }, []);
 
   const redirection = useNavigate();
 

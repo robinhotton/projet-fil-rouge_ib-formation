@@ -26,15 +26,15 @@ const PrestationController: React.FC = () => {
         )
       )
     );
-  }, []);
+  }, [id]);
 
   return (
     <div className="categories">
       <h1>Catégorie : {categorie?.nom}</h1>
-      {prestations.map((prestation) => {
+      {prestations.map((prestation, index) => {
         return (
           <div className="card">
-            <PrestationCard prestation={prestation} />
+            <PrestationCard key={index} prestation={prestation} />
           </div>
         );
       })}

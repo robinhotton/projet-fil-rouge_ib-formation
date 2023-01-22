@@ -17,10 +17,6 @@ const Router: React.FC = () => {
       element: <PrestationPage />,
     },
     {
-      path: "/admin",
-      element: <AdministrateurPage />,
-    },
-    {
       path: "/create",
       element: <CreatePrestationPage />,
     },
@@ -31,6 +27,10 @@ const Router: React.FC = () => {
     {
       path: "/categorie/:id",
       element: <CategoriePage />,
+    },
+    {
+      path: "/admin",
+      element: <AdministrateurPage />,
     },
   ];
   return <>{useRoutes(routes)}</>;

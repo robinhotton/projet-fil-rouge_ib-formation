@@ -33,8 +33,8 @@ const PrestationController: React.FC = () => {
       <h1>Catégorie : {categorie?.nom}</h1>
       {prestations.map((prestation, index) => {
         return (
-          <div className="card">
-            <PrestationCard key={index} prestation={prestation} />
+          <div key={index++} className="card">
+            <PrestationCard prestation={prestation} />
           </div>
         );
       })}

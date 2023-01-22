@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Categorie from "../../models/Categorie";
 import CategoriesService from "../../services/CategorieService";
+import "./LandingForm.scss";
 
 const LandingForm: React.FC = () => {
   const [categories, setCategories] = useState<Categorie[]>([]);
@@ -25,30 +26,23 @@ const LandingForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Ville:
-        <input
-          type="text"
-          value={city}
-          onChange={(event) => setCity(event.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Choisir un type de projet:
-        <select
-          value={dropdownValue}
-          onChange={(event) => setDropdownValue(event.target.value)}
-        >
-          {categories.map((categorie, index) => (
-            <option key={index} value={categorie.nom}>
-              {categorie.nom}
-            </option>
-          ))}
-        </select>
-      </label>
-      <br />
+    <form className="landingForm" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={city}
+        placeholder="ville, code postal..."
+        onChange={(event) => setCity(event.target.value)}
+      />
+      <select
+        value={dropdownValue}
+        onChange={(event) => setDropdownValue(event.target.value)}
+      >
+        {categories.map((categorie, index) => (
+          <option key={index} value={categorie.nom}>
+            {categorie.nom}
+          </option>
+        ))}
+      </select>
       <button type="submit">Envoyer</button>
     </form>
   );

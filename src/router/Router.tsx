@@ -1,5 +1,6 @@
 import { RouteObject, useRoutes } from "react-router";
 import AdministrateurPage from "../pages/AdministrateurPage";
+import AllPrestationsPage from "../pages/AllPrestationsPage";
 import CategoriePage from "../pages/CategoriePage";
 import CreatePrestationPage from "../pages/CreatePrestationPage";
 import EditPrestationPage from "../pages/EditPrestationPage";
@@ -11,6 +12,10 @@ const Router: React.FC = () => {
     {
       path: "/",
       element: <LandingPage />,
+    },
+    {
+      path: "prestation",
+      element: <AllPrestationsPage />,
     },
     {
       path: "prestation/:id",

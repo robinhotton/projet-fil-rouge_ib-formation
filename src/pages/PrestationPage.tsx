@@ -24,11 +24,11 @@ const PrestationPage: React.FC = () => {
     <>
       <Header />
       {prestation?.id ? (
-        <>
+        <main>
           <div className="card">
             <PrestationDetail prestation={prestation} />
           </div>
-        </>
+        </main>
       ) : (
         <h1>Cette prestation n'exite pas</h1>
       )}

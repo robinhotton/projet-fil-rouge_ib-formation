@@ -1,14 +1,15 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
 import PrestationController from "../components/prestation/PrestationController";
+import "./CategoriePage.scss";
 
 const CategoriePage: React.FC = () => {
   return (
-    <body>
+    <div className="CategoriePage">
       <Header />
       <PrestationController />
       <Footer />
-    </body>
+    </div>
   );
 };
 export default CategoriePage;

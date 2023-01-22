@@ -26,6 +26,7 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
 
   const prixMoyen = (): number => {
     let moy: number = 0;
+    if (prestations.length === 0) return moy;
     prestations.forEach(
       (prestation) =>
         (moy +=
@@ -43,7 +44,8 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
         prestation.prixMateriel!;
       if (prixPrestation < min) min = prixPrestation;
     });
-    return min;
+    if (min === Infinity) return prixMax();
+    else return min;
   };
 
   const prixMax = (): number => {

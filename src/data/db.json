@@ -41,7 +41,7 @@
       "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
         "qualiteGlobale": 5,
-        "faciliteCommunication": 5,
+        "faciliteCommunication": 4,
         "qualiteTechnique": 5,
         "niveauExpertise": 5
       }
@@ -57,10 +57,10 @@
       "termine": true,
       "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
-        "qualiteGlobale": 5,
-        "faciliteCommunication": 5,
-        "qualiteTechnique": 5,
-        "niveauExpertise": 5
+        "qualiteGlobale": 4,
+        "faciliteCommunication": 3,
+        "qualiteTechnique": 4,
+        "niveauExpertise": 4
       }
     },
     {
@@ -91,10 +91,10 @@
       "termine": true,
       "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
-        "qualiteGlobale": 0,
-        "faciliteCommunication": 0,
-        "qualiteTechnique": 0,
-        "niveauExpertise": 0
+        "qualiteGlobale": 3,
+        "faciliteCommunication": 2,
+        "qualiteTechnique": 4,
+        "niveauExpertise": 3
       }
     }
   ],

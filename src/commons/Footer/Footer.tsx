@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import Prestation from "../../models/Prestation";
+import PrestationService from "../../services/PrestationService";
 import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
-import Prestation from "../../models/Prestation";
-import PrestationService from "../../services/PrestationService";
 import "./Footer.scss";
+import { Link } from "react-router-dom";
 
 /**
  *
@@ -18,7 +19,7 @@ const Footer: React.FC = () => {
     PrestationService.getAllPrestations().then((prestations) =>
       setPrestations(prestations)
     );
-  });
+  }, []);
 
   const prestationsEnCours = (): number => {
     return prestations.filter((prestation) => prestation.termine === false)
@@ -44,19 +45,19 @@ const Footer: React.FC = () => {
         <ul>
           <p>À propos d'Ultramotion Corp :</p>
           <li>
-            <a href="">Nos valeurs</a>
+            <Link to="">Nos valeurs</Link>
           </li>
           <li>
-            <a href="">Comment ça marche ?</a>
+            <Link to="">Comment ça marche ?</Link>
           </li>
           <li>
-            <a href="">Devenir partenaire</a>
+            <Link to="">Devenir partenaire</Link>
           </li>
           <li>
-            <a href="">Aide et contact</a>
+            <Link to="">Aide et contact</Link>
           </li>
           <li>
-            <a href="">FAQ</a>
+            <Link to="">FAQ</Link>
           </li>
         </ul>
       </div>
@@ -73,7 +74,7 @@ const Footer: React.FC = () => {
           <BsLinkedin className="Linkedin" href="http://www.linkedin.com/" />
         </div>
         <p>
-          © 2023 - ULTRAMOTION GROUP - <a href="">Conditions générales</a>
+          © 2023 - ULTRAMOTION GROUP - <Link to="">Conditions générales</Link>
         </p>
       </div>
     </footer>

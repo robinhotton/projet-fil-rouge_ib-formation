@@ -99,7 +99,7 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
 
   return (
     <div className="cardCategorie">
-      <h2 className="titleCard">{nomCategorie}</h2>
+      <h2>{nomCategorie}</h2>
       <div className="statsNombre">
         <AdminCard
           textCard="Moyenne par prestataire"

@@ -7,9 +7,9 @@ type AdminCardProps = {
 
 const AdminCard: React.FC<AdminCardProps> = ({ textCard, getCardData }) => {
   return (
-    <div className="Card">
-      <p className="contentCard center">{textCard}</p>
-      <p className="contentCard center">{getCardData}</p>
+    <div className="AdminCard">
+      <p>{textCard}</p>
+      <p>{getCardData}</p>
     </div>
   );
 };

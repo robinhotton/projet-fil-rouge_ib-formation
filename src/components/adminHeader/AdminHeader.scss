@@ -9,15 +9,15 @@
   margin: 0.5em;
 }
 
+.adminHeaderLogo {
+  display: flex;
+  justify-content: space-between;
+}
+
 .adminHeaderHand {
   color: orange;
 }
 
 .adminHeaderPerson {
-}
-
-.adminHeaderLogo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  margin-left: 36em;
 }

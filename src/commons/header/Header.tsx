@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
     <header>
-      <p>logo</p>
+      <Link to="/">
+        <p className="pLink">logo</p>
+      </Link>
       <Link to="/prestation">
         <p className="pLink">prestations</p>
       </Link>

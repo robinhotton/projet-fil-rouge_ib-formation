@@ -9,13 +9,13 @@ const Header: React.FC = () => {
   return (
     <header>
       <p>logo</p>
-      <Link to="/prestations">
+      <Link to="/prestation">
         <p className="pLink">prestations</p>
       </Link>
-      <Link to="/prestations">
+      <DropdownMenu placeholder="categories" route="/categorie" />
+      <Link to="/entreprise">
         <p className="pLink">entreprises</p>
       </Link>
-      <DropdownMenu placeholder="categories" route="/categorie" />
       <SearchBarController />
       <ConnexionLink />
       <FaShoppingCart className="cart" />

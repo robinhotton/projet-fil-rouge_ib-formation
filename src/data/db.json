@@ -5,6 +5,7 @@
       "nom": "robin",
       "prenom": "hotton",
       "mail": "robin@hotton.com",
+      "motDePasse": "oui",
       "panier": []
     }
   ],

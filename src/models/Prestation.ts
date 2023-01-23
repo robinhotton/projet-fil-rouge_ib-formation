@@ -30,6 +30,7 @@ export default class Prestation {
     this.tempsPrestation = tempsPrestation;
     this.prixMateriel = prixMateriel;
   }
+
   public prixTotal(): number {
     if (this.tempsPrestation && this.prixMateriel) {
       return this.tauxHoraire * this.tempsPrestation + this.prixMateriel;

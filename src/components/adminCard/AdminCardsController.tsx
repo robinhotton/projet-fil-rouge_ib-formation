@@ -31,8 +31,9 @@ const AdminCardsController: React.FC = () => {
       <StatsGlobales allPrestations={prestations} />
       <h1 className="titlePrestationPage">Prestations</h1>
       <div className="allCategories">
-        {categories.map((categorie) => (
+        {categories.map((categorie, index) => (
           <CardsCategorie
+            key={index}
             nomCategorie={categorie.nom}
             prestationsDeLaCategorie={prestationsParCategories(categorie.nom)}
           />

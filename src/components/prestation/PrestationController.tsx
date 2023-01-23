@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Prestation from "../../models/Prestation";
 import PrestationService from "../../services/PrestationService";
 import PrestationCard from "./PrestationCard";
@@ -34,9 +34,11 @@ const PrestationController: React.FC = () => {
       <div className="categories">
         {prestations.map((prestation, index) => {
           return (
-            <div key={index++} className="card">
-              <PrestationCard prestation={prestation} />
-            </div>
+            <Link to={`/prestation/${prestation.id}`}>
+              <div key={index++} className="card">
+                <PrestationCard prestation={prestation} />
+              </div>
+            </Link>
           );
         })}
       </div>

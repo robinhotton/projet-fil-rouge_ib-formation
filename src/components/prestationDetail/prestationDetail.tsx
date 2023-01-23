@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Entreprise from "../../models/Entreprise";
 import Prestation from "../../models/Prestation";
+import ClientsService from "../../services/ClientService";
 import EntrepriseService from "../../services/EntrepriseService";
 import PrestationService from "../../services/PrestationService";
 import "./prestationDetail.scss";
@@ -29,6 +30,12 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
     }
   }, [prestationDetail?.idEntreprise]);
 
+  const handleClick = () => {
+    console.log("enter handle");
+    if (prestationDetail) ClientsService.ajouterPrestation(1, prestationDetail);
+    console.log("add prestation");
+  };
+
   return (
     <>
       <div className="pageDetailBlock">
@@ -39,8 +46,11 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
             {entreprise?.coordonnees} - {entreprise?.zoneGeographique}
           </h2>
           <p className="content">{prestationDetail?.description}</p>
-          <button className="buttonPrestationSubmit bigButtonText bold">
-            Demander un devis
+          <button
+            className="buttonPrestationSubmit bigButtonText bold"
+            onClick={() => handleClick()}
+          >
+            Ajouter au panier
           </button>
         </div>
         <div className="galeryBlock">
@@ -64,7 +74,6 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
             />
           </div>
           <div className="thirdRow">
-            {" "}
             <img
               className="img4"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"

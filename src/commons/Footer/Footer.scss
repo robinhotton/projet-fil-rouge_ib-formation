@@ -2,15 +2,14 @@
 
 footer {
   background: $black;
-  height: 274px;
+  height: 150px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
 .TopFooter p,
-.TopFooter a,
-.TopFooter span,
+.TopFooter p span,
 .MiddleFooter a,
 .MiddleFooter p,
 .EndFooter p,
@@ -19,21 +18,81 @@ footer {
   text-decoration: none;
   font-family: $worksans;
   font-size: 15px;
+  margin: 5px;
 }
 
-ul {
-  list-style-type: none;
+.TopFooter p:first-child,
+.MiddleFooter p:first-child {
+  font-size: 15px;
+  font-family: $worksans;
+  padding-bottom: 10px;
 }
 
 span {
   border: solid;
-  mix-blend-mode: normal;
+  padding: 6px 18px 6px 19px;
   border: 1px solid $light;
   border-radius: 5px;
 }
 
-.Facebook, .Youtube, .Twitter, .Linkedin {
-    filter : invert(1);
-    margin: 10px;
+.Facebook,
+.Linkedin {
+  width: 32px;
+  height: 32px;
+  filter: invert(0);
+  color: $light;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
+.Youtube,
+.YoutubeDiv {
+  filter: invert(0);
+  color: $black;
+  width: 32px;
+  height: 32px;
+  background: $light;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.TopFooter p {
+  margin-bottom: 20px;
+}
+
+.Social {
+  width: 314px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.YoutubeDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Youtube {
+  width: 28px;
+  height: 22px;
+  align-self: center;
+}
+
+.TwitterDiv {
+  width: 32px;
+  height: 32px;
+  background: $light;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Twitter {
+  align-self: center;
+  color: $black;
+}

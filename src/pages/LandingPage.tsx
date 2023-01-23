@@ -1,11 +1,16 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
+import GridCategorie from "../components/gridCategorie/GridCategorie";
+import LandingForm from "../components/landingForm/LandingForm";
 
-export default function LandingPage(): JSX.Element {
+const LandingPage: React.FC = () => {
   return (
     <>
       <Header />
+      <LandingForm />
+      <GridCategorie />
       <Footer />
     </>
   );
-}
+};
+export default LandingPage;

@@ -1,12 +1,14 @@
 import "./App.Scss";
-import LandingPage from "./pages/LandingPage";
+import "./assets/css/utils/fonts.scss";
+import "./assets/css/utils/buttons.scss";
+import Router from "./router/Router";
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <LandingPage />
+      <Router />
     </div>
   );
-}
+};
 
 export default App;

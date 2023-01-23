@@ -1,0 +1,68 @@
+@import "../../assets/css/utils/variables.scss";
+
+main {
+    min-height: 100%;
+    position: relative;
+    margin-bottom: 100px;
+    .prestationForm {
+        width: 700px;
+        // height: 500px;
+        margin: 25px auto;
+        background: $light;
+        border-radius: 10px;
+        padding: 25px;
+        h1 {
+            margin-bottom: 50px;
+        }
+        .formGroupBlock 
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 25px;
+            .formGroup
+            {
+                display: flex;
+                flex-direction: column;
+                margin-right: 25px;
+                &:last-child
+                {
+                    margin-right: 0;
+                }
+                label {
+                    margin-bottom: 10px;
+                }
+                input[type=text], textArea, input[type=number]
+                {
+                    border: 1px solid $black;
+                    border-radius: 10px;
+                }
+                input[type=text], input[type=number]
+                {
+                    width: 234px;
+                    height: 56px;
+                    margin-bottom: 25px;
+                    padding-left: 19px;
+                    &:last-child
+                    {
+                        margin-bottom: 0;
+                    }
+                }
+                textArea
+                {
+                    height: 100%!important;
+                    width: 300px!important;
+                    padding-left: 19px;
+                    padding-top: 19px;
+                    font-size: 15px;
+                    font-family: $roboto;
+                    resize: none;
+                }
+            }
+        }
+        .buttonPrestationSubmit
+        {
+            margin-left: 50px;
+        }
+    }
+}

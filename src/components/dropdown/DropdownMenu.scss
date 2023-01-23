@@ -1,13 +1,20 @@
 @import "../../assets/css/utils/variables.scss";
 
-button {
+.MenuContainer button {
   position: relative;
   white-space: nowrap;
   border: 1px solid transparent;
   cursor: pointer;
-}
-button:hover,
-button.active {
   color: $light;
   background: $black;
+}
+.MenuContainer button:hover,
+.MenuContainer button.active {
+  border: 1px solid $light;
+}
+
+.flex-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

@@ -1,0 +1,24 @@
+@import "../../assets/css/utils/variables.scss";
+
+.landingForm {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+  margin-bottom: 100px;
+  width: 700px;
+  height: 500px;
+  margin: 25px auto;
+  background: $light;
+  border-radius: 10px;
+  padding: 25px;
+  input,
+  select {
+    border: 1px solid $black;
+    border-radius: 10px;
+    width: 45em;
+    height: 3em;
+    margin-bottom: 2em;
+    padding-left: 1em;
+  }
+}

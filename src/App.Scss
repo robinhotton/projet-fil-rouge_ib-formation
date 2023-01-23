@@ -1,2 +1,8 @@
 @import 'assets/css/utils/variables.scss';
-@import 'assets/css/utils/fonts.scss';
+
+main
+{
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 100px;
+}

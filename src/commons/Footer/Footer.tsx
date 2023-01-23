@@ -1,42 +1,83 @@
+import { useEffect, useState } from "react";
+import Prestation from "../../models/Prestation";
+import PrestationService from "../../services/PrestationService";
 import { BsFacebook } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
+import { BsTwitter } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import "./Footer.scss";
+import { Link } from "react-router-dom";
 
-export default function Footer() {
+/**
+ *
+ * @returns affichage du footer
+ */
+const Footer: React.FC = () => {
+  const [prestations, setPrestations] = useState<Prestation[]>([]);
+
+  useEffect(() => {
+    PrestationService.getAllPrestations().then((prestations) =>
+      setPrestations(prestations)
+    );
+  }, []);
+
+  const prestationsEnCours = (): number => {
+    return prestations.filter((prestation) => prestation.termine === false)
+      .length;
+  };
+  const prestationsTerminees = (): number => {
+    return prestations.filter((prestation) => prestation.termine === true)
+      .length;
+  };
   return (
     <footer>
       <div className="TopFooter">
         <p>Statistiques</p>
-        <p>Commandes en cours:</p>
-        <span>4821</span>
-        <p>Services livrés:</p>
-        <span>8971</span>
+        <p>
+          Commandes en cours : <span>{prestationsEnCours()}</span>
+        </p>
+        <p>
+          Services livrés : <span>{prestationsTerminees()}</span>
+        </p>
       </div>
 
       <div className="MiddleFooter">
-        <ul><p>À propos d'Ultramotion Corp</p>
-          <li><a href="">Nos valeurs</a></li>
-          <li><a href="">Comment ça marche ?</a></li>
-          <li><a href="">Devenir partenaire</a></li>
-          <li><a href="">Aide et contact</a></li>
-          <li><a href="">FAQ</a></li>
-        </ul> 
+        <ul>
+          <p>À propos d'Ultramotion Corp :</p>
+          <li>
+            <Link to="">Nos valeurs</Link>
+          </li>
+          <li>
+            <Link to="">Comment ça marche ?</Link>
+          </li>
+          <li>
+            <Link to="">Devenir partenaire</Link>
+          </li>
+          <li>
+            <Link to="">Aide et contact</Link>
+          </li>
+          <li>
+            <Link to="">FAQ</Link>
+          </li>
+        </ul>
       </div>
 
       <div className="EndFooter">
-        <BsFacebook className="Facebook" href="https://www.facebook.com/" />
-        <AiFillTwitterCircle
-          className="Twitter"
-          href="https://www.twitter.com/"
-        />
-        <BsYoutube className="Youtube" href="https://www.youtube.com/" />
-        <BsLinkedin className="Linkedin" href="http://www.linkedin.com/" />
+        <div className="Social">
+          <BsFacebook className="Facebook" href="https://www.facebook.com/" />
+          <div className="TwitterDiv">
+            <BsTwitter className="Twitter" href="https://www.twitter.com/" />
+          </div>
+          <div className="YoutubeDiv">
+            <BsYoutube className="Youtube" href="https://www.youtube.com/" />
+          </div>
+          <BsLinkedin className="Linkedin" href="http://www.linkedin.com/" />
+        </div>
         <p>
-          © 2023 - ULTRAMOTION GROUP - <a href="">Conditions générales</a>
+          © 2023 - ULTRAMOTION GROUP - <Link to="">Conditions générales</Link>
         </p>
       </div>
     </footer>
   );
-}
+};
+export default Footer;

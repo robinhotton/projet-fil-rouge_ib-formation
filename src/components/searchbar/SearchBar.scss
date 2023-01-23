@@ -1,3 +1,8 @@
-.searchbar {
-    width: 200px;
+@import "../../assets/css/utils/variables.scss";
+
+.SearchBar {
+  width: 400px;
+}
+.SearchButton:hover {
+  border: solid $light;
 }

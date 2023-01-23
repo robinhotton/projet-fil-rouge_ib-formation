@@ -6,6 +6,7 @@ import Prestation from "../models/Prestation";
 import PrestationService from "../services/PrestationService";
 import PrestationCard from "../components/prestation/PrestationCard";
 import { FiEdit } from "react-icons/fi";
+import PrestationDetail from "../components/prestationDetail/prestationDetail";
 
 const PrestationPage: React.FC = () => {
   const [prestation, setPrestation] = useState<Prestation>();
@@ -23,14 +24,11 @@ const PrestationPage: React.FC = () => {
     <>
       <Header />
       {prestation?.id ? (
-        <>
+        <main>
           <div className="card">
-            <PrestationCard prestation={prestation} />
-            {/*<link to={`/edit/${id}`}>
-              <FiEdit />
-            </link> */}
+            <PrestationDetail prestation={prestation} />
           </div>
-        </>
+        </main>
       ) : (
         <h1>Cette prestation n'exite pas</h1>
       )}

@@ -11,7 +11,7 @@
   "entreprises": [
     {
       "id": 1,
-      "name": "La baie thon",
+      "name": "Laisse béton",
       "logo ": "http://www.logo.com",
       "effectif": 42,
       "coordonnees": "42 Rue Brûle Maison, 59000 Lille",
@@ -20,7 +20,7 @@
     },
     {
       "id": 2,
-      "name": "La baie thon 2",
+      "name": "L'arrêt du Maçon",
       "logo ": "http://www.logo.com",
       "effectif": 42,
       "coordonnees": "43 Rue Brûle Maison, 59000 Lille",

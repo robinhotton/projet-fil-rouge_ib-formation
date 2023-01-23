@@ -1,7 +1,7 @@
 import Client from "../models/Client";
 import Prestation from "../models/Prestation";
 
-export default class ClientsService {
+export default class ClientService {
   public static async getAllClients(): Promise<Client[]> {
     return fetch("http://localhost:3004/clients/").then((response) =>
       response.json().catch((error) => this.error(error))
@@ -17,11 +17,17 @@ export default class ClientsService {
     );
   }
 
+  static prestationsPanier(idClient: number): Promise<Prestation> {
+    return fetch(`http://localhost:3004/clients/${idClient}/panier/`)
+      .then((response) => response.json())
+      .catch((error) => this.error(error));
+  }
+
   static ajouterPrestation(
     idClient: number,
     prestation: Prestation
   ): Promise<Prestation> {
-    return fetch(`http://localhost:3004/clients/${idClient}/panier`, {
+    return fetch(`http://localhost:3004/clients/${idClient}/panier/`, {
       headers: { "content-type": "application/json" },
       method: "POST",
       body: JSON.stringify(prestation),

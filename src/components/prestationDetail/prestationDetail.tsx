@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Entreprise from "../../models/Entreprise";
 import Prestation from "../../models/Prestation";
-import ClientsService from "../../services/ClientService";
+import ClientService from "../../services/ClientService";
 import EntrepriseService from "../../services/EntrepriseService";
 import PrestationService from "../../services/PrestationService";
 import "./prestationDetail.scss";
@@ -31,9 +31,7 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
   }, [prestationDetail?.idEntreprise]);
 
   const handleClick = () => {
-    console.log("enter handle");
-    if (prestationDetail) ClientsService.ajouterPrestation(1, prestationDetail);
-    console.log("add prestation");
+    if (prestationDetail) ClientService.ajouterPrestation(1, prestationDetail);
   };
 
   return (

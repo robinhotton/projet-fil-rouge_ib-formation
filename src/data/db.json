@@ -11,35 +11,109 @@
   "entreprises": [
     {
       "id": 1,
+      "name": "La baie thon",
       "logo ": "http://www.logo.com",
       "effectif": 42,
-      "siret": 40380088100043,
       "coordonnees": "42 Rue Brûle Maison, 59000 Lille",
-      "zoneActivite": "Metropole Lilloise"
+      "siret": 40380088100043,
+      "zoneGeographique": "Metropole Lilloise"
+    },
+    {
+      "id": 2,
+      "name": "La baie thon 2",
+      "logo ": "http://www.logo.com",
+      "effectif": 42,
+      "coordonnees": "43 Rue Brûle Maison, 59000 Lille",
+      "siret": 40380088100044,
+      "zoneGeographique": "Metropole Lilloise"
     }
   ],
   "prestations": [
     {
       "id": 1,
       "idEntreprise": 1,
-      "categorie": ["Le câblage d'armoire électrique"],
+      "categorie": "Le câblage d'armoire électrique",
       "description": "Pose et réparation des câbles des armoires électriques avec style",
-      "tauxHoraire": "42.69",
-      "tempsPrestation": 42,
-      "prixMateriel": 4200,
+      "tauxHoraire": 42.12,
+      "tempsPrestation": 36,
+      "prixMateriel": 4000,
       "termine": true,
       "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
       "evaluations": {
         "qualiteGlobale": 5,
-        "faciliteCommunication": 5,
+        "faciliteCommunication": 4,
         "qualiteTechnique": 5,
         "niveauExpertise": 5
+      }
+    },
+    {
+      "id": 2,
+      "idEntreprise": 1,
+      "categorie": "L'accompagnement aux choix de matériels industriels",
+      "description": "Pose et réparation des câbles des armoires électriques avec style",
+      "tauxHoraire": 36.05,
+      "tempsPrestation": 50,
+      "prixMateriel": 4200,
+      "termine": true,
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
+      "evaluations": {
+        "qualiteGlobale": 4,
+        "faciliteCommunication": 3,
+        "qualiteTechnique": 4,
+        "niveauExpertise": 4
+      }
+    },
+    {
+      "id": 3,
+      "idEntreprise": 2,
+      "categorie": "Le câblage d'armoire électrique",
+      "description": "Armoire électrique en panne ? appelez-nous ! Rapide, pas chere, c'est nous qu'on préfère",
+      "tauxHoraire": 42.69,
+      "tempsPrestation": 42,
+      "prixMateriel": 420,
+      "termine": false,
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
+      "evaluations": {
+        "qualiteGlobale": 0,
+        "faciliteCommunication": 0,
+        "qualiteTechnique": 0,
+        "niveauExpertise": 0
+      }
+    },
+    {
+      "id": 4,
+      "idEntreprise": 2,
+      "categorie": "L'installation de matériels",
+      "description": "installations de diverses grosses machines",
+      "tauxHoraire": 96.3,
+      "tempsPrestation": 70,
+      "prixMateriel": 5000,
+      "termine": true,
+      "devis": "https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png",
+      "evaluations": {
+        "qualiteGlobale": 3,
+        "faciliteCommunication": 2,
+        "qualiteTechnique": 4,
+        "niveauExpertise": 3
       }
     }
   ],
   "categories": [
-    "Le câblage d'armoire électrique",
-    "L'accompagnement aux choix de matériels industriels",
-    "L'installation de matériels"
+    {
+      "id": 1,
+      "nom": "Le câblage d'armoire électrique"
+    },
+    {
+      "id": 2,
+      "nom": "L'accompagnement aux choix de matériels industriels"
+    },
+    {
+      "id": 3,
+      "nom": "L'installation de matériels"
+    },
+    {
+      "id": 4,
+      "nom": "Autre"
+    }
   ]
 }

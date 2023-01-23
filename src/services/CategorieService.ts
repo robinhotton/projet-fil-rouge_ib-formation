@@ -7,6 +7,19 @@ export default class CategoriesService {
     );
   }
 
+  static getCategorieById(id: number): Promise<Categorie> {
+    return fetch(`http://localhost:3004/categories/${id}`).then((response) =>
+      response
+        .json()
+        .then((data) => (this.isEmpty(data) ? null : data))
+        .catch((error) => this.error(error))
+    );
+  }
+
+  private static isEmpty(data: Object): boolean {
+    return Object.keys(data).length === 0;
+  }
+
   private static error(error: Error): void {
     console.error(error);
   }

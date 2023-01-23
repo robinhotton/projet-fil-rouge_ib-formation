@@ -1,3 +1,5 @@
+import "./AdminCard.scss";
+
 type AdminCardProps = {
   textCard: string;
   getCardData: number;
@@ -5,9 +7,9 @@ type AdminCardProps = {
 
 const AdminCard: React.FC<AdminCardProps> = ({ textCard, getCardData }) => {
   return (
-    <div className="Card">
-      <p>textCard: {textCard}</p>
-      <p>data: {getCardData}</p>
+    <div className="AdminCard">
+      <p>{textCard}</p>
+      <p>{getCardData}</p>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Prestation from "../../models/Prestation";
 import Entreprise from "../../models/Entreprise";
 import AdminCard from "./AdminCard";
 import EntrepriseService from "../../services/EntrepriseService";
+import "./AdminCardsCategorie.scss";
 
 type AdminCardsCategorieProps = {
   nomCategorie: string;
@@ -25,23 +26,34 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
 
   const prixMoyen = (): number => {
     let moy: number = 0;
-    prestations.forEach((prestation) => (moy += prestation.prixTotal()));
-    return moy;
+    if (prestations.length === 0) return moy;
+    prestations.forEach(
+      (prestation) =>
+        (moy +=
+          prestation.tauxHoraire * prestation.tempsPrestation! +
+          prestation.prixMateriel!)
+    );
+    return +(moy / prestations.length).toFixed(2);
   };
 
   const prixMin = (): number => {
-    let min: number = prestations[0].prixTotal();
+    let min: number = Infinity;
     prestations.forEach((prestation) => {
-      const prixPrestation = prestation.prixTotal();
+      const prixPrestation =
+        prestation.tauxHoraire * prestation.tempsPrestation! +
+        prestation.prixMateriel!;
       if (prixPrestation < min) min = prixPrestation;
     });
-    return min;
+    if (min === Infinity) return prixMax();
+    else return min;
   };
 
   const prixMax = (): number => {
-    let max: number = prestations[0].prixTotal();
+    let max: number = 0;
     prestations.forEach((prestation) => {
-      const prixPrestation: number = prestation.prixTotal();
+      const prixPrestation: number =
+        prestation.tauxHoraire * prestation.tempsPrestation! +
+        prestation.prixMateriel!;
       if (prixPrestation > max) max = prixPrestation;
     });
     return max;
@@ -58,7 +70,9 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   const setUpTableau = (): number[] => {
     const tableauARemplir: number[] = setUpTableauZero();
     prestations.forEach((prestation) => {
-      // tableauARemplir[prestation.idEntreprise - 1] += 1;
+      if (prestation.idEntreprise) {
+        tableauARemplir[prestation.idEntreprise - 1] += 1;
+      }
     });
     return tableauARemplir;
   };
@@ -86,21 +100,25 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   return (
     <div className="cardCategorie">
       <h2>{nomCategorie}</h2>
-      <AdminCard
-        textCard="Moyenne par prestataire"
-        getCardData={moyParPrestataire()}
-      />
-      <AdminCard
-        textCard="Minimun par prestataire"
-        getCardData={minParPrestataire()}
-      />
-      <AdminCard
-        textCard="Maximum par prestataire"
-        getCardData={maxParPrestataire()}
-      />
-      <AdminCard textCard="Prix moyen" getCardData={prixMoyen()} />
-      <AdminCard textCard="Prix minimum" getCardData={prixMin()} />
-      <AdminCard textCard="Prix maximum" getCardData={prixMax()} />
+      <div className="statsNombre">
+        <AdminCard
+          textCard="Moyenne par prestataire"
+          getCardData={moyParPrestataire()}
+        />
+        <AdminCard
+          textCard="Minimun par prestataire"
+          getCardData={minParPrestataire()}
+        />
+        <AdminCard
+          textCard="Maximum par prestataire"
+          getCardData={maxParPrestataire()}
+        />
+      </div>
+      <div className="statsPrix">
+        <AdminCard textCard="Prix moyen" getCardData={prixMoyen()} />
+        <AdminCard textCard="Prix minimum" getCardData={prixMin()} />
+        <AdminCard textCard="Prix maximum" getCardData={prixMax()} />
+      </div>
     </div>
   );
 };

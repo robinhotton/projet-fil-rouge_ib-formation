@@ -1,0 +1,23 @@
+@import "../../assets/css/utils/variables.scss";
+
+.adminHeaderTitle,
+.adminHeaderHand,
+.adminHeaderPerson {
+  font-family: $worksans;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+.adminHeaderLogo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adminHeaderHand {
+  color: orange;
+}
+
+.adminHeaderPerson {
+  margin-left: 36em;
+}

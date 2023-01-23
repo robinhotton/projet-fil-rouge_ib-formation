@@ -1,5 +1,6 @@
 import Prestation from "../../models/Prestation";
 import Card from "./AdminCard";
+import "./AdminCardsGlobales.scss";
 
 type AdminCardsGlobalesProps = {
   allPrestations: Prestation[];

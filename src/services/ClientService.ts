@@ -1,4 +1,5 @@
 import Client from "../models/Client";
+import Prestation from "../models/Prestation";
 
 export default class ClientService {
   public static async getAllClients(): Promise<Client[]> {
@@ -7,8 +8,8 @@ export default class ClientService {
     );
   }
 
-  static getClientById(id: number): Promise<Client> {
-    return fetch(`http://localhost:3004/clients/${id}`).then((response) =>
+  static getClientById(idClient: number): Promise<Client> {
+    return fetch(`http://localhost:3004/clients/${idClient}`).then((response) =>
       response
         .json()
         .then((data) => (this.isEmpty(data) ? null : data))
@@ -16,11 +17,20 @@ export default class ClientService {
     );
   }
 
-  static createClient(Client: Client): Promise<Client> {
-    return fetch(`http://localhost:3004/clients`, {
-      method: "POST",
-      body: JSON.stringify(Client),
+  static prestationsPanier(idClient: number): Promise<Prestation> {
+    return fetch(`http://localhost:3004/clients/${idClient}/panier/`)
+      .then((response) => response.json())
+      .catch((error) => this.error(error));
+  }
+
+  static ajouterPrestation(
+    idClient: number,
+    prestation: Prestation
+  ): Promise<Prestation> {
+    return fetch(`http://localhost:3004/clients/${idClient}/panier/`, {
       headers: { "content-type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(prestation),
     })
       .then((response) => response.json())
       .catch((error) => this.error(error));

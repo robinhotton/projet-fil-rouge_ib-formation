@@ -1,19 +1,17 @@
+import Prestation from "./Prestation";
+
 export default class Client {
   id?: number;
-  lastName: string;
-  name: string;
-  email: string;
-  password: string;
+  nom: string;
+  prenom: string;
+  mail: string;
+  motDePasse: string;
+  panier: Prestation[] = [];
 
-  constructor(
-    lastName: string = "",
-    name: string = "",
-    email: string = "",
-    password: string = ""
-  ) {
-    this.lastName = lastName;
-    this.name = name;
-    this.email = email;
-    this.password = password;
+  constructor(nom: string, prenom: string, mail: string, motDePasse: string) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.mail = mail;
+    this.motDePasse = motDePasse;
   }
 }

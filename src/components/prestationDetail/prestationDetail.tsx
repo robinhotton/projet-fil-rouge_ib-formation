@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Entreprise from "../../models/Entreprise";
 import Prestation from "../../models/Prestation";
-import ClientService from "../../services/ClientService";
 import EntrepriseService from "../../services/EntrepriseService";
 import PrestationService from "../../services/PrestationService";
 import "./prestationDetail.scss";
@@ -16,6 +15,8 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
   const [entreprise, setEntreprise] = useState<Entreprise>();
 
   let { id } = useParams<string>();
+
+  const redirection = useNavigate();
 
   useEffect(() => {
     if (id) {
@@ -31,7 +32,11 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
   }, [prestationDetail?.idEntreprise]);
 
   const handleClick = () => {
-    if (prestationDetail) ClientService.ajouterPrestation(1, prestationDetail);
+    if (prestationDetail) {
+      prestationDetail.idClient = 1;
+      PrestationService.updatePrestation(prestationDetail);
+      redirection("/prestation/");
+    }
   };
 
   return (

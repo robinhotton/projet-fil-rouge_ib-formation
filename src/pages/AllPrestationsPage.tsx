@@ -1,6 +1,6 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
-import AllPrestations from "../components/prestation/AllPrestations";
+import AllPrestations from "../components/allPrestations/AllPrestations";
 
 const AllPrestationPage: React.FC = () => {
   return (

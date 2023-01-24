@@ -67,7 +67,8 @@
         "faciliteCommunication": 3,
         "qualiteTechnique": 4,
         "niveauExpertise": 4
-      }
+      },
+      "idClient": 1
     },
     {
       "id": 3,

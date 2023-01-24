@@ -11,8 +11,14 @@ const PrestationController: React.FC = () => {
   const [categorie, setCategorie] = useState<Categorie>();
   const [prestations, setPrestations] = useState<Prestation[]>([]);
 
+  /**
+   * id de l'url qui est utilisé pour récupéré la bonne catégorie
+   */
   const { id } = useParams<string>();
 
+  /**
+   * stocke les prestations dont la catégorie correspondent a l'id recu en paramètre grace a l'url
+   */
   useEffect(() => {
     if (id) {
       CategoriesService.getCategorieById(+id).then((categorie) =>
@@ -26,7 +32,7 @@ const PrestationController: React.FC = () => {
         )
       )
     );
-  }, [categorie?.id]);
+  }, [categorie]);
 
   return (
     <>

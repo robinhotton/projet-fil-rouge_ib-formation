@@ -39,6 +39,10 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
     },
   });
 
+  /**
+   * stocke la modification dans le hook form dans la bonne variable
+   * @param event Ce lance quand une modification est faite sur un champs
+   */
   const editInscription = (event: React.ChangeEvent<any>) => {
     const nomDuChamp: string = event.target.name;
     const valeurDuChamp: string = event.target.value;
@@ -46,6 +50,10 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
     setForm({ ...form, ...nouveauChamp });
   };
 
+  /**
+   * Prends le client recu en paramètre etle créer, grâce aux informations stocké dans le hook form avant de push dans la base de donnée
+   * @param event Ce lance quand on clique sur le bouton submit
+   */
   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     inscription.prenom = form.prenom.value;

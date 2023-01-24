@@ -20,7 +20,9 @@ const Header: React.FC = () => {
       </Link>
       <SearchBarController />
       <ConnexionLink />
-      <FaShoppingCart className="cart" />
+      <Link to="/panier">
+        <FaShoppingCart className="cart" />
+      </Link>
     </header>
   );
 };

@@ -6,7 +6,6 @@ export default class Client {
   prenom: string;
   mail: string;
   motDePasse: string;
-  panier: Prestation[] = [];
 
   constructor(nom: string, prenom: string, mail: string, motDePasse: string) {
     this.nom = nom;

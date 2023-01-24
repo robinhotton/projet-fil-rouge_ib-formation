@@ -16,6 +16,16 @@ export default class ClientService {
     );
   }
 
+  static createClient(Client: Client): Promise<Client> {
+    return fetch(`http://localhost:3004/clients`, {
+      method: "POST",
+      body: JSON.stringify(Client),
+      headers: { "content-type": "application/json" },
+    })
+      .then((response) => response.json())
+      .catch((error) => this.error(error));
+  }
+
   private static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
   }

@@ -2,8 +2,8 @@
   "clients": [
     {
       "id": 1,
-      "nom": "robin",
-      "prenom": "hotton",
+      "name": "robin",
+      "lastName": "hotton",
       "mail": "robin@hotton.com",
       "motDePasse": "oui",
       "panier": []

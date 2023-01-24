@@ -7,7 +7,12 @@ export default class Client {
   mail: string;
   motDePasse: string;
 
-  constructor(nom: string, prenom: string, mail: string, motDePasse: string) {
+  constructor(
+    nom: string = "",
+    prenom: string = "",
+    mail: string = "",
+    motDePasse: string = ""
+  ) {
     this.nom = nom;
     this.prenom = prenom;
     this.mail = mail;

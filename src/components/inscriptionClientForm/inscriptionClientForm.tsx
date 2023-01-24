@@ -1,133 +1,121 @@
-// import { useState } from "react";
-// import Client from "../../models/Client";
-// import Entreprise from "../../models/Entreprise";
-// import EntrepriseService from "../../services/EntrepriseService";
+import { useState } from "react";
+import Client from "../../models/Client";
+import ClientService from "../../services/ClientService";
 
-// type props = {
-//   inscription: Client;
-// };
+type props = {
+  inscription: Client;
+};
 
-// type champ = {
-//   value?: any;
-//   error?: string;
-//   isValid?: boolean;
-// };
+type champ = {
+  value?: any;
+  error?: string;
+  isValid?: boolean;
+};
 
-// type Form = {
-//   lastName: champ;
-//   name: champ;
-//   email: champ;
-//   password: champ;
-// };
+type Form = {
+  prenom: champ;
+  nom: champ;
+  mail: champ;
+  motDePasse: champ;
+};
 
-const InscriptionClientForm: React.FC = () => {
-  // const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
-  //   const [form, setForm] = useState<Form>({
-  //     lastName: {
-  //       value: inscription.lastName,
-  //       isValid: true,
-  //     },
-  //     name: {
-  //       value: inscription.name,
-  //       isValid: true,
-  //     },
-  //     email: {
-  //       value: inscription.email,
-  //       isValid: true,
-  //     },
-  //     password: {
-  //       value: inscription.password,
-  //       isValid: true,
-  //     },
-  //   });
+const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
+  const [form, setForm] = useState<Form>({
+    prenom: {
+      value: inscription.prenom,
+      isValid: true,
+    },
+    nom: {
+      value: inscription.nom,
+      isValid: true,
+    },
+    mail: {
+      value: inscription.mail,
+      isValid: true,
+    },
+    motDePasse: {
+      value: inscription.motDePasse,
+      isValid: true,
+    },
+  });
 
-  //   ////////
+  const editInscription = (event: React.ChangeEvent<any>) => {
+    const nomDuChamp: string = event.target.name;
+    const valeurDuChamp: string = event.target.value;
+    const nouveauChamp: champ = { [nomDuChamp]: { value: valeurDuChamp } };
+    setForm({ ...form, ...nouveauChamp });
+  };
 
-  //   const editInscription = (event: React.ChangeEvent<any>) => {
-  //     const nomDuChamp: string = event.target.name;
-  //     const valeurDuChamp: string = event.target.value;
-  //     const nouveauChamp: champ = { [nomDuChamp]: { value: valeurDuChamp } };
-  //     setForm({ ...form, ...nouveauChamp });
-  //   };
+  const soumission = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    inscription.prenom = form.prenom.value;
+    inscription.nom = form.nom.value;
+    inscription.mail = form.mail.value;
+    inscription.motDePasse = form.motDePasse.value;
 
-  //   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
-  //     event.preventDefault();
-  //     inscription.name = form.name.value;
-  //     inscription.description = form.description.value;
-  //     inscription.coordonnees = form.coordonnees.value;
-  //     inscription.domaine = form.domaine.value;
-  //     inscription.zoneGeographique = form.zoneGeographique.value;
-  //     inscription.effectif = form.effectif.value;
-  //     console.log(inscription);
+    ClientService.createClient(inscription);
+  };
+  return (
+    <>
+      <form className="inscriptionClientForm" onSubmit={soumission}>
+        <div className="formBlock">
+          <div className="formGroupBlock">
+            <div className="formGroup">
+              {" "}
+              <img src="../../assets/img/LogoPrincipal.svg"></img>
+              <h1 className="title bold">Un plaisir de vous revoir</h1>
+              <button type="button" className="googleButton">
+                Se connecter avec Google
+              </button>
+              <p>Ou</p>
+              <input
+                type="text"
+                name="email"
+                value={form.mail.value}
+                onChange={editInscription}
+                placeholder="Example@gmail.com"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="MotDePasse"
+                value={form.motDePasse.value}
+                onChange={editInscription}
+              />
+              <div>
+                <input
+                  type="checkbox"
+                  name="prestataireSouscription"
+                  className="prestataireSouscription"
+                  value="prestataireSouscription"
+                />
+                <label htmlFor="prestataireSouscription">
+                  Je souhaite m'inscrire en tant que prestataire
+                </label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="cgu"
+                  className="cgu"
+                  value="cgu"
+                  required
+                />
+                <label htmlFor="cgu">
+                  J'accepte les conditions générales d'utilisation.
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  //     EntrepriseService.createEntreprise(inscription);
-  //   };
-  //   return (
-  //     <>
-  //       <form className="inscriptionPrestataireForm" onSubmit={soumission}>
-  //         <h1 className="title bold center">
-  //           S'inscrire en tant que prestataire
-  //         </h1>
-
-  //         <div className="formBlock">
-  //           <div className="formGroupBlock">
-  //             <div className="formGroup">
-  //               <input
-  //                 type="text"
-  //                 name="name"
-  //                 value={form.name.value}
-  //                 onChange={editInscription}
-  //                 placeholder="Nom de l'entreprise"
-  //               />
-  //               <textarea
-  //                 name="description"
-  //                 placeholder="Description de l'entreprise"
-  //                 onChange={editInscription}
-  //                 value={form.description.value}
-  //               ></textarea>
-
-  //               <input
-  //                 type="text"
-  //                 name="coordonnees"
-  //                 placeholder="Coordonnées de l'entreprise"
-  //                 value={form.coordonnees.value}
-  //                 onChange={editInscription}
-  //               />
-  //               <input
-  //                 type="text"
-  //                 name="domaine"
-  //                 placeholder="Domaine activité de l'entreprise : Couvreur"
-  //                 value={form.domaine.value}
-  //                 onChange={editInscription}
-  //               />
-  //               <input
-  //                 type="text"
-  //                 name="zoneGeographique"
-  //                 placeholder="Zone géographique de l'entreprise : Métropôle Lilloise"
-  //                 value={form.zoneGeographique.value}
-  //                 onChange={editInscription}
-  //               />
-
-  //               <input
-  //                 type="number"
-  //                 name="effectif"
-  //                 value={form.effectif.value}
-  //                 onChange={editInscription}
-  //                 placeholder="Effectif de l'entreprise"
-  //               />
-  //             </div>
-  //           </div>
-  //         </div>
-
-  //         <input
-  //           className="buttonSubscribeSubmit"
-  //           type="submit"
-  //           value="Valider l'inscription"
-  //         />
-  //       </form>
-  //     </>
-  //   );
-  // };
-  return <></>;
+        <input
+          className="buttonSubscribeSubmit"
+          type="submit"
+          value="S'inscrire"
+        />
+      </form>
+    </>
+  );
 };
 export default InscriptionClientForm;

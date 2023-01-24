@@ -17,6 +17,16 @@ export default class ClientService {
     );
   }
 
+  static createClient(Client: Client): Promise<Client> {
+    return fetch(`http://localhost:3004/clients`, {
+      method: "POST",
+      body: JSON.stringify(Client),
+      headers: { "content-type": "application/json" },
+    })
+      .then((response) => response.json())
+      .catch((error) => this.error(error));
+  }
+
   static prestationsPanier(idClient: number): Promise<Prestation> {
     return fetch(`http://localhost:3004/clients/${idClient}/panier/`)
       .then((response) => response.json())

@@ -13,28 +13,28 @@ type champ = {
 };
 
 type Form = {
-  lastName: champ;
-  name: champ;
-  email: champ;
-  password: champ;
+  prenom: champ;
+  nom: champ;
+  mail: champ;
+  motDePasse: champ;
 };
 
 const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
   const [form, setForm] = useState<Form>({
-    lastName: {
-      value: inscription.lastName,
+    prenom: {
+      value: inscription.prenom,
       isValid: true,
     },
-    name: {
-      value: inscription.name,
+    nom: {
+      value: inscription.nom,
       isValid: true,
     },
-    email: {
-      value: inscription.email,
+    mail: {
+      value: inscription.mail,
       isValid: true,
     },
-    password: {
-      value: inscription.password,
+    motDePasse: {
+      value: inscription.motDePasse,
       isValid: true,
     },
   });
@@ -48,10 +48,10 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
 
   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    inscription.lastName = form.lastName.value;
-    inscription.name = form.name.value;
-    inscription.email = form.email.value;
-    inscription.password = form.password.value;
+    inscription.prenom = form.prenom.value;
+    inscription.nom = form.nom.value;
+    inscription.mail = form.mail.value;
+    inscription.motDePasse = form.motDePasse.value;
 
     ClientService.createClient(inscription);
   };
@@ -71,7 +71,7 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
               <input
                 type="text"
                 name="email"
-                value={form.email.value}
+                value={form.mail.value}
                 onChange={editInscription}
                 placeholder="Example@gmail.com"
               />
@@ -79,7 +79,7 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
                 type="password"
                 name="password"
                 placeholder="MotDePasse"
-                value={form.password.value}
+                value={form.motDePasse.value}
                 onChange={editInscription}
               />
               <div>

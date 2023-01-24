@@ -16,8 +16,8 @@ export default class EntrepriseService {
     );
   }
 
-  static createPrestation(entreprise: Entreprise): Promise<Entreprise> {
-    return fetch(`http://localhost:3004/entreprises/`, {
+  static createEntreprise(entreprise: Entreprise): Promise<Entreprise> {
+    return fetch(`http://localhost:3004/entreprises`, {
       method: "POST",
       body: JSON.stringify(entreprise),
       headers: { "content-type": "application/json" },

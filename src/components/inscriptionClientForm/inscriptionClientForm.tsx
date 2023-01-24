@@ -3,7 +3,7 @@ import Entreprise from "../../models/Entreprise";
 import EntrepriseService from "../../services/EntrepriseService";
 
 type props = {
-  inscription: Entreprise;
+  inscription: Client;
 };
 
 type champ = {
@@ -13,41 +13,33 @@ type champ = {
 };
 
 type Form = {
+  lastName: champ;
   name: champ;
-  description: champ;
-  coordonnees: champ;
-  domaine: champ;
-  zoneGeographique: champ;
-  effectif: champ;
+  email: champ;
+  password: champ;
 };
 
-const InscriptionPrestataireForm: React.FC<props> = ({ inscription }) => {
+const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
   const [form, setForm] = useState<Form>({
+    lastName: {
+      value: inscription.lastName,
+      isValid: true,
+    },
     name: {
       value: inscription.name,
       isValid: true,
     },
-    description: {
-      value: inscription.description,
+    email: {
+      value: inscription.email,
       isValid: true,
     },
-    coordonnees: {
-      value: inscription.coordonnees,
-      isValid: true,
-    },
-    domaine: {
-      value: inscription.domaine,
-      isValid: true,
-    },
-    zoneGeographique: {
-      value: inscription.zoneGeographique,
-      isValid: true,
-    },
-    effectif: {
-      value: inscription.effectif,
+    password: {
+      value: inscription.password,
       isValid: true,
     },
   });
+
+  ////////
 
   const editInscription = (event: React.ChangeEvent<any>) => {
     const nomDuChamp: string = event.target.name;

@@ -22,6 +22,7 @@ const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
     <div className="fullCard">
       <img
         src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&cs=tinysrgb&w=600"
+        className="imagePrestationCard"
         alt="prestation"
       />
 

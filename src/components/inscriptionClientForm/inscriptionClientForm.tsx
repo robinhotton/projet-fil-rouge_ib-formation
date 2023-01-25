@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Client from "../../models/Client";
 import ClientService from "../../services/ClientService";
+import "./inscriptionClientForm.scss";
 
 type props = {
   inscription: Client;
@@ -55,6 +56,9 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
 
     ClientService.createClient(inscription);
   };
+
+  const [isChecked, setIsChecked] = useState(false);
+
   return (
     <>
       <form className="inscriptionClientForm" onSubmit={soumission}>
@@ -62,22 +66,42 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
           <div className="formGroupBlock">
             <div className="formGroup">
               {" "}
-              <img src="../../assets/img/LogoPrincipal.svg"></img>
+              <img
+                src="src\assets\img\LogoPrincipal.svg"
+                className="imageInscription"
+                alt="inscription"
+              ></img>
               <h1 className="title bold">Un plaisir de vous revoir</h1>
-              <button type="button" className="googleButton">
+              <button type="button" className="googleButton linkToGoogle">
                 Se connecter avec Google
               </button>
               <p>Ou</p>
+              <div className="prenomNom">
+                <input
+                  type="text"
+                  name="prenom"
+                  value={form.prenom.value}
+                  onChange={editInscription}
+                  placeholder="John"
+                />
+                <input
+                  type="text"
+                  name="nom"
+                  placeholder="nom"
+                  value={form.nom.value}
+                  onChange={editInscription}
+                />
+              </div>
               <input
                 type="text"
-                name="email"
+                name="mail"
                 value={form.mail.value}
                 onChange={editInscription}
                 placeholder="Example@gmail.com"
               />
               <input
                 type="password"
-                name="password"
+                name="motDePasse"
                 placeholder="MotDePasse"
                 value={form.motDePasse.value}
                 onChange={editInscription}
@@ -100,6 +124,7 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
                   className="cgu"
                   value="cgu"
                   required
+                  onChange={() => setIsChecked(!isChecked)}
                 />
                 <label htmlFor="cgu">
                   J'accepte les conditions générales d'utilisation.
@@ -110,9 +135,10 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
         </div>
 
         <input
-          className="buttonSubscribeSubmit"
+          className="buttonSubscribeSubmit bigButtonText"
           type="submit"
           value="S'inscrire"
+          disabled={!isChecked}
         />
       </form>
     </>

@@ -10,11 +10,10 @@
     "four";
 
   padding-block: 2rem;
-  width: min(95%, 70rem);
+  width: 75%;
   margin-inline: auto;
 }
 .categorie-grid .categorie {
-  padding: 2rem;
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(30, 30, 30, 0.25);
 }
 
@@ -50,17 +49,31 @@
 
 .categorie-grid .categorie p {
   position: relative;
-  bottom: 25px;
-  left: 25px;
+  bottom: 100px;
   color: $light;
 
   text-shadow: 0px 4px 30px #000000;
 }
 
 .categorie-grid .categorie:nth-child(2) p {
-  color: $black;
+  color: $light;
 }
 .categorie-grid .categorie img {
   background-size: cover;
   object-fit: cover;
+}
+
+.horizontaleImg, .carreImg
+{
+  height: 250px;
+  width: 100%;
+}
+
+.verticalImg
+{
+  width: 350px;
+  height: 100%;
+}
+.horizontale, .carre {
+  height: 250px;
 }

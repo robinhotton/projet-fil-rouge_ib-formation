@@ -40,7 +40,7 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
           </h2>
           <p className="content">{prestationDetail?.description}</p>
           <button className="buttonPrestationSubmit bigButtonText bold">
-            Demander un devis
+            <a className="bigButtonText" href="https://www.coover.fr/wp-content/uploads/2019/11/exemple-devis-gratuit.png" download="devis.png">Demander un devis</a>
           </button>
         </div>
         <div className="galeryBlock">

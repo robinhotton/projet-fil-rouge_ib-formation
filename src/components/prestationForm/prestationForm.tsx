@@ -43,6 +43,10 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
 
   const redirection = useNavigate();
 
+  /**
+   * stocke la modification dans le hook form dans la bonne variable
+   * @param event Ce lance quand une modification est faite sur un champs
+   */
   const editPrestation = (event: React.ChangeEvent<any>) => {
     const nomDuChamp: string = event.target.name;
     const valeurDuChamp: string = event.target.value;
@@ -50,27 +54,36 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
     setForm({ ...form, ...nouveauChamp });
   };
 
+  /**
+   * Prends la prestation recu en parametre et l'update ou le créer s'il existe pas, grâce aux informations stocké dans le hook form avant de push dans la base de donnée
+   * @param event Ce lance quand on clique sur le bouton submit
+   */
   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     prestation.description = form.description.value;
     prestation.tauxHoraire = form.tauxHoraire.value;
     prestation.categorie = form.categorie.value;
     prestation.devis = form.devis.value;
+    // set sur l'entreprise 2 par defaut, a changer quand on a une connexion
+    prestation.idEntreprise = 2;
     if (edit) maj();
     else ajout();
   };
+
+  /**
+   * créer une prestation
+   */
   const ajout = () => {
     PrestationService.createPrestation(prestation).then(() => redirection(`/`));
   };
+
+  /**
+   * Mettre à jour une prestation
+   */
   const maj = () => {
     PrestationService.updatePrestation(prestation).then(() =>
       redirection(`/${prestation.id}`)
     );
-  };
-
-  const supprPrestation = () => {
-    PrestationService.deletePrestations(prestation);
-    redirection(`/`);
   };
 
   return (

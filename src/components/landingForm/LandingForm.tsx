@@ -9,20 +9,30 @@ const LandingForm: React.FC = () => {
   const [city, setCity] = useState<string>();
   const [dropdownValue, setDropdownValue] = useState<string>();
 
+  /**
+   * stocke toutes les categories dans le hook
+   */
   useEffect(() => {
     CategoriesService.getAllCategories().then((categories) =>
       setCategories(categories)
     );
   }, []);
 
+  /**
+   * permet de rediriger la route
+   */
   const redirection = useNavigate();
 
+  /**
+   * redirige vers la bonne page catégorie
+   * @param event se déclenche a l'envoie du formulaire
+   */
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const categorie: number =
+    const categorieId: number =
       categories.findIndex((categorie) => categorie.nom === dropdownValue) + 1;
-    if (categorie === 0) redirection(`/categorie/1`);
-    else redirection(`/categorie/${categorie}`);
+    if (categorieId === 0) redirection(`/categorie/1`);
+    else redirection(`/categorie/${categorieId}`);
   };
 
   return (

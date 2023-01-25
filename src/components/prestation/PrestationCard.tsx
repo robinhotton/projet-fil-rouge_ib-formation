@@ -10,6 +10,9 @@ type PrestationCardProps = {
 const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
   const [entreprise, setEntreprise] = useState<Entreprise>();
 
+  /**
+   * lien entre la prtestation et son entreprise
+   */
   useEffect(() => {
     if (prestation.idEntreprise) {
       EntrepriseService.getEntrepriseById(prestation.idEntreprise).then(

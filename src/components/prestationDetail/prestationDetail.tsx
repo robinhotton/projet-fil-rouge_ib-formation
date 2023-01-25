@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Entreprise from "../../models/Entreprise";
 import Prestation from "../../models/Prestation";
-import ClientService from "../../services/ClientService";
 import EntrepriseService from "../../services/EntrepriseService";
 import PrestationService from "../../services/PrestationService";
 import "./prestationDetail.scss";
@@ -15,8 +14,20 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
   const [prestationDetail, setPrestationDetail] = useState<Prestation>();
   const [entreprise, setEntreprise] = useState<Entreprise>();
 
+  /**
+   * id de l'url qui est utilisé pour récupéré la bonne prestation
+   */
   let { id } = useParams<string>();
 
+  /**
+   * permet de rediriger l'url grâce a la route du routeur
+   */
+  const redirection = useNavigate();
+
+  /**
+   * Récupère	la prestation grâce a son id et le useParams id.
+   * Fais une jointure entre l'idEntreprise de de la prestation et l'id de l'entreprise, puis stocke l'entreprise dans le hook entreprise.
+   */
   useEffect(() => {
     if (id) {
       PrestationService.getPrestationsById(+id).then((data) =>
@@ -30,8 +41,16 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
     }
   }, [prestationDetail?.idEntreprise]);
 
+  /**
+   * Ajoute au panier quand le client clique sur le bouton et redirige sur la page prestation
+   */
   const handleClick = () => {
-    if (prestationDetail) ClientService.ajouterPrestation(1, prestationDetail);
+    if (prestationDetail) {
+      //par defaut sur le client 1, a changer quand on aura la connexion
+      prestationDetail.idClient = 1;
+      PrestationService.updatePrestation(prestationDetail);
+      redirection("/prestation/");
+    }
   };
 
   return (

@@ -9,13 +9,24 @@ type AdminCardsGlobalesProps = {
 const AdminCardsGlobales: React.FC<AdminCardsGlobalesProps> = ({
   allPrestations,
 }) => {
+  /**
+   * logique qui calcule le nombre de prestations totales
+   */
   const prestationsTotales = (): number => {
     return allPrestations.length;
   };
+
+  /**
+   * logique qui calcule le nombre de prestations en cours
+   */
   const prestationsEnCours = (): number => {
     return allPrestations.filter((prestation) => prestation.termine === false)
       .length;
   };
+
+  /**
+   * logique qui calcule le nombre de prestations terminées
+   */
   const prestationsTerminees = (): number => {
     return allPrestations.filter((prestation) => prestation.termine === true)
       .length;

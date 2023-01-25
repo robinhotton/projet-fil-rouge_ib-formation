@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import InscriptionClientForm from "../components/inscriptionClientForm/inscriptionClientForm";
 import Client from "../models/Client";
 import "./InscriptionPage.scss";
@@ -11,12 +12,8 @@ const InscriptionPage: React.FC = () => {
           alt="inscriptionClient"
         ></img>
         <div>
-          <p>
-            Déjà un inscrit chez nous ?{" "}
-            <a href="" className="link">
-              Connectez-vous
-            </a>
-          </p>
+          <p>Déjà un inscrit chez nous ?</p>
+          <Link to="">Connectez-vous</Link>
         </div>
         <div>
           <InscriptionClientForm inscription={new Client()} />

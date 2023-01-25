@@ -3,6 +3,7 @@ import Evaluation from "./Evaluation";
 export default class Prestation {
   id?: number;
   idEntreprise?: number;
+  idClient?: number;
   categorie: string;
   description: string;
   tauxHoraire: number;

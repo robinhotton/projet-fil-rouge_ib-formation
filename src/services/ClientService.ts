@@ -1,14 +1,14 @@
-import Entreprise from "../models/Entreprise";
+import Client from "../models/Client";
 
-export default class EntrepriseService {
-  public static async getAllEntreprises(): Promise<Entreprise[]> {
-    return fetch("http://localhost:3004/entreprises/").then((response) =>
+export default class ClientService {
+  public static async getAllClients(): Promise<Client[]> {
+    return fetch("http://localhost:3004/clients/").then((response) =>
       response.json().catch((error) => this.error(error))
     );
   }
 
-  static getEntrepriseById(id: number): Promise<Entreprise> {
-    return fetch(`http://localhost:3004/entreprises/${id}`).then((response) =>
+  static getClientById(idClient: number): Promise<Client> {
+    return fetch(`http://localhost:3004/clients/${idClient}`).then((response) =>
       response
         .json()
         .then((data) => (this.isEmpty(data) ? null : data))
@@ -16,10 +16,10 @@ export default class EntrepriseService {
     );
   }
 
-  static createEntreprise(entreprise: Entreprise): Promise<Entreprise> {
-    return fetch(`http://localhost:3004/entreprises`, {
+  static createClient(Client: Client): Promise<Client> {
+    return fetch(`http://localhost:3004/clients`, {
       method: "POST",
-      body: JSON.stringify(entreprise),
+      body: JSON.stringify(Client),
       headers: { "content-type": "application/json" },
     })
       .then((response) => response.json())

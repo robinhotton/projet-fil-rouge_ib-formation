@@ -8,6 +8,7 @@ import EditPrestationPage from "../pages/EditPrestationPage";
 import InscriptionEntreprisePage from "../pages/InscriptionEntreprisePage";
 import InscriptionPage from "../pages/InscriptionPage";
 import LandingPage from "../pages/LandingPage";
+import PanierPage from "../pages/PanierPage";
 import PrestationPage from "../pages/PrestationPage";
 
 const Router: React.FC = () => {
@@ -51,6 +52,10 @@ const Router: React.FC = () => {
     {
       path: "/inscription/entreprise",
       element: <InscriptionEntreprisePage />,
+    },
+    {
+      path: "/panier",
+      element: <PanierPage />,
     },
     {
       path: "/admin",

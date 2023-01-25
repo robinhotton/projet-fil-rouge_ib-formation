@@ -11,11 +11,18 @@ type DropDownProps = {
 const DropDown: React.FC<DropDownProps> = ({ categories, route }) => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
+  /**
+   * permet de réagir à l'evenement
+   */
   useEffect(() => {
     setShowDropDown(showDropDown);
   }, [showDropDown]);
 
+  /**
+   * permet le rediriger la route
+   */
   const redirection = useNavigate();
+
   /**
    * Passe la catégorie a son parent pour qu'il puisse l'afficher
    * @param categorie la categorie selectionné

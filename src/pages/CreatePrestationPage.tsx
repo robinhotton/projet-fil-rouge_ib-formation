@@ -1,6 +1,6 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
-import CreatePrestation from "../components/createPrestation/createPrestation";
+import CreatePrestation from "../components/prestationForm/createPrestationForm";
 
 const CreatePrestationPage: React.FC = () => {
   return (

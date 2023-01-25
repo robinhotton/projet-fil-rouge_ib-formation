@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Prestation from "../models/Prestation";
 import PrestationService from "../services/PrestationService";
-import PrestationCard from "../components/prestation/PrestationCard";
-import { FiEdit } from "react-icons/fi";
 import PrestationDetail from "../components/prestationDetail/prestationDetail";
 
 const PrestationPage: React.FC = () => {

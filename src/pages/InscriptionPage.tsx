@@ -1,11 +1,24 @@
-import Footer from "../commons/Footer/Footer";
-import Header from "../commons/header/Header";
-
+import { Link } from "react-router-dom";
+import InscriptionClientForm from "../components/inscriptionClientForm/inscriptionClientForm";
+import Client from "../models/Client";
+import "./InscriptionPage.scss";
 const InscriptionPage: React.FC = () => {
   return (
     <>
-      <Header />
-      <Footer />
+      <div>
+        <img
+          src="https://static4.depositphotos.com/1022884/350/i/600/depositphotos_3504089-stock-photo-yellow-helmet-and-plans-rools.jpg"
+          className="imageConnexion"
+          alt="inscriptionClient"
+        ></img>
+        <div>
+          <p>Déjà un inscrit chez nous ?</p>
+          <Link to="">Connectez-vous</Link>
+        </div>
+        <div>
+          <InscriptionClientForm inscription={new Client()} />
+        </div>
+      </div>
     </>
   );
 };

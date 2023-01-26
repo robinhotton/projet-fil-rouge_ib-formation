@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import InscriptionClientForm from "../components/inscriptionClientForm/inscriptionClientForm";
-import Client from "../models/Client";
+import InscriptionClientForm from "../../components/inscriptionClientForm/inscriptionClientForm";
+import Client from "../../models/Client";
 import "./InscriptionPage.scss";
 
 const InscriptionPage: React.FC = () => {

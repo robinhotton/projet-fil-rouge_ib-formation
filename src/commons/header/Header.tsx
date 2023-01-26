@@ -1,4 +1,4 @@
-import ConnexionLink from "../../components/connexion/ConnexionLink";
+import ConnexionLink from "../../components/inscriptionLink/InscriptionLink";
 import DropdownMenu from "../../components/dropdown/DropdownMenu";
 import SearchBarController from "../../components/searchbar/SearchBarController";
 import { FaShoppingCart } from "react-icons/fa";

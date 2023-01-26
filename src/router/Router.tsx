@@ -1,13 +1,13 @@
 import { RouteObject, useRoutes } from "react-router";
-import AdministrateurPage from "../pages/AdministrateurPage";
+import AdministrateurPage from "../pages/administrateur/AdministrateurPage";
 import AllPrestationsPage from "../pages/AllPrestationsPage";
 import CategoriePage from "../pages/CategoriePage";
 import ConnexionPage from "../pages/ConnexionPage";
 import CreatePrestationPage from "../pages/CreatePrestationPage";
 import EditPrestationPage from "../pages/EditPrestationPage";
 import InscriptionEntreprisePage from "../pages/InscriptionEntreprisePage";
-import InscriptionPage from "../pages/InscriptionPage";
-import LandingPage from "../pages/LandingPage";
+import InscriptionPage from "../pages/inscription/InscriptionPage";
+import LandingPage from "../pages/landing/LandingPage";
 import PanierPage from "../pages/PanierPage";
 import PrestationPage from "../pages/PrestationPage";
 

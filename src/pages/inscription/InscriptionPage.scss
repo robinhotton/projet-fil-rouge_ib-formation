@@ -1,6 +1,6 @@
-@import "../assets/css/utils/fonts.scss";
-@import "../assets/css/utils/buttons.scss";
-@import "../assets/css/utils/variables.scss";
+@import "../../assets/css/utils/fonts.scss";
+@import "../../assets/css/utils/buttons.scss";
+@import "../../assets/css/utils/variables.scss";
 
 // .imageConnexion {
 //   width: 720px;
@@ -92,8 +92,7 @@
         .checkboxLine {
           margin-bottom: 15px;
         }
-        .buttonPrestationSubmit
-        {
+        .buttonPrestationSubmit {
           width: 100%;
           margin-top: 25px;
         }

@@ -1,6 +1,6 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import "./Connexion.scss";
+import "./InscriptionLink.scss";
 
 const ConnexionLink: React.FC = () => {
   return (

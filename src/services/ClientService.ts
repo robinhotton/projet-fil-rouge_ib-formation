@@ -2,22 +2,23 @@ import Client from "../models/Client";
 
 export default class ClientService {
   public static async getAllClients(): Promise<Client[]> {
-    return fetch("http://localhost:3004/clients/").then((response) =>
+    return await fetch("http://localhost:3004/clients/").then((response) =>
       response.json().catch((error) => this.error(error))
     );
   }
 
-  static getClientById(idClient: number): Promise<Client> {
-    return fetch(`http://localhost:3004/clients/${idClient}`).then((response) =>
-      response
-        .json()
-        .then((data) => (this.isEmpty(data) ? null : data))
-        .catch((error) => this.error(error))
+  public static async getClientById(idClient: number): Promise<Client> {
+    return await fetch(`http://localhost:3004/clients/${idClient}`).then(
+      (response) =>
+        response
+          .json()
+          .then((data) => (this.isEmpty(data) ? null : data))
+          .catch((error) => this.error(error))
     );
   }
 
-  static createClient(Client: Client): Promise<Client> {
-    return fetch(`http://localhost:3004/clients`, {
+  public static async createClient(Client: Client): Promise<Client> {
+    return await fetch(`http://localhost:3004/clients`, {
       method: "POST",
       body: JSON.stringify(Client),
       headers: { "content-type": "application/json" },

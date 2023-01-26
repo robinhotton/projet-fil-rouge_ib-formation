@@ -2,22 +2,25 @@ import Entreprise from "../models/Entreprise";
 
 export default class EntrepriseService {
   public static async getAllEntreprises(): Promise<Entreprise[]> {
-    return fetch("http://localhost:3004/entreprises/").then((response) =>
+    return await fetch("http://localhost:3004/entreprises/").then((response) =>
       response.json().catch((error) => this.error(error))
     );
   }
 
-  static getEntrepriseById(id: number): Promise<Entreprise> {
-    return fetch(`http://localhost:3004/entreprises/${id}`).then((response) =>
-      response
-        .json()
-        .then((data) => (this.isEmpty(data) ? null : data))
-        .catch((error) => this.error(error))
+  public static async getEntrepriseById(id: number): Promise<Entreprise> {
+    return await fetch(`http://localhost:3004/entreprises/${id}`).then(
+      (response) =>
+        response
+          .json()
+          .then((data) => (this.isEmpty(data) ? null : data))
+          .catch((error) => this.error(error))
     );
   }
 
-  static createEntreprise(entreprise: Entreprise): Promise<Entreprise> {
-    return fetch(`http://localhost:3004/entreprises`, {
+  public static async createEntreprise(
+    entreprise: Entreprise
+  ): Promise<Entreprise> {
+    return await fetch(`http://localhost:3004/entreprises`, {
       method: "POST",
       body: JSON.stringify(entreprise),
       headers: { "content-type": "application/json" },

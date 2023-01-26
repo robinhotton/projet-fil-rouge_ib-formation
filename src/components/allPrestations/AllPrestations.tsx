@@ -4,6 +4,7 @@ import PrestationService from "../../services/PrestationService";
 import PrestationCard from "../prestation/PrestationCard";
 import "./AllPrestations.scss";
 import { Link } from "react-router-dom";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 const AllPrestations: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
@@ -28,6 +29,9 @@ const AllPrestations: React.FC = () => {
           </Link>
         );
       })}
+      <Link to={`/prestation/create`}>
+        <IoIosAddCircleOutline className="createPrestation" />
+      </Link>
     </div>
   );
 };

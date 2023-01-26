@@ -19,4 +19,10 @@
     margin-bottom: 2em;
     padding-left: 1em;
   }
+
+  .EnvoyerBouton {
+    background: $orange;
+    cursor: pointer;
+    border: solid 1px $black;
+  }
 }

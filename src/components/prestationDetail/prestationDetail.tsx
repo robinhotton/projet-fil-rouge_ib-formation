@@ -5,6 +5,8 @@ import Prestation from "../../models/Prestation";
 import EntrepriseService from "../../services/EntrepriseService";
 import PrestationService from "../../services/PrestationService";
 import "./prestationDetail.scss";
+import { FiEdit } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 type PrestationCardProps = {
   prestation?: Prestation;
@@ -39,7 +41,7 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
         (data) => setEntreprise(data)
       );
     }
-  }, [prestationDetail?.idEntreprise]);
+  }, [id, prestationDetail?.idEntreprise]);
 
   /**
    * Ajoute au panier quand le client clique sur le bouton et redirige sur la page prestation
@@ -63,43 +65,48 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
             {entreprise?.coordonnees} - {entreprise?.zoneGeographique}
           </h2>
           <p className="content">{prestationDetail?.description}</p>
-          <button
-            className="buttonPrestationSubmit bigButtonText bold"
-            onClick={() => handleClick()}
-          >
-            Ajouter au panier
-          </button>
+          <div className="flex">
+            <button
+              className="buttonPrestationSubmit bigButtonText bold"
+              onClick={() => handleClick()}
+            >
+              Ajouter au panier
+            </button>
+            <Link to={`/prestation/edit/${id}`}>
+              <FiEdit className="editPrestation" />{" "}
+            </Link>
+          </div>
         </div>
         <div className="galeryBlock">
           <div className="firstRow">
             <img
               className="detail-img1"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image1"
             />
             <img
               className="detail-img2"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image2"
             />
           </div>
           <div className="secondRow">
             <img
               className="detail-img3"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image3"
             />
           </div>
           <div className="thirdRow">
             <img
               className="detail-img4"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image4"
             />
             <img
               className="detail-img5"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image5"
             />
           </div>
         </div>

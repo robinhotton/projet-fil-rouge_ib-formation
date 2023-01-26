@@ -5,8 +5,7 @@
       "name": "robin",
       "lastName": "hotton",
       "mail": "robin@hotton.com",
-      "motDePasse": "oui",
-      "panier": []
+      "motDePasse": "oui"
     }
   ],
   "entreprises": [
@@ -38,7 +37,7 @@
       "id": 1,
       "idEntreprise": 1,
       "categorie": "Le câblage d'armoire électrique",
-      "description": "Pose et réparation des câbles des armoires électriques avec style",
+      "description": "Réparation des câbles des armoires électriques avec style",
       "tauxHoraire": 42.12,
       "tempsPrestation": 36,
       "prixMateriel": 4000,
@@ -55,7 +54,7 @@
       "id": 2,
       "idEntreprise": 1,
       "categorie": "L'accompagnement aux choix de matériels industriels",
-      "description": "Pose et réparation des câbles des armoires électriques avec style",
+      "description": "Pose des câbles des armoires électriques avec style",
       "tauxHoraire": 36.05,
       "tempsPrestation": 50,
       "prixMateriel": 4200,

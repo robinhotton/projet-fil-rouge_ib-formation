@@ -53,7 +53,9 @@ const LandingForm: React.FC = () => {
           </option>
         ))}
       </select>
-      <button type="submit">Envoyer</button>
+      <button className="EnvoyerBouton" type="submit">
+        Envoyer
+      </button>
     </form>
   );
 };

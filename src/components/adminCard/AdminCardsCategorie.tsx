@@ -25,7 +25,7 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     EntrepriseService.getAllEntreprises().then((entreprise) =>
       setEntreprises(entreprise)
     );
-  }, []);
+  }, [prestationsDeLaCategorie]);
 
   /**
    * logique pour afficher le prix moyen d'une catégorie de prestation

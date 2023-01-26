@@ -2,6 +2,7 @@ import { useState } from "react";
 import Client from "../../models/Client";
 import ClientService from "../../services/ClientService";
 import "./inscriptionClientForm.scss";
+import { FcGoogle } from "react-icons/fc";
 
 type props = {
   inscription: Client;
@@ -69,85 +70,88 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
 
   return (
     <>
-      <form className="inscriptionClientForm" onSubmit={soumission}>
-        <div className="formBlock">
-          <div className="formGroupBlock">
-            <div className="formGroup">
-              {" "}
-              <img
-                src="src\assets\img\LogoPrincipal.svg"
-                className="imageInscription"
-                alt="inscription"
-              ></img>
-              <h1 className="title bold">Un plaisir de vous revoir</h1>
-              <button type="button" className="googleButton linkToGoogle">
-                Se connecter avec Google
-              </button>
-              <p>Ou</p>
-              <div className="prenomNom">
-                <input
-                  type="text"
-                  name="prenom"
-                  value={form.prenom.value}
-                  onChange={editInscription}
-                  placeholder="John"
-                />
-                <input
-                  type="text"
-                  name="nom"
-                  placeholder="nom"
-                  value={form.nom.value}
-                  onChange={editInscription}
-                />
-              </div>
-              <input
-                type="text"
-                name="mail"
-                value={form.mail.value}
-                onChange={editInscription}
-                placeholder="Example@gmail.com"
-              />
-              <input
-                type="password"
-                name="motDePasse"
-                placeholder="MotDePasse"
-                value={form.motDePasse.value}
-                onChange={editInscription}
-              />
-              <div>
-                <input
-                  type="checkbox"
-                  name="prestataireSouscription"
-                  className="prestataireSouscription"
-                  value="prestataireSouscription"
-                />
-                <label htmlFor="prestataireSouscription">
-                  Je souhaite m'inscrire en tant que prestataire
-                </label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="cgu"
-                  className="cgu"
-                  value="cgu"
-                  required
-                  onChange={() => setIsChecked(!isChecked)}
-                />
-                <label htmlFor="cgu">
-                  J'accepte les conditions générales d'utilisation.
-                </label>
-              </div>
-            </div>
-          </div>
+      <img
+        src="../../assets/img/LogoPrincipal.svg"
+        className="imageInscription"
+        alt="inscription"
+      ></img>
+      <form onSubmit={soumission}>
+        <button type="button" className="googleButton linkToGoogle">
+          <FcGoogle /> Se connecter avec Google
+        </button>
+        <div className="otherBlock">
+          <hr className="line" />
+          <p className="or content center">Ou</p>
+          <hr className="line" />
         </div>
 
-        <input
-          className="buttonSubscribeSubmit bigButtonText"
-          type="submit"
-          value="S'inscrire"
-          disabled={!isChecked}
-        />
+        <div className="formGroup">
+          <div className="nameGroup">
+            <input
+              type="text"
+              name="prenom"
+              placeholder="John"
+              value={form.prenom.value}
+              onChange={editInscription}
+            />
+            <input
+              type="text"
+              name="nom"
+              placeholder="Doe"
+              value={form.nom.value}
+              onChange={editInscription}
+            />
+          </div>
+          <div className="emailGroup">
+            <input
+              type="email"
+              name="mail"
+              value={form.mail.value}
+              onChange={editInscription}
+              placeholder="Example@gmail.com"
+            />
+          </div>
+          <div className="passwordGroup">
+            <input
+              type="password"
+              name="motDePasse"
+              placeholder="MotDePasse"
+              value={form.motDePasse.value}
+              onChange={editInscription}
+            />
+          </div>
+          <div className="checkboxLine">
+            <input
+              type="checkbox"
+              name="prestataireSouscription"
+              className="prestataireSouscription"
+              value="prestataireSouscription"
+            />
+            <label htmlFor="prestataireSouscription" className="content">
+              Je souhaite m'inscrire en tant que prestataire
+            </label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="cgu"
+              className="cgu"
+              value="cgu"
+              required
+              onChange={() => setIsChecked(!isChecked)}
+            />
+            <label htmlFor="cgu" className="content">
+              J'accepte les conditions générales d'utilisation.
+            </label>
+          </div>
+
+          <input
+            className="buttonPrestationSubmit bigButtonText"
+            type="submit"
+            value="S'inscrire"
+            disabled={!isChecked}
+          />
+        </div>
       </form>
     </>
   );

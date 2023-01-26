@@ -9,14 +9,14 @@ const Header: React.FC = () => {
   return (
     <header>
       <Link to="/">
-        <p className="pLink">logo</p>
+        <img src="/DarkMode.png" alt="Logo" />
       </Link>
       <Link to="/prestation">
-        <p className="pLink">prestations</p>
+        <p className="pLink">Prestations</p>
       </Link>
-      <DropdownMenu placeholder="categories" route="/categorie" />
+      <DropdownMenu placeholder="Categories" route="/categorie" />
       <Link to="/entreprise">
-        <p className="pLink">entreprises</p>
+        <p className="pLink">Entreprises</p>
       </Link>
       <SearchBarController />
       <ConnexionLink />

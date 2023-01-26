@@ -19,20 +19,23 @@ const AllPrestations: React.FC = () => {
   }, []);
 
   return (
-    <div className="AllPrestations">
-      {prestations.map((prestation, index) => {
-        return (
-          <Link to={`/prestation/${prestation.id}`}>
-            <div key={index++} className="card">
-              <PrestationCard prestation={prestation} />
-            </div>
-          </Link>
-        );
-      })}
-      <Link to={`/prestation/create`}>
-        <IoIosAddCircleOutline className="createPrestation" />
-      </Link>
-    </div>
+    <>
+      <h1 className="title">Toutes les Prestations</h1>
+      <div className="AllPrestations">
+        {prestations.map((prestation, index) => {
+          return (
+            <Link to={`/prestation/${prestation.id}`}>
+              <div key={index++} className="card">
+                <PrestationCard prestation={prestation} />
+              </div>
+            </Link>
+          );
+        })}
+        <Link to={`/prestation/create`}>
+          <IoIosAddCircleOutline className="createPrestation" />
+        </Link>
+      </div>
+    </>
   );
 };
 export default AllPrestations;

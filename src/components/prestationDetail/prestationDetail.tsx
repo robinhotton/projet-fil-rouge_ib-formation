@@ -51,7 +51,7 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
       //par defaut sur le client 1, a changer quand on aura la connexion
       prestationDetail.idClient = 1;
       PrestationService.updatePrestation(prestationDetail);
-      redirection("/panier");
+      redirection("/");
     }
   };
 
@@ -73,7 +73,7 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
               Ajouter au panier
             </button>
             <Link to={`/prestation/edit/${id}`}>
-              <FiEdit className="editPrestation" />{" "}
+              <FiEdit className="editPrestation" />
             </Link>
           </div>
         </div>

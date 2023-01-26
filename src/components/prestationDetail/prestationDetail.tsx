@@ -49,7 +49,7 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
       //par defaut sur le client 1, a changer quand on aura la connexion
       prestationDetail.idClient = 1;
       PrestationService.updatePrestation(prestationDetail);
-      redirection("/prestation/");
+      redirection("/panier");
     }
   };
 
@@ -73,31 +73,31 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
         <div className="galeryBlock">
           <div className="firstRow">
             <img
-              className="img1"
+              className="detail-img1"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
               alt="image"
             />
             <img
-              className="img2"
+              className="detail-img2"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
               alt="image"
             />
           </div>
           <div className="secondRow">
             <img
-              className="img3"
+              className="detail-img3"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
               alt="image"
             />
           </div>
           <div className="thirdRow">
             <img
-              className="img4"
+              className="detail-img4"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
               alt="image"
             />
             <img
-              className="img5"
+              className="detail-img5"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
               alt="image"
             />

@@ -38,15 +38,25 @@ const PrestationController: React.FC = () => {
     <>
       <h1 className="categorieTitre">Catégorie : {categorie?.nom}</h1>
       <div className="categories">
-        {prestations.map((prestation, index) => {
-          return (
-            <Link to={`/prestation/${prestation.id}`}>
-              <div key={index++} className="card">
-                <PrestationCard prestation={prestation} />
-              </div>
+        {prestations.length > 0 ? (
+          <>
+            {prestations.map((prestation, index) => {
+              return (
+                <Link to={`/prestation/${prestation.id}`}>
+                  <div key={index++} className="card">
+                    <PrestationCard prestation={prestation} />
+                  </div>
+                </Link>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            <Link to="">
+              <PrestationCard prestation={new Prestation()} />
             </Link>
-          );
-        })}
+          </>
+        )}
       </div>
     </>
   );

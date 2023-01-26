@@ -49,8 +49,7 @@
         "faciliteCommunication": 4,
         "qualiteTechnique": 5,
         "niveauExpertise": 5
-      },
-      "idClient": 1
+      }
     },
     {
       "id": 2,
@@ -67,8 +66,7 @@
         "faciliteCommunication": 3,
         "qualiteTechnique": 4,
         "niveauExpertise": 4
-      },
-      "idClient": 1
+      }
     },
     {
       "id": 3,

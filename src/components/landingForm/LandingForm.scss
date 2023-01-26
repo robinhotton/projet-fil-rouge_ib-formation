@@ -3,14 +3,13 @@
 .landingForm {
   display: flex;
   flex-direction: column;
+  width: 600px;
 
-  min-height: 100%;
-  margin-bottom: 100px;
-  width: 700px;
-  margin: 25px auto;
+  margin: 150px auto 50px auto;
   background: $light;
   border-radius: 10px;
   padding: 25px;
+
   input,
   select {
     border: 1px solid $black;

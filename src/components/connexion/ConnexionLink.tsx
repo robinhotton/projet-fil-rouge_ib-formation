@@ -6,8 +6,8 @@ const ConnexionLink: React.FC = () => {
   return (
     <div className="connexion">
       <BsFillPersonFill className="person" />
-      <Link to="">
-        <span>Connexion</span>
+      <Link to="/inscription/client">
+        <span>S'inscrire</span>
       </Link>
     </div>
   );

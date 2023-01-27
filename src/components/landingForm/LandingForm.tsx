@@ -37,6 +37,7 @@ const LandingForm: React.FC = () => {
 
   return (
     <form className="landingForm" onSubmit={handleSubmit}>
+      <h1 className="center">Je recherche une prestation</h1>
       <input
         type="text"
         value={city}
@@ -53,8 +54,8 @@ const LandingForm: React.FC = () => {
           </option>
         ))}
       </select>
-      <button className="EnvoyerBouton" type="submit">
-        Envoyer
+      <button className="EnvoyerBouton buttonText" type="submit">
+        Confirmer
       </button>
     </form>
   );

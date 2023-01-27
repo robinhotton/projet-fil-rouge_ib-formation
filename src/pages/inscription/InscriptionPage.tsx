@@ -17,7 +17,7 @@ const InscriptionPage: React.FC = () => {
         <div className="registerFormBlock">
           <div className="content">
             <p>
-              Déjà un inscrit chez nous ? <Link to="/">Connectez-vous</Link>
+              Déjà un inscrit chez nous ? <Link to="/" className="link">Connectez-vous</Link>
             </p>
           </div>
           <div className="formClientBlock">

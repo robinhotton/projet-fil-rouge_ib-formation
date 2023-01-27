@@ -164,7 +164,7 @@ const InscriptionPrestataireForm: React.FC<props> = ({ inscription }) => {
         </div>
 
         <input
-          className="buttonPrestationSubmit bigButtonText"
+          className="buttonPrestationSubmit bigButtonText bold"
           type="submit"
           value="Valider l'inscription"
         />

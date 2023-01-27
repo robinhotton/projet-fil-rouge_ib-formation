@@ -78,11 +78,9 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
 
   return (
     <>
-      <img
-        src="../../assets/img/LogoPrincipal.svg"
-        className="imageInscription"
-        alt="inscription"
-      ></img>
+      <div className="logoBlock">
+        <img src="/logo.svg" className="imageInscription" alt="inscription" />
+      </div>
       <form onSubmit={soumission}>
         <button type="button" className="googleButton linkToGoogle">
           <FcGoogle /> Se connecter avec Google
@@ -171,7 +169,7 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
           </div>
 
           <input
-            className="buttonPrestationSubmit bigButtonText"
+            className="buttonPrestationSubmit bigButtonText bold"
             type="submit"
             value={changeValue ? "Suivant" : "S'inscrire"}
             disabled={!isChecked}

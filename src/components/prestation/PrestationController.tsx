@@ -32,7 +32,7 @@ const PrestationController: React.FC = () => {
         )
       )
     );
-  }, [categorie?.nom]);
+  }, [categorie?.nom, id]);
 
   return (
     <>

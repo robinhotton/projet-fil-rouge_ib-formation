@@ -7,7 +7,7 @@ const ConnexionLink: React.FC = () => {
     <div className="connexion">
       <BsFillPersonFill className="person" />
       <Link to="/inscription/client">
-        <span>S'inscrire</span>
+        <span className="menuHeader bold">S'inscrire</span>
       </Link>
     </div>
   );

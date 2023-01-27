@@ -12,12 +12,12 @@ const Header: React.FC = () => {
         <img src="/DarkMode.png" alt="Logo" />
       </Link>
       <Link to="/prestation">
-        <p className="pLink">Prestations</p>
+        <p className="pLink menuHeader bold">Prestations</p>
       </Link>
       <DropdownMenu placeholder="Categories" route="/categorie" />
-      <Link to="/entreprise">
-        <p className="pLink">Entreprises</p>
-      </Link>
+      {/* <Link to="/entreprise">
+        <p className="pLink menuHeader bold">Entreprises</p>
+      </Link> */}
       <SearchBarController />
       <ConnexionLink />
       <Link to="/panier">

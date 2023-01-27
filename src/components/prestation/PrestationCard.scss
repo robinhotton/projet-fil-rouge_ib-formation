@@ -21,10 +21,10 @@
 }
 
 // .titleCard,
-.coord,
-.contentCard {
-  padding-left: 25px;
-}
+// .coord,
+// .contentCard {
+//   padding-left: 25px;
+// }
 
 // .titleCard {
 //   font-weight: bold;
@@ -33,6 +33,9 @@
 //   padding-top: 23px;
 // }
 
+.cardBody {
+  padding: 25px;
+}
 .coord {
   width: 249px;
   height: 17px;
@@ -52,11 +55,7 @@
   width: 130px;
   border-radius: 5px;
   background: $orange;
-  margin-top: 38px;
-  margin-left: 25px;
+  margin-top: 25px;
   border: 0;
-  font-family: $worksans, bold;
-  font-size: 16px;
   color: $light;
-  line-height: 150%;
 }

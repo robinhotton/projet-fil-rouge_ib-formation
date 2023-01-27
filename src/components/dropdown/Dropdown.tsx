@@ -33,7 +33,7 @@ const DropDown: React.FC<DropDownProps> = ({ categories, route }) => {
 
   return (
     <>
-      <div className={showDropDown ? "dropdown" : "dropdown active"}>
+      <div className={showDropDown ? "dropdown" : "dropdown active menuHeader"}>
         {categories.map((categorie: string, index: number): JSX.Element => {
           return (
             <p

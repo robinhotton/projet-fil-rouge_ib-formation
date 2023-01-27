@@ -5,7 +5,22 @@
       "name": "robin",
       "lastName": "hotton",
       "mail": "robin@hotton.com",
-      "motDePasse": "oui"
+      "motDePasse": "oui",
+      "panier": []
+    },
+    {
+      "nom": "Doe",
+      "prenom": "John",
+      "mail": "johndoe@gmail.com",
+      "motDePasse": "johndoe@gmail.com",
+      "id": 2
+    },
+    {
+      "nom": "Doe",
+      "prenom": "John",
+      "mail": "JohnJohn@John.John",
+      "motDePasse": "JohnJohn@John.John",
+      "id": 3
     }
   ],
   "entreprises": [

@@ -5,7 +5,7 @@ import CategoriePage from "../pages/CategoriePage";
 import ConnexionPage from "../pages/ConnexionPage";
 import CreatePrestationPage from "../pages/CreatePrestationPage";
 import EditPrestationPage from "../pages/EditPrestationPage";
-import InscriptionEntreprisePage from "../pages/InscriptionEntreprisePage";
+import InscriptionEntreprisePage from "../pages/inscriptionPrestarairePage/InscriptionEntreprisePage";
 import InscriptionPage from "../pages/inscription/InscriptionPage";
 import LandingPage from "../pages/landing/LandingPage";
 import PanierPage from "../pages/PanierPage";

@@ -12,7 +12,7 @@ export default class Entreprise {
 
   constructor(
     name: string = "",
-    logo: string = "",
+    logo: string = "http://www.logo.com",
     effectif: number = 0,
     coordonnees: string = "",
     zoneGeographique: string = "",

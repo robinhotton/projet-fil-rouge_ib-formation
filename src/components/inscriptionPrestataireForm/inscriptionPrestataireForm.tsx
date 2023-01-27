@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Entreprise from "../../models/Entreprise";
 import EntrepriseService from "../../services/EntrepriseService";
 
@@ -60,6 +61,7 @@ const InscriptionPrestataireForm: React.FC<props> = ({ inscription }) => {
     setForm({ ...form, ...nouveauChamp });
   };
 
+  const redirection = useNavigate();
   /**
    * Prends l'entreprise recu en paramètre etle créer, grâce aux informations stocké dans le hook form avant de push dans la base de donnée
    * @param event Ce lance quand on clique sur le bouton submit
@@ -73,67 +75,96 @@ const InscriptionPrestataireForm: React.FC<props> = ({ inscription }) => {
     inscription.zoneGeographique = form.zoneGeographique.value;
     inscription.effectif = form.effectif.value;
     EntrepriseService.createEntreprise(inscription);
+    redirection("/");
   };
 
   return (
     <>
-      <form className="inscriptionPrestataireForm" onSubmit={soumission}>
+      <form onSubmit={soumission}>
         <h1 className="title bold center">
           S'inscrire en tant que prestataire
         </h1>
 
         <div className="formBlock">
           <div className="formGroupBlock">
-            <div className="formGroup">
-              <input
-                type="text"
-                name="name"
-                value={form.name.value}
-                onChange={editInscription}
-                placeholder="Nom de l'entreprise"
-              />
-              <textarea
-                name="description"
-                placeholder="Description de l'entreprise"
-                onChange={editInscription}
-                value={form.description.value}
-              ></textarea>
-
-              <input
-                type="text"
-                name="coordonnees"
-                placeholder="Coordonnées de l'entreprise"
-                value={form.coordonnees.value}
-                onChange={editInscription}
-              />
-              <input
-                type="text"
-                name="domaine"
-                placeholder="Domaine activité de l'entreprise : Couvreur"
-                value={form.domaine.value}
-                onChange={editInscription}
-              />
-              <input
-                type="text"
-                name="zoneGeographique"
-                placeholder="Zone géographique de l'entreprise : Métropôle Lilloise"
-                value={form.zoneGeographique.value}
-                onChange={editInscription}
-              />
-
-              <input
-                type="number"
-                name="effectif"
-                value={form.effectif.value}
-                onChange={editInscription}
-                placeholder="Effectif de l'entreprise"
-              />
+            <div className="formPrestataireGroup">
+              <div className="inputBlock">
+                <label htmlFor="name" className="subTitle medium">
+                  Nom de l'entreprise :
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name.value}
+                  onChange={editInscription}
+                  placeholder="Nom de l'entreprise"
+                />
+              </div>
+              <div className="inputBlock">
+                <label htmlFor="description" className="subTitle medium">
+                  Description de l'entreprise :
+                </label>
+                <textarea
+                  name="description"
+                  placeholder="Description de l'entreprise"
+                  onChange={editInscription}
+                  value={form.description.value}
+                ></textarea>
+              </div>
+              <div className="inputBlock">
+                <label htmlFor="coordonnees" className="subTitle medium">
+                  Coordonnées :
+                </label>
+                <input
+                  type="text"
+                  name="coordonnees"
+                  placeholder="Coordonnées de l'entreprise"
+                  value={form.coordonnees.value}
+                  onChange={editInscription}
+                />
+              </div>
+              <div className="inputBlock">
+                <label htmlFor="domaine" className="subTitle medium">
+                  Domaine activité :
+                </label>
+                <input
+                  type="text"
+                  name="domaine"
+                  placeholder="Domaine activité de l'entreprise : Couvreur"
+                  value={form.domaine.value}
+                  onChange={editInscription}
+                />
+              </div>
+              <div className="inputBlock">
+                <label htmlFor="domaine" className="subTitle medium">
+                  Zone Géographique :
+                </label>
+                <input
+                  type="text"
+                  name="zoneGeographique"
+                  placeholder="Zone géographique de l'entreprise : Métropôle Lilloise"
+                  value={form.zoneGeographique.value}
+                  onChange={editInscription}
+                />
+              </div>
+              <div className="inputBlock">
+                <label htmlFor="domaine" className="subTitle medium">
+                  Nombre effectif :
+                </label>
+                <input
+                  type="number"
+                  name="effectif"
+                  value={form.effectif.value}
+                  onChange={editInscription}
+                  placeholder="Effectif de l'entreprise"
+                />
+              </div>
             </div>
           </div>
         </div>
 
         <input
-          className="buttonSubscribeSubmit"
+          className="buttonPrestationSubmit bigButtonText"
           type="submit"
           value="Valider l'inscription"
         />

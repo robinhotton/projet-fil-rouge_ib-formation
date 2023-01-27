@@ -3,6 +3,7 @@ import Client from "../../models/Client";
 import ClientService from "../../services/ClientService";
 import "./inscriptionClientForm.scss";
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router";
 
 type props = {
   inscription: Client;
@@ -41,6 +42,10 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
     },
   });
 
+  const [isChecked, setIsChecked] = useState(false);
+  const [changeValue, setChangeValue] = useState(false);
+  const redirection = useNavigate();
+
   /**
    * stocke la modification dans le hook form dans la bonne variable
    * @param event Ce lance quand une modification est faite sur un champs
@@ -62,11 +67,14 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
     inscription.nom = form.nom.value;
     inscription.mail = form.mail.value;
     inscription.motDePasse = form.motDePasse.value;
-
     ClientService.createClient(inscription);
-  };
 
-  const [isChecked, setIsChecked] = useState(false);
+    if (changeValue) {
+      redirection("/inscription/entreprise");
+    } else {
+      redirection("/");
+    }
+  };
 
   return (
     <>
@@ -87,22 +95,35 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
 
         <div className="formGroup">
           <div className="nameGroup">
-            <input
-              type="text"
-              name="prenom"
-              placeholder="John"
-              value={form.prenom.value}
-              onChange={editInscription}
-            />
-            <input
-              type="text"
-              name="nom"
-              placeholder="Doe"
-              value={form.nom.value}
-              onChange={editInscription}
-            />
+            <div className="inputBlock">
+              <label htmlFor="prenom" className="subTitle medium">
+                Prenom :
+              </label>
+              <input
+                type="text"
+                name="prenom"
+                placeholder="John"
+                value={form.prenom.value}
+                onChange={editInscription}
+              />
+            </div>
+            <div className="inputBlock">
+              <label htmlFor="prenom" className="subTitle medium">
+                Nom :
+              </label>
+              <input
+                type="text"
+                name="nom"
+                placeholder="Doe"
+                value={form.nom.value}
+                onChange={editInscription}
+              />
+            </div>
           </div>
-          <div className="emailGroup">
+          <div className="inputBlock emailGroup">
+            <label htmlFor="prenom" className="subTitle medium">
+              Email :
+            </label>
             <input
               type="email"
               name="mail"
@@ -111,7 +132,10 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
               placeholder="Example@gmail.com"
             />
           </div>
-          <div className="passwordGroup">
+          <label htmlFor="prenom" className="subTitle medium">
+            Mot de passe :
+          </label>
+          <div className="inputBlock passwordGroup">
             <input
               type="password"
               name="motDePasse"
@@ -126,6 +150,7 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
               name="prestataireSouscription"
               className="prestataireSouscription"
               value="prestataireSouscription"
+              onClick={() => setChangeValue(!changeValue)}
             />
             <label htmlFor="prestataireSouscription" className="content">
               Je souhaite m'inscrire en tant que prestataire
@@ -148,7 +173,7 @@ const InscriptionClientForm: React.FC<props> = ({ inscription }) => {
           <input
             className="buttonPrestationSubmit bigButtonText"
             type="submit"
-            value="S'inscrire"
+            value={changeValue ? "Suivant" : "S'inscrire"}
             disabled={!isChecked}
           />
         </div>

@@ -1,7 +1,6 @@
 # UltraMotion Corp
 
-![logo Pricipal](/public/img/logoPrincipal.svg)
-![logo DarkMode](/public/img/logoDarkMode.svg)
+![logo DarkMode](/public/logoDarkMode.svg)
 
 Projet fil rouge : [Ib-formation](https://www.ib-formation.fr/)
 
@@ -16,9 +15,9 @@ Projet : 22 décembre 2022 - 1 fevrier 2023
 
 ## installation
 
-- récupérer le projet
 - installer les dépendances avec `npm i`
-- Lancer le serveur avec `npm start`
+- Lancer le serveur json `npm run json`, il se lancera sur le port 3004.
+- Lancer le serveur avec `npm start`, il se lancera sur le port 3001.
 
 ## Membres
 

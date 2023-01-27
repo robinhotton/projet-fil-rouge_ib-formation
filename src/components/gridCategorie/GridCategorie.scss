@@ -1,8 +1,6 @@
 @import "../../assets/css/utils/fonts.scss";
 
 .categorie-grid {
-  position: relative;
-  bottom: 100px;
   display: grid;
   gap: 2rem;
   grid-template-areas:
@@ -76,4 +74,15 @@
 .categorie:hover {
   transform: scale(1.05);
   transition: all ease-in-out 0.4s;
+}
+
+.gridContainer {
+  position: relative;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.gridContainer > h1 {
+  margin-left: 115px;
+  margin-bottom: 20px;
 }

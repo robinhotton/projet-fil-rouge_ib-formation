@@ -1,31 +1,41 @@
 @import "../../assets/css/utils/variables.scss";
 
 .landingForm {
-  position: relative;
-  bottom: 450px;
-  z-index: 1;
   display: flex;
+  position: relative;
+  bottom: 500px;
+  z-index: 1;
   flex-direction: column;
-  width: 600px;
+  width: 350px;
 
   margin: 0px auto 0px auto;
   background: $light;
   border-radius: 10px;
   padding: 25px;
+  h1 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 21px;
+    color: #303030;
+    font-weight: bold;
+    justify-content: center;
+  }
 
   input,
   select {
+    margin: 10px auto;
     border: 1px solid $black;
     border-radius: 10px;
-    width: auto;
-    height: 3em;
-    margin-bottom: 2em;
-    padding-left: 1em;
+    width: 270px;
+    height: 54px;
   }
 
   .EnvoyerBouton {
     background: $orange;
     cursor: pointer;
-    border: solid 1px $black;
+    border: 0;
+    border-radius: 10px;
+    margin: 75px auto 0px auto;
+    width: 130px;
+    height: 25px;
   }
 }

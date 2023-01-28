@@ -14,10 +14,7 @@ const Header: React.FC = () => {
       <Link to="/prestation">
         <p className="pLink">Prestations</p>
       </Link>
-      <DropdownMenu placeholder="Categories" route="/categorie" />
-      <Link to="/entreprise">
-        <p className="pLink">Entreprises</p>
-      </Link>
+      <DropdownMenu placeholder="Catégories" route="/categorie" />
       <SearchBarController />
       <ConnexionLink />
       <Link to="/panier">

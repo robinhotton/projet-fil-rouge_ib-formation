@@ -28,6 +28,27 @@
       "mail": "azertyuiop@tamer.com",
       "motDePasse": "zertyuiop",
       "id": 4
+    },
+    {
+      "nom": "fsd",
+      "prenom": "zsff",
+      "mail": "dfd@ddds.com",
+      "motDePasse": "azertghyjuk",
+      "id": 5
+    },
+    {
+      "nom": "cxsvv",
+      "prenom": "qswdv",
+      "mail": "ccccc@ccc.com",
+      "motDePasse": "zghfgsdfsdfds",
+      "id": 6
+    },
+    {
+      "nom": "xqsdsqdfc",
+      "prenom": "zedfdcsd",
+      "mail": "xqdxsqqs@qdqdd0",
+      "motDePasse": "zzdqsdqsdqads",
+      "id": 7
     }
   ],
   "entreprises": [
@@ -122,6 +143,23 @@
         "qualiteTechnique": 4,
         "niveauExpertise": 3
       }
+    },
+    {
+      "idEntreprise": 2,
+      "categorie": "toto@toto.com",
+      "description": "toto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto",
+      "tauxHoraire": "45",
+      "tempsPrestation": 0,
+      "prixMateriel": 0,
+      "termine": false,
+      "devis": "toto@toto.comtoto@toto.com",
+      "evaluation": {
+        "qualiteGlobale": 0,
+        "faciliteCommunication": 0,
+        "qualiteTechnique": 0,
+        "niveauExpertise": 0
+      },
+      "id": 5
     }
   ],
   "categories": [

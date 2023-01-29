@@ -1,7 +1,7 @@
 @import "../../assets/css/utils/fonts.scss";
 
 .fullCard {
-  height: 444px;
+  height: auto;
   width: 300px;
   border-radius: 10px;
   box-shadow: 0px 4px 30px rgba(30, 30, 30, 0.2);
@@ -44,9 +44,10 @@
 
 .contentCard {
   width: 249px;
-  height: 36px;
+  height: auto;
   margin-top: 25px;
   color: $black;
+  word-break: break-word;
 }
 
 .moreButton {

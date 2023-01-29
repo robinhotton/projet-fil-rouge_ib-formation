@@ -36,7 +36,7 @@ const PrestationController: React.FC = () => {
 
   return (
     <>
-      <h1 className="categorieTitre">Catégorie : {categorie?.nom}</h1>
+      <h1 className="titleCategory bold">Catégorie : {categorie?.nom}</h1>
       <div className="categories">
         {prestations.length > 0 ? (
           <>

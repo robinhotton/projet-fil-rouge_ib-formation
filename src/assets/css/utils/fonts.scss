@@ -6,6 +6,11 @@
   font-size: 42px;
   color: $black;
 }
+.titleCategory {
+  font-family: $worksans;
+  font-size: 32px;
+  color: $black;
+}
 .titleCard {
   font-family: $worksans;
   font-size: 21px;
@@ -26,8 +31,7 @@ input,
   font-size: 15px;
 }
 
-.menuHeader
-{
+.menuHeader {
   font-family: $worksans;
   font-size: 15px;
 }

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         <img src="/DarkMode.png" alt="Logo" />
       </Link>
       <Link to="/prestation">
-        <p className="pLink">Prestations</p>
+        <p className="pLink menuHeader bold">Prestations</p>
       </Link>
       <DropdownMenu placeholder="Catégories" route="/categorie" />
       <SearchBarController />

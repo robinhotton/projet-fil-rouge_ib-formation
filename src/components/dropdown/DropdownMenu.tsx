@@ -49,7 +49,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ placeholder, route }) => {
         }
       >
         <div className="flex-align">
-          <p>{placeholder} </p>
+          <p className="menuHeader bold">{placeholder} </p>
           <RxTriangleDown />
         </div>
         {showDropDown && (

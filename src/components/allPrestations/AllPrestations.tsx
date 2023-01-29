@@ -20,7 +20,7 @@ const AllPrestations: React.FC = () => {
 
   return (
     <>
-      <h1 className="title">Toutes les Prestations</h1>
+      <h1 className="title bold">Toutes les Prestations</h1>
       <div className="AllPrestations">
         {prestations.map((prestation, index) => {
           return (

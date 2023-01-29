@@ -1,4 +1,4 @@
-import ConnexionLink from "../../components/connexion/ConnexionLink";
+import ConnexionLink from "../../components/inscriptionLink/InscriptionLink";
 import DropdownMenu from "../../components/dropdown/DropdownMenu";
 import SearchBarController from "../../components/searchbar/SearchBarController";
 import { FaShoppingCart } from "react-icons/fa";
@@ -9,18 +9,20 @@ const Header: React.FC = () => {
   return (
     <header>
       <Link to="/">
-        <p className="pLink">logo</p>
+        <img src="/DarkMode.png" alt="Logo" />
       </Link>
       <Link to="/prestation">
-        <p className="pLink">prestations</p>
+        <p className="pLink menuHeader bold">Prestations</p>
       </Link>
-      <DropdownMenu placeholder="categories" route="/categorie" />
-      <Link to="/entreprise">
-        <p className="pLink">entreprises</p>
-      </Link>
+      <DropdownMenu placeholder="Categories" route="/categorie" />
+      {/* <Link to="/entreprise">
+        <p className="pLink menuHeader bold">Entreprises</p>
+      </Link> */}
       <SearchBarController />
       <ConnexionLink />
-      <FaShoppingCart className="cart" />
+      <Link to="/panier">
+        <FaShoppingCart className="cart" />
+      </Link>
     </header>
   );
 };

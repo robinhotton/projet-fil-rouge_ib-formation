@@ -2,17 +2,18 @@ import Categorie from "../models/Categorie";
 
 export default class CategoriesService {
   public static async getAllCategories(): Promise<Categorie[]> {
-    return fetch("http://localhost:3004/categories/").then((response) =>
+    return await fetch("http://localhost:3004/categories/").then((response) =>
       response.json().catch((error) => this.error(error))
     );
   }
 
-  static getCategorieById(id: number): Promise<Categorie> {
-    return fetch(`http://localhost:3004/categories/${id}`).then((response) =>
-      response
-        .json()
-        .then((data) => (this.isEmpty(data) ? null : data))
-        .catch((error) => this.error(error))
+  public static async getCategorieById(id: number): Promise<Categorie> {
+    return await fetch(`http://localhost:3004/categories/${id}`).then(
+      (response) =>
+        response
+          .json()
+          .then((data) => (this.isEmpty(data) ? null : data))
+          .catch((error) => this.error(error))
     );
   }
 

@@ -1,13 +1,13 @@
 import { RouteObject, useRoutes } from "react-router";
-import AdministrateurPage from "../pages/AdministrateurPage";
+import AdministrateurPage from "../pages/administrateur/AdministrateurPage";
 import AllPrestationsPage from "../pages/AllPrestationsPage";
 import CategoriePage from "../pages/CategoriePage";
-import ConnexionPage from "../pages/ConnexionPage";
 import CreatePrestationPage from "../pages/CreatePrestationPage";
 import EditPrestationPage from "../pages/EditPrestationPage";
-import InscriptionEntreprisePage from "../pages/InscriptionEntreprisePage";
-import InscriptionPage from "../pages/InscriptionPage";
-import LandingPage from "../pages/LandingPage";
+import InscriptionEntreprisePage from "../pages/inscriptionPrestarairePage/InscriptionEntreprisePage";
+import InscriptionPage from "../pages/inscription/InscriptionPage";
+import LandingPage from "../pages/landing/LandingPage";
+import PanierPage from "../pages/PanierPage";
 import PrestationPage from "../pages/PrestationPage";
 
 const Router: React.FC = () => {
@@ -33,27 +33,23 @@ const Router: React.FC = () => {
       element: <EditPrestationPage />,
     },
     {
-      path: "/categorie",
-      element: <></>,
-    },
-    {
-      path: "/categorie/:id",
+      path: "categorie/:id",
       element: <CategoriePage />,
     },
     {
-      path: "/connexion",
-      element: <ConnexionPage />,
-    },
-    {
-      path: "/inscription/client",
+      path: "inscription/client",
       element: <InscriptionPage />,
     },
     {
-      path: "/inscription/entreprise",
+      path: "inscription/entreprise",
       element: <InscriptionEntreprisePage />,
     },
     {
-      path: "/admin",
+      path: "panier",
+      element: <PanierPage />,
+    },
+    {
+      path: "admin",
       element: <AdministrateurPage />,
     },
   ];

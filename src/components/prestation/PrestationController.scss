@@ -1,16 +1,16 @@
+.categorieTitre {
+  display: flex;
+  padding-top: 120px;
+  font-size: 24px;
+  justify-content: center;
+}
+
 .categories {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px 100px 30px 100px;
-}
-
-.categorieTitre {
-  display: flex;
-  font-size: 24px;
-  justify-content: center;
-  margin: 1rem;
+  margin: 0px 50px;
 }
 
 .card {

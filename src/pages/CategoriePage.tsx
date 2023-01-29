@@ -1,11 +1,11 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
 import PrestationController from "../components/prestation/PrestationController";
-import "./CategoriePage.scss";
+import "../assets/css/utils/FooterEnBas.scss";
 
 const CategoriePage: React.FC = () => {
   return (
-    <div className="CategoriePage">
+    <div className="FooterEnBas">
       <Header />
       <PrestationController />
       <Footer />

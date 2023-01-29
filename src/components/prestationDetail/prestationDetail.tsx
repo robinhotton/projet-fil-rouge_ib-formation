@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Entreprise from "../../models/Entreprise";
 import Prestation from "../../models/Prestation";
 import EntrepriseService from "../../services/EntrepriseService";
 import PrestationService from "../../services/PrestationService";
 import "./prestationDetail.scss";
+import { FiEdit } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 type PrestationCardProps = {
   prestation?: Prestation;
@@ -14,8 +16,20 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
   const [prestationDetail, setPrestationDetail] = useState<Prestation>();
   const [entreprise, setEntreprise] = useState<Entreprise>();
 
+  /**
+   * id de l'url qui est utilisé pour récupéré la bonne prestation
+   */
   let { id } = useParams<string>();
 
+  /**
+   * permet de rediriger l'url grâce a la route du routeur
+   */
+  const redirection = useNavigate();
+
+  /**
+   * Récupère	la prestation grâce a son id et le useParams id.
+   * Fais une jointure entre l'idEntreprise de de la prestation et l'id de l'entreprise, puis stocke l'entreprise dans le hook entreprise.
+   */
   useEffect(() => {
     if (id) {
       PrestationService.getPrestationsById(+id).then((data) =>
@@ -27,7 +41,19 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
         (data) => setEntreprise(data)
       );
     }
-  }, [prestationDetail?.idEntreprise]);
+  }, [id, prestationDetail?.idEntreprise]);
+
+  /**
+   * Ajoute au panier quand le client clique sur le bouton et redirige sur la page prestation
+   */
+  const handleClick = () => {
+    if (prestationDetail) {
+      //par defaut sur le client 1, a changer quand on aura la connexion
+      prestationDetail.idClient = 1;
+      PrestationService.updatePrestation(prestationDetail);
+      redirection("/");
+    }
+  };
 
   return (
     <>
@@ -39,41 +65,48 @@ const PrestationDetail: React.FC<PrestationCardProps> = () => {
             {entreprise?.coordonnees} - {entreprise?.zoneGeographique}
           </h2>
           <p className="content">{prestationDetail?.description}</p>
-          <button className="buttonPrestationSubmit bigButtonText bold">
-            Demander un devis
-          </button>
+          <div className="flex">
+            <button
+              className="buttonPrestationSubmit bigButtonText bold"
+              onClick={() => handleClick()}
+            >
+              Ajouter au panier
+            </button>
+            <Link to={`/prestation/edit/${id}`}>
+              <FiEdit className="editPrestation" />
+            </Link>
+          </div>
         </div>
         <div className="galeryBlock">
           <div className="firstRow">
             <img
-              className="img1"
+              className="detail-img1"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image1"
             />
             <img
-              className="img2"
+              className="detail-img2"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image2"
             />
           </div>
           <div className="secondRow">
             <img
-              className="img3"
+              className="detail-img3"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image3"
             />
           </div>
           <div className="thirdRow">
-            {" "}
             <img
-              className="img4"
+              className="detail-img4"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image4"
             />
             <img
-              className="img5"
+              className="detail-img5"
               src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600"
-              alt="image"
+              alt="image5"
             />
           </div>
         </div>

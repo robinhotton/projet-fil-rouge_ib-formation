@@ -1,0 +1,19 @@
+@import "../../assets/css/utils/variables.scss";
+
+.person {
+  color: $light;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+a span {
+  color: $light;
+  border: solid $black;
+}
+
+.connexion
+{
+  display: flex;
+  align-items: center;
+}

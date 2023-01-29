@@ -1,0 +1,16 @@
+.AllPrestations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.createPrestation {
+  font-size: 50px;
+  color: #303030;
+}
+
+.createPrestation:hover {
+  transform: scale(1.2);
+  transition: 400ms;
+}

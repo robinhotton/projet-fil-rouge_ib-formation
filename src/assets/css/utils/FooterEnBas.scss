@@ -1,0 +1,6 @@
+.FooterEnBas {
+  /**** Pour fixer le Footer en bas de page ****/
+  display: grid; /*Transforme la balise body en contenur grid*/
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}

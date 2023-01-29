@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Prestation from "../../models/Prestation";
-import PrestationForm from "../prestationForm/prestationForm";
+import PrestationForm from "./prestationForm";
 import "./createPrestation.scss";
 
 const CreatePrestation: React.FC = () => {

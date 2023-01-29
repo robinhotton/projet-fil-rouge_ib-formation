@@ -3,6 +3,7 @@ import Evaluation from "./Evaluation";
 export default class Prestation {
   id?: number;
   idEntreprise?: number;
+  idClient?: number;
   categorie: string;
   description: string;
   tauxHoraire: number;
@@ -30,6 +31,7 @@ export default class Prestation {
     this.tempsPrestation = tempsPrestation;
     this.prixMateriel = prixMateriel;
   }
+
   public prixTotal(): number {
     if (this.tempsPrestation && this.prixMateriel) {
       return this.tauxHoraire * this.tempsPrestation + this.prixMateriel;

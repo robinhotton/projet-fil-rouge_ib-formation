@@ -13,6 +13,9 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ placeholder, route }) => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [categories, setCategories] = useState<string[]>([]);
 
+  /**
+   * récupère uniquement les nom des categories
+   */
   useEffect(() => {
     CategoriesService.getAllCategories().then((categories) =>
       setCategories(categories.map((categorie) => categorie.nom))
@@ -46,7 +49,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ placeholder, route }) => {
         }
       >
         <div className="flex-align">
-          <p>{placeholder} </p>
+          <p className="menuHeader bold">{placeholder} </p>
           <RxTriangleDown />
         </div>
         {showDropDown && (

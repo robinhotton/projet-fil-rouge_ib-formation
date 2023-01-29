@@ -1,12 +1,15 @@
 import Footer from "../commons/Footer/Footer";
 import Header from "../commons/header/Header";
+import Panier from "../components/panier/Panier";
 
-const ConnexionPage: React.FC = () => {
+const PanierPage: React.FC = () => {
   return (
     <>
       <Header />
+      <Panier />
       <Footer />
     </>
   );
 };
-export default ConnexionPage;
+
+export default PanierPage;

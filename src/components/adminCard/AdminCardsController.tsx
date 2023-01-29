@@ -11,6 +11,9 @@ const AdminCardsController: React.FC = () => {
   const [prestations, setPrestations] = useState<Prestation[]>([]);
   const [categories, setCategories] = useState<Categorie[]>([]);
 
+  /**
+   * stockes toutes les prestations et toutes les catégories
+   */
   useEffect(() => {
     PrestationService.getAllPrestations().then((prestations) =>
       setPrestations(prestations)
@@ -20,6 +23,11 @@ const AdminCardsController: React.FC = () => {
     );
   }, []);
 
+  /**
+   * renvoie une copie du tableau de prestations filtré pour garder que ceux avec le bon nom de catégorie
+   * @param nomCategorie le nom de la catégorie
+   * @returns les prestations de la catégorie
+   */
   const prestationsParCategories = (nomCategorie: string): Prestation[] => {
     const copie: Prestation[] = prestations;
     return copie.filter((prestation) => prestation.categorie === nomCategorie);

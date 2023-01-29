@@ -1,6 +1,7 @@
 .pageDetailBlock {
   display: flex;
   flex-direction: row;
+  margin-top: 120px;
   justify-content: space-around;
   .contentBlock {
     width: 500px;
@@ -16,12 +17,24 @@
     p {
       margin: 25px 0;
     }
+    .buttonPrestationSubmit {
+      cursor: pointer;
+    }
+    .editPrestation {
+      margin-left: 20px;
+      font-size: 30px;
+      color: #303030;
+    }
+    .editPrestation:hover {
+      transform: scale(1.2);
+      transition: 400ms;
+    }
   }
 
   .galeryBlock {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 400px;
     .firstRow,
     .secondRow,
     .thirdRow {
@@ -30,35 +43,35 @@
       flex-direction: row;
     }
     .firstRow {
-      .img1 {
+      .detail-img1 {
         width: 50%;
         margin-right: 25px;
       }
-      .img2 {
+      .detail-img2 {
         width: 50%;
       }
     }
     .secondRow {
       margin: 25px 0;
-      .img3 {
+      .detail-img3 {
         width: 100%;
       }
     }
     .thirdRow {
-      .img4 {
+      .detail-img4 {
         width: 50%;
         margin-right: 25px;
       }
-      .img5 {
+      .detail-img5 {
         width: 50%;
       }
     }
 
-    .img1,
-    .img2,
-    .img3,
-    .img4,
-    .img5 {
+    .detail-img1,
+    .detail-img2,
+    .detail-img3,
+    .detail-img4,
+    .detail-img5 {
       border-radius: 0;
     }
   }

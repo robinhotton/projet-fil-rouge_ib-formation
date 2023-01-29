@@ -1,0 +1,108 @@
+@import "../../assets/css/utils/fonts.scss";
+@import "../../assets/css/utils/buttons.scss";
+@import "../../assets/css/utils/variables.scss";
+
+.registerBlock {
+  display: flex;
+  flex-direction: row;
+  .registerImgBlock {
+    width: 50%;
+    height: 100vh;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .registerFormBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 50px;
+    width: 50%;
+    .logoBlock {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0 25px 0;
+      img {
+        height: 100px;
+      }
+    }
+    .googleButton {
+      width: 100%;
+      height: 65px;
+      padding: 20px 15px;
+      background: none;
+      border: 1px solid $black;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        padding-right: 10px;
+      }
+    }
+
+    form {
+      .otherBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .line {
+          width: 50%;
+          height: 5px;
+          background: $light;
+          border: 0;
+        }
+        .or {
+          width: 10%;
+          background: transparent;
+          padding: 10px 5px;
+          margin: 25px auto;
+        }
+      }
+      .formGroup {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          border: 1px solid $black;
+          border-radius: 10px;
+          margin-bottom: 25px;
+          padding: 0;
+          height: 56px;
+          margin-top: 10px;
+          &::placeholder {
+            padding-left: 15px;
+          }
+        }
+        .nameGroup {
+          display: flex;
+          flex-direction: row;
+          .inputBlock {
+            label {
+              margin-bottom: 10px;
+            }
+            margin-right: 25px;
+            width: 100%;
+            input[type="text"] {
+              width: 100%;
+            }
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+        }
+        .checkboxLine {
+          margin-bottom: 15px;
+        }
+        .buttonPrestationSubmit {
+          width: 100%;
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}

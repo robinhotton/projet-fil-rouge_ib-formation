@@ -17,13 +17,19 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
   const [prestations, setPrestations] = useState<Prestation[]>([]);
   const [entreprises, setEntreprises] = useState<Entreprise[]>([]);
 
+  /**
+   * recupère toutes les entreprises et affecte les prestations de la categorie recu en parametre
+   */
   useEffect(() => {
     setPrestations(prestationsDeLaCategorie);
     EntrepriseService.getAllEntreprises().then((entreprise) =>
       setEntreprises(entreprise)
     );
-  }, []);
+  }, [prestationsDeLaCategorie]);
 
+  /**
+   * logique pour afficher le prix moyen d'une catégorie de prestation
+   */
   const prixMoyen = (): number => {
     let moy: number = 0;
     if (prestations.length === 0) return moy;
@@ -36,6 +42,9 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     return +(moy / prestations.length).toFixed(2);
   };
 
+  /**
+   * logique pour afficher le prix minimum d'une catégorie de prestation
+   */
   const prixMin = (): number => {
     let min: number = Infinity;
     prestations.forEach((prestation) => {
@@ -48,6 +57,9 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     else return min;
   };
 
+  /**
+   * logique pour afficher le prix maximum d'une catégorie de prestation
+   */
   const prixMax = (): number => {
     let max: number = 0;
     prestations.forEach((prestation) => {
@@ -59,6 +71,10 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     return max;
   };
 
+  /**
+   * fonction qui permet de setup un tableau remplis de 0 de taille entreprises.length qui represente le nombre de prestation de la catégorie par entreprise
+   * @returns le tableau de 0
+   */
   const setUpTableauZero = (): number[] => {
     const tableauDeZero: number[] = [];
     entreprises.forEach(() => {
@@ -67,6 +83,10 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     return tableauDeZero;
   };
 
+  /**
+   * remplis le tableau en augmentant le nombre de la case tableau de 1 de l'entreprise pourr chaqu'une de ses prestations de la catégorie
+   * @returns le tableau remplis
+   */
   const setUpTableau = (): number[] => {
     const tableauARemplir: number[] = setUpTableauZero();
     prestations.forEach((prestation) => {
@@ -77,6 +97,9 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     return tableauARemplir;
   };
 
+  /**
+   * Utilise le tableau setUp pour calculer la moyenne des prestations des entreprises pour cette catégorie
+   */
   const moyParPrestataire = (): number => {
     const tableauRempli: number[] = setUpTableau();
     const moy: number =
@@ -87,11 +110,17 @@ const AdminCardsCategorie: React.FC<AdminCardsCategorieProps> = ({
     return moy;
   };
 
+  /**
+   * Utilise le tableau setUp pour calculer la minimun des prestations des entreprises pour cette catégorie
+   */
   const minParPrestataire = (): number => {
     const tableauRempli: number[] = setUpTableau();
     return Math.min(...tableauRempli);
   };
 
+  /**
+   * Utilise le tableau setUp pour calculer la maximum des prestations des entreprises pour cette catégorie
+   */
   const maxParPrestataire = (): number => {
     const tableauRempli: number[] = setUpTableau();
     return Math.max(...tableauRempli);

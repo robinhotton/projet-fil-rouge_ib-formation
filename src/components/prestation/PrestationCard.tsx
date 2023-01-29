@@ -10,6 +10,9 @@ type PrestationCardProps = {
 const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
   const [entreprise, setEntreprise] = useState<Entreprise>();
 
+  /**
+   * lien entre la prtestation et son entreprise
+   */
   useEffect(() => {
     if (prestation.idEntreprise) {
       EntrepriseService.getEntrepriseById(prestation.idEntreprise).then(
@@ -22,13 +25,16 @@ const PrestationCard: React.FC<PrestationCardProps> = ({ prestation }) => {
     <div className="fullCard">
       <img
         src="https://images.pexels.com/photos/8853535/pexels-photo-8853535.jpeg?auto=compress&cs=tinysrgb&w=600"
+        className="imagePrestationCard"
         alt="prestation"
       />
 
-      <h1 className="titleCard">{entreprise?.name}</h1>
-      <h2 className="coord">{entreprise?.zoneGeographique}</h2>
-      <p className="contentCard">{prestation.description}</p>
-      <button className="moreButton">En savoir plus</button>
+      <div className="cardBody">
+        <h1 className="titleCard bold">{entreprise?.name}</h1>
+        <h2 className="subtitle coord medium">{entreprise?.zoneGeographique}</h2>
+        <p className="contentCard">{prestation.description}</p>
+        <button className="moreButton buttonText bold">En savoir plus</button>
+      </div>
     </div>
   );
 };

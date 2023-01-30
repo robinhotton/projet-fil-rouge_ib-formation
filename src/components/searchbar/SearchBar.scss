@@ -6,3 +6,8 @@
 .SearchButton:hover {
   border: solid $light;
 }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

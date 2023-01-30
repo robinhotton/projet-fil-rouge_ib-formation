@@ -49,6 +49,20 @@
       "mail": "xqdxsqqs@qdqdd0",
       "motDePasse": "zzdqsdqsdqads",
       "id": 7
+    },
+    {
+      "nom": "qsdfghnj,",
+      "prenom": "aqzsfghj,",
+      "mail": "johndoe@gmail.com",
+      "motDePasse": "qaerfthyujikol",
+      "id": 8
+    },
+    {
+      "nom": "cvbhnjgfghjhg",
+      "prenom": "jlmù*fvgbj",
+      "mail": "cfghdfjhgjkhfgnfd@fkjzedfjgkf.com",
+      "motDePasse": "zrgtedfghjrfgh",
+      "id": 9
     }
   ],
   "entreprises": [
@@ -92,7 +106,7 @@
         "qualiteTechnique": 5,
         "niveauExpertise": 5
       },
-      "idClient": 0
+      "idClient": 1
     },
     {
       "id": 2,

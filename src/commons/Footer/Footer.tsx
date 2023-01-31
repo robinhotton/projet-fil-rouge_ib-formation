@@ -64,14 +64,22 @@ const Footer: React.FC = () => {
 
       <div className="EndFooter">
         <div className="Social">
-          <BsFacebook className="Facebook" href="https://www.facebook.com/" />
-          <div className="TwitterDiv">
-            <BsTwitter className="Twitter" href="https://www.twitter.com/" />
-          </div>
-          <div className="YoutubeDiv">
-            <BsYoutube className="Youtube" href="https://www.youtube.com/" />
-          </div>
-          <BsLinkedin className="Linkedin" href="http://www.linkedin.com/" />
+          <a href="https://www.facebook.com/">
+            <BsFacebook className="Facebook" />
+          </a>
+          <a href="https://www.twitter.com/">
+            <div className="TwitterDiv">
+              <BsTwitter className="Twitter" />
+            </div>
+          </a>
+          <a href="https://www.youtube.com/">
+            <div className="YoutubeDiv">
+              <BsYoutube className="Youtube" />
+            </div>
+          </a>
+          <a href="http://www.linkedin.com/">
+            <BsLinkedin className="Linkedin" />
+          </a>
         </div>
         <p>
           © 2023 - ULTRAMOTION GROUP - <Link to="">Conditions générales</Link>

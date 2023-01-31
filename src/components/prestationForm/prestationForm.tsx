@@ -75,7 +75,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
    */
   const ajout = () => {
     PrestationService.createPrestation(prestation).then(() =>
-      redirection(`/prestation/${prestation.id}`)
+      redirection(`/prestation/`)
     );
   };
 

@@ -5,8 +5,7 @@
       "name": "robin",
       "lastName": "hotton",
       "mail": "robin@hotton.com",
-      "motDePasse": "oui",
-      "panier": []
+      "motDePasse": "oui"
     },
     {
       "nom": "Doe",
@@ -57,7 +56,7 @@
         "qualiteTechnique": 5,
         "niveauExpertise": 5
       },
-      "idClient": 1
+      "idClient": 0
     },
     {
       "id": 2,

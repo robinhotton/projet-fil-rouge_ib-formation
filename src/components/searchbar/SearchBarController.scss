@@ -1,0 +1,15 @@
+@import "../../assets/css/utils/variables.scss";
+.searchResult {
+  display: flex;
+  flex-direction: column;
+}
+.searchResult p {
+  color: $light;
+  cursor: pointer;
+  border: solid 1px $light;
+  font-family: $roboto;
+}
+
+.searchResult p:hover {
+  background-color: #606060;
+}

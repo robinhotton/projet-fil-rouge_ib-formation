@@ -74,7 +74,9 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
    * créer une prestation
    */
   const ajout = () => {
-    PrestationService.createPrestation(prestation).then(() => redirection(`/`));
+    PrestationService.createPrestation(prestation).then(() =>
+      redirection(`/prestation/${prestation.id}`)
+    );
   };
 
   /**
@@ -82,7 +84,7 @@ const PrestationForm: React.FC<props> = ({ prestation, edit }) => {
    */
   const maj = () => {
     PrestationService.updatePrestation(prestation).then(() =>
-      redirection(`/${prestation.id}`)
+      redirection(`/prestation/${prestation.id}`)
     );
   };
 

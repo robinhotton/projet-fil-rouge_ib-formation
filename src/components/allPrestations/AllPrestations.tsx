@@ -19,8 +19,8 @@ const AllPrestations: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <h1 className="title bold">Toutes les Prestations</h1>
+    <main className="prestationPage">
+      <h1 className="titleCategory bold center">Toutes les Prestations</h1>
       <div className="AllPrestations">
         {prestations.map((prestation, index) => {
           return (
@@ -35,7 +35,7 @@ const AllPrestations: React.FC = () => {
           <IoIosAddCircleOutline className="createPrestation" />
         </Link>
       </div>
-    </>
+    </main>
   );
 };
 export default AllPrestations;

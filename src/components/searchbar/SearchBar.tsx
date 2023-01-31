@@ -10,13 +10,15 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onChangeHandler,
 }) => {
   return (
-    <input
-      value={prestationsValue}
-      onChange={onChangeHandler}
-      className="SearchBar"
-      type="text"
-      placeholder="rechercher une prestation..."
-    />
+    <div className="flex-column">
+      <input
+        value={prestationsValue}
+        onChange={onChangeHandler}
+        className="SearchBar"
+        type="text"
+        placeholder="rechercher une prestation..."
+      />
+    </div>
   );
 };
 

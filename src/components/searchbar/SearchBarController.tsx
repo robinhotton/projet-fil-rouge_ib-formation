@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
-import PrestationCard from "../prestation/PrestationCard";
-import PrestationService from "../../services/PrestationService";
 import SearchBar from "./SearchBar";
-import Prestation from "../../models/Prestation";
+import Categorie from "../../models/Categorie";
+import CategoriesService from "../../services/CategorieService";
+import "./SearchBarController.scss";
+import { Link } from "react-router-dom";
 
 const SearchBarController: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [prestations, setPrestations] = useState<Prestation[]>([]);
+  const [categories, setCategories] = useState<Categorie[]>([]);
 
   /**
    * remplis le hook prestations
    */
   useEffect(() => {
-    PrestationService.getAllPrestations().then((prestations) =>
-      setPrestations(prestations)
+    CategoriesService.getAllCategories().then((categories) =>
+      setCategories(categories)
     );
   }, []);
 
@@ -30,24 +31,28 @@ const SearchBarController: React.FC = () => {
    * @param searchTerm le paramètre reçu grâce à la searchbar
    * @returns les prestations
    */
-  const toSearch = (searchTerm: string) => (item: any) =>
-    item.categorie.toLowerCase().includes(searchTerm.toLowerCase());
+  const toSearch = (searchTerm: string) => (item: Categorie) =>
+    item.nom.toLowerCase().includes(searchTerm.toLowerCase());
 
   return (
     <>
-      <SearchBar
-        prestationsValue={searchTerm}
-        onChangeHandler={onSearchHandler}
-      />
-      {searchTerm === "" ? (
-        <></>
-      ) : (
-        <>
-          {prestations.filter(toSearch(searchTerm)).map((prestation) => (
-            <PrestationCard key={prestation.id} prestation={prestation} />
-          ))}
-        </>
-      )}
+      <div className="searchResult">
+        <SearchBar
+          prestationsValue={searchTerm}
+          onChangeHandler={onSearchHandler}
+        />
+        {searchTerm === "" ? (
+          <></>
+        ) : (
+          <>
+            {categories.filter(toSearch(searchTerm)).map((categorie, index) => (
+              <Link to={`/categorie/${categorie.id}`}>
+                <p key={index}>{categorie.nom}</p>
+              </Link>
+            ))}
+          </>
+        )}
+      </div>
     </>
   );
 };

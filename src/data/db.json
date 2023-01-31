@@ -12,43 +12,8 @@
       "nom": "Doe",
       "prenom": "John",
       "mail": "johndoe@gmail.com",
-      "motDePasse": "johndoe@gmail.com",
+      "motDePasse": "johndoe",
       "id": 2
-    },
-    {
-      "nom": "Doe",
-      "prenom": "John",
-      "mail": "JohnJohn@John.John",
-      "motDePasse": "JohnJohn@John.John",
-      "id": 3
-    },
-    {
-      "nom": "zertyuio",
-      "prenom": "aqsdfghju",
-      "mail": "azertyuiop@tamer.com",
-      "motDePasse": "zertyuiop",
-      "id": 4
-    },
-    {
-      "nom": "fsd",
-      "prenom": "zsff",
-      "mail": "dfd@ddds.com",
-      "motDePasse": "azertghyjuk",
-      "id": 5
-    },
-    {
-      "nom": "cxsvv",
-      "prenom": "qswdv",
-      "mail": "ccccc@ccc.com",
-      "motDePasse": "zghfgsdfsdfds",
-      "id": 6
-    },
-    {
-      "nom": "xqsdsqdfc",
-      "prenom": "zedfdcsd",
-      "mail": "xqdxsqqs@qdqdd0",
-      "motDePasse": "zzdqsdqsdqads",
-      "id": 7
     }
   ],
   "entreprises": [
@@ -91,7 +56,8 @@
         "faciliteCommunication": 4,
         "qualiteTechnique": 5,
         "niveauExpertise": 5
-      }
+      },
+      "idClient": 1
     },
     {
       "id": 2,
@@ -108,7 +74,8 @@
         "faciliteCommunication": 3,
         "qualiteTechnique": 4,
         "niveauExpertise": 4
-      }
+      },
+      "idClient": 0
     },
     {
       "id": 3,
@@ -125,7 +92,8 @@
         "faciliteCommunication": 0,
         "qualiteTechnique": 0,
         "niveauExpertise": 0
-      }
+      },
+      "idClient": 0
     },
     {
       "id": 4,
@@ -142,24 +110,8 @@
         "faciliteCommunication": 2,
         "qualiteTechnique": 4,
         "niveauExpertise": 3
-      }
-    },
-    {
-      "idEntreprise": 2,
-      "categorie": "toto@toto.com",
-      "description": "toto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto.comtoto@toto",
-      "tauxHoraire": "45",
-      "tempsPrestation": 0,
-      "prixMateriel": 0,
-      "termine": false,
-      "devis": "toto@toto.comtoto@toto.com",
-      "evaluation": {
-        "qualiteGlobale": 0,
-        "faciliteCommunication": 0,
-        "qualiteTechnique": 0,
-        "niveauExpertise": 0
       },
-      "id": 5
+      "idClient": 0
     }
   ],
   "categories": [

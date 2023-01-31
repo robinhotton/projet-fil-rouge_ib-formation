@@ -1,11 +1,19 @@
 .panier {
   display: flex;
-  justify-content: center;
-  padding-top: 50px;
+  justify-content: space-around;
+  padding: 50px;
 }
 
-.FooterEnBas > h1 {
+.flexPanier {
   display: flex;
   justify-content: center;
   padding-top: 150px;
+}
+
+.flexPanier > button {
+  margin-left: 20px;
+}
+
+.flexPanier > button > span {
+  border: none;
 }

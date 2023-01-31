@@ -35,8 +35,10 @@ const PrestationController: React.FC = () => {
   }, [categorie?.nom, id]);
 
   return (
-    <>
-      <h1 className="titleCategory bold">Catégorie : {categorie?.nom}</h1>
+    <main className="categoryPage">
+      <h1 className="titleCategory bold center">
+        Catégorie : {categorie?.nom}
+      </h1>
       <div className="categories">
         {prestations.length > 0 ? (
           <>
@@ -51,14 +53,12 @@ const PrestationController: React.FC = () => {
             })}
           </>
         ) : (
-          <>
-            <Link to="">
-              <PrestationCard prestation={new Prestation()} />
-            </Link>
-          </>
+          <div className="fixCardVide">
+            <PrestationCard prestation={new Prestation()} />
+          </div>
         )}
       </div>
-    </>
+    </main>
   );
 };
 export default PrestationController;

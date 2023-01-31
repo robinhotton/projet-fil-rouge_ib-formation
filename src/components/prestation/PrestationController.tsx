@@ -53,11 +53,9 @@ const PrestationController: React.FC = () => {
             })}
           </>
         ) : (
-          <>
-            <Link to="">
-              <PrestationCard prestation={new Prestation()} />
-            </Link>
-          </>
+          <div className="fixCardVide">
+            <PrestationCard prestation={new Prestation()} />
+          </div>
         )}
       </div>
     </main>

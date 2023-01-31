@@ -12,57 +12,8 @@
       "nom": "Doe",
       "prenom": "John",
       "mail": "johndoe@gmail.com",
-      "motDePasse": "johndoe@gmail.com",
+      "motDePasse": "johndoe",
       "id": 2
-    },
-    {
-      "nom": "Doe",
-      "prenom": "John",
-      "mail": "JohnJohn@John.John",
-      "motDePasse": "JohnJohn@John.John",
-      "id": 3
-    },
-    {
-      "nom": "zertyuio",
-      "prenom": "aqsdfghju",
-      "mail": "azertyuiop@tamer.com",
-      "motDePasse": "zertyuiop",
-      "id": 4
-    },
-    {
-      "nom": "fsd",
-      "prenom": "zsff",
-      "mail": "dfd@ddds.com",
-      "motDePasse": "azertghyjuk",
-      "id": 5
-    },
-    {
-      "nom": "cxsvv",
-      "prenom": "qswdv",
-      "mail": "ccccc@ccc.com",
-      "motDePasse": "zghfgsdfsdfds",
-      "id": 6
-    },
-    {
-      "nom": "xqsdsqdfc",
-      "prenom": "zedfdcsd",
-      "mail": "xqdxsqqs@qdqdd0",
-      "motDePasse": "zzdqsdqsdqads",
-      "id": 7
-    },
-    {
-      "nom": "qsdfghnj,",
-      "prenom": "aqzsfghj,",
-      "mail": "johndoe@gmail.com",
-      "motDePasse": "qaerfthyujikol",
-      "id": 8
-    },
-    {
-      "nom": "cvbhnjgfghjhg",
-      "prenom": "jlmù*fvgbj",
-      "mail": "cfghdfjhgjkhfgnfd@fkjzedfjgkf.com",
-      "motDePasse": "zrgtedfghjrfgh",
-      "id": 9
     }
   ],
   "entreprises": [

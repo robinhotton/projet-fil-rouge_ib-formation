@@ -1,7 +1,5 @@
 # UltraMotion Corp
 
-![logo DarkMode](/public/logoDarkMode.svg)
-
 Projet fil rouge : [Ib-formation](https://www.ib-formation.fr/)
 
 Formation : début novembre 2022 - fin janvier 2023 (3 mois)
@@ -13,8 +11,10 @@ Projet : 22 décembre 2022 - 1 fevrier 2023
 
 - [node.js](https://nodejs.org/en/)
 
-## installation
+## Installation
 
+- git pull https://github.com/Gerob59/projet-fil-rouge_ib-formation.git
+- cd projet-fil-rouge_ib-formation/
 - installer les dépendances avec `npm i`
 - Lancer le serveur json `npm run json`, il se lancera sur le port 3004.
 - Lancer le serveur avec `npm start`, il se lancera sur le port 3001.
@@ -33,7 +33,7 @@ Projet : 22 décembre 2022 - 1 fevrier 2023
 - [Wireframe / Maquettage / Prototypage](https://www.figma.com/team_invite/redeem/78lEjFCsum1azZk7CFyG98)
 - [Trello](https://trello.com/b/n83uIREc/projet-fil-rouge)
 - Implémentation graphique avec react typescript
-
+- [powerpoint](https://docs.google.com/presentation/d/1vlYP597yBXGyF31VK8lA2Tcc4mW5-kweJCSL1juDDTw/edit#slide=id.g182027ba2c2_0_0)
 ---
 
 ## Description

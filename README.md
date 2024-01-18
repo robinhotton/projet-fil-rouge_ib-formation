@@ -13,9 +13,10 @@ Projet : 22 décembre 2022 - 1 fevrier 2023
 
 ## Installation
 
-- git pull https://github.com/Gerob59/projet-fil-rouge_ib-formation.git
-- cd projet-fil-rouge_ib-formation/
+- cloner le projet `git clone https://github.com/Gerob59/projet-fil-rouge_ib-formation.git`
+- ce déplacer dans le bon dossier `cd projet-fil-rouge_ib-formation/`
 - installer les dépendances avec `npm i`
+- installer json-server : `npm install json-server --save-dev`
 - Lancer le serveur json `npm run json`, il se lancera sur le port 3004.
 - Lancer le serveur avec `npm start`, il se lancera sur le port 3001.
 
